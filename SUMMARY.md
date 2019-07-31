@@ -14,15 +14,15 @@
 
 ## 语言
 - [java](语言/java/README.md)
-    -[io](语言/java/io/README.md)
+    - [io](语言/java/io/README.md)
         - [概述](语言/java/io/1概述.md)
         - [隐藏的设计模式](语言/java/io/2隐藏的设计模式.md)
-        - [代码示例](语言/java/io/3代码示例.md)
+        -  [代码示例](语言/java/io/3代码示例.md)
         - [控制台](语言/java/io/4控制台.md)
         - [网络](语言/java/io/5网络Io.md)
         - [Bio_Nio_Aio](语言/java/io/6Bio_Nio_Aio.md)
         - [reactor和preactor模型.pdf](语言/java/io/7reactor和preactor模型.pdf)  
-    -[jmx](语言/java/jmx/README.md)
+    - [jmx](语言/java/jmx/README.md)
         - [odl中mxbean的实现](语言/java/jmx/2odl中mxbean的实现.md)
 
 
