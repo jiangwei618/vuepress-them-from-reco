@@ -1,4 +1,0 @@
-# gitbook
-# Introduction
-
->>>>>>> init gitbook
