@@ -16,16 +16,16 @@
 
 ### jmx
 - [java](语言/java/README.md)
-- [概述](语言/io/1概述.md)
-- [隐藏的设计模式](语言/io/2隐藏的设计模式.md)
-- [代码示例](语言/io/3代码示例.md)
-- [控制台](语言/io/4控制台.md)
-- [网络](语言/io/5网络Io.md)
-- [Bio_Nio_Aio](语言/io/6Bio_Nio_Aio.md)
-- [reactor和preactor模型.pdf](语言/io/7reactor和preactor模型.pdf)  
+- [概述](语言/java/io/1概述.md)
+- [隐藏的设计模式](语言/java/io/2隐藏的设计模式.md)
+- [代码示例](语言/java/io/3代码示例.md)
+- [控制台](语言/java/io/4控制台.md)
+- [网络](语言/java/io/5网络Io.md)
+- [Bio_Nio_Aio](语言/java/io/6Bio_Nio_Aio.md)
+- [reactor和preactor模型.pdf](语言/java/io/7reactor和preactor模型.pdf)  
 ### jmx2
-- [jmx](jmx/1JMX.md)
-- [odl中mxbean的实现](语言/io/2odl中mxbean的实现.md)
+- [jmx](语言/java/jmx/1JMX.md)
+- [odl中mxbean的实现](语言/java/io/2odl中mxbean的实现.md)
 
 
 ## 框架 
