@@ -25,7 +25,7 @@
 - [reactor和preactor模型.pdf](语言/java/io/7reactor和preactor模型.pdf)  
 ### jmx2
 - [jmx](语言/java/jmx/1JMX.md)
-- [odl中mxbean的实现](语言/java/io/2odl中mxbean的实现.md)
+- [odl中mxbean的实现](语言/java/jmx/2odl中mxbean的实现.md)
 
 
 ## 框架 
