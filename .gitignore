@@ -1,3 +1,4 @@
+<<<<<<< c537292d2920b29d37563be963d1db89b9b1a6c8
 <<<<<<< 69aa1900cd1b2757f8b7e00a6d78c4653667ad62
 # Node rules:
 ## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
@@ -16,6 +17,10 @@ _book
 *.mobi
 *.pdf
 =======
+=======
+_book
+_book/
+>>>>>>> 修改gitignore
 build/
 out/
 log/
