@@ -36,7 +36,7 @@
 
     - [虚拟机](语言/java/虚拟机/README.md)
         - [阻塞和异步](语言/java/虚拟机/1多线程脑图.md)
-        - [GuavaFutures异步回调机制源码解析](语言/java/虚拟机/2虚拟内存机制.md)
+        - [GuavaFutures异步回调机制源码解析](语言/java/虚拟机/2虚拟机内存机制.md)
         - [线程池-ThreadPoolExecutor机制](语言/java/虚拟机/3操作字节码.md)
 
     - [观察者模式实现](语言/java/观察者模式实现/README.md)
