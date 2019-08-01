@@ -1,7 +1,7 @@
 ## 语言
 - [java](语言/java/README.md)
     - [基础](语言/java/基础/README.md)
-        - [基础脑图](java基础脑图.md)
+        - [基础脑图](语言/java基础脑图.md)
     - [io](语言/java/io/README.md)
         - [概述](语言/java/io/1概述.md)
         - [隐藏的设计模式](语言/java/io/2隐藏的设计模式.md)
