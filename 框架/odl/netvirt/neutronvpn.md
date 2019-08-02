@@ -1,97 +1,12 @@
-#主要功能
-&emsp;监听Datastore中由neutron-northbound plugin的transcriber转换后的数据结构，再次转换为vpndervice中的数据结构，并存入datastroe。  
+# 网络处理
 
-#主要结构
-api:  
-    yang: neutronvpn
-impl:  
-
-
-类 | 监听库 | 操作库|
----------|----------|---------
-NeutronBgpvpnChangeListener|neutron:neutron/bgpvpns|
-NeutronFloatingToFixedIpMappingChangeListener|
-NeutronHostConfigChangeListener|
-NeutronNetworkChangeListener|neutron:neutron/networks|
-NeutronPortChangeListener     |
-NeutronRouterChangeListener|
-NeutronSecurityRuleConstants|  
-NeutronSubnetChangeListener|
-NeutronSubnetGwMacResolver|
-NeutronTrunkChangeListener  |
-UpgradeStateListener |
-IPV6InternetDefaultRouteProgrammer  |
-NeutronvpnManager  |
-NeutronvpnManagerImpl  |
-NeutronvpnNatManager  |
-NeutronvpnUtils  |
-NeutronExternalSubnetHandler|
-
-# NeutronNetworkChangeListener
-## add 
+## add
+**主要流程**
 
 {% uml %}
 ```plantuml
 @startuml
 
-PARTICIPANT "neutron\n:neutron/networks" as DsNetworks #99FF99
-
-DsNetworks -->  NeutronNetworkChangeListener:数据库监听通知
-activate NeutronNetworkChangeListener
-NeutronNetworkChangeListener -> NeutronNetworkChangeListener:isNetworkTypeSupported \n && isVlanOrVxlanNetwork\n <color red>no</color>
-NeutronNetworkChangeListener -> DsNetworks:game over
-deactivate NeutronNetworkChangeListener
-
-== 创建 Elan instance== 
-
-NeutronNetworkChangeListener --> neutronvpnUtils:缓存
-NeutronNetworkChangeListener -> NeutronNetworkChangeListener: createElanInstance
-activate NeutronNetworkChangeListener
-PARTICIPANT "/config\n/elan\n:elan-instances" as DsElan #99FF99
-
-NeutronNetworkChangeListener -> DsElan:<color blue>read datastore</color>
-DsElan --> NeutronNetworkChangeListener
-alt isExist
-NeutronNetworkChangeListener -> NeutronNetworkChangeListener: exist instance
-else
-NeutronNetworkChangeListener -> DsElan:创建； <color blue>write datastore</color>
-end
-deactivate NeutronNetworkChangeListener
-
-== 外部网络处理  == 
-NeutronNetworkChangeListener -> NeutronNetworkChangeListener: isExternal
-NeutronNetworkChangeListener -> DsNetworks:<color red>no</color>
-
-NeutronNetworkChangeListener ->IElanService:createExternalElanNetwork 
-note left
-Create ELAN interface and IETF interfaces for the physical network
-end note
-
-PARTICIPANT "config\n/ietf-interfaces\n:interfaces" as DsIetf #99FF99
-IElanService -> IElanService :createIetfInterfaces
-IElanService -> DsIetf: <color blue>write datastore; node1</color>
-
-IElanService -> IElanService:addElanInterface
-PARTICIPANT "config\n/elan\n:elan-interfaces" as DsElanInterfaces #99FF99
-IElanService -> DsElanInterfaces: <color blue>write datastore</color>
-
-
-IElanService -> NeutronvpnNatManager: addExternalNetwork
-PARTICIPANT "/config\n/odl-nat\n:external-networks  " as DsOdlNat #99FF99
-NeutronvpnNatManager -> DsOdlNat: <color blue>write network to datastore</color>
-
-alt isFlatOrVlanNetwork
-PARTICIPANT "/config\n/l3vpn\n:vpn-instances  " as DsL3vpn #99FF99
-IElanService -> NeutronvpnNatManager: createL3InternalVpn
-NeutronvpnNatManager -> DsL3vpn: <color blue>write datastore</color>
-
-IElanService -> NeutronvpnNatManager: createExternalVpnInterfaces
-activate NeutronvpnNatManager
-NeutronvpnNatManager -> DsElanInterfaces:获取 elan interface
-DsElanInterfaces -> NeutronvpnNatManager
-NeutronvpnNatManager -> DsL3vpn:  <color blue>write datastore</color>
-deactivate NeutronvpnNatManager
-end
 
 @enduml
 
