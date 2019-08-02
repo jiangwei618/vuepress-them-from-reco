@@ -7,601 +7,1165 @@
     },
     "value": [
         {
-            "notificationCount": 6,
-            "listener": "org.opendaylight.netvirt.qosservice.QosNeutronPortChangeListener@6af88039",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports/port/port"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$MultipathReactor@4cbda494",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/multipath/multipath"
-        },
-        {
-            "notificationCount": 2,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@31ae2a79",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)dpn-endpoints/DPN-TEPs-info/DPN-TEPs-info"
-        },
-        {
-            "notificationCount": 6,
-            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.GroupForwarder@2817f2ab",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)group/group"
-        },
-        {
-            "notificationCount": 9,
-            "listener": "org.opendaylight.netvirt.aclservice.listeners.AclEventListener@74aca228",
-            "enabled": true,
-            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-access-control-list?revision=2016-02-18)access-lists/acl/acl"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@58c63e30",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:coe:northbound:pod?revision=2017-06-11)coe/pods/pods"
-        },
-        {
-            "notificationCount": 3,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@717f6a9f",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@4cf10ecd",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:aaa:app:config?revision=2017-06-19)shiro-configuration"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.netvirt.elan.l2gw.listeners.ElanInstanceListener@7dfbfbbd",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@78714fd",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:aaa:app:config?revision=2017-06-19)datastore-config"
-        },
-        {
-            "notificationCount": 3,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@207f7d8e",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$ConfigServerReactor@79dd75de",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/config-server"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@28b40673",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$VrfsReactor@d15b1ee",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/vrfs/vrfs"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.elan.l2gw.listeners.L2GatewayConnectionListener@45921521",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/l2gatewayConnections/l2gatewayConnection/l2gatewayConnection"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$EbgpMultihopReactor@3186d127",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors/ebgp-multihop"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.TableForwarder@1680bc06",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)table-features/table-features"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "com.inspur.ice.impl.cluster.vpc.VpcProvider@3e70a5ac",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)vpcJobs/vpc/vpc"
-        },
-        {
-            "notificationCount": 4,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@52f1208",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-interfaces/elan-interface/elan-interface"
-        },
-        {
-            "notificationCount": 5,
-            "listener": "org.opendaylight.genius.interfacemanager.listeners.VlanMemberConfigListener@71219d00",
-            "enabled": true,
-            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@189533d7",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:topology-lldp-discovery:config?revision=2016-05-11)topology-lldp-discovery-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@14835d67",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:dhcpservice:config?revision=2015-07-10)dhcpservice-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@3d24e3c",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn:config?revision=2016-08-06)neutronvpn-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.dhcpservice.DhcpConfigListener@69685105",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn?revision=2015-06-02)dhcp-config"
-        },
-        {
-            "notificationCount": 6,
-            "listener": "org.opendaylight.netvirt.ipv6service.NeutronPortChangeListener@36c281b4",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports/port/port"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.netvirt.qosservice.QosNeutronNetworkChangeListener@36077a59",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/networks/network/network"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "com.inspur.ice.impl.cluster.topodiscover.TopoDiscoverProvider@7edda9e",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)topoDiscoverJobs/device-topo/device-topo"
-        },
-        {
-            "notificationCount": 4,
-            "listener": "org.opendaylight.netvirt.aclservice.listeners.AclElanInterfaceListener@e4d0097",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-interfaces/elan-interface/elan-interface"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@1c1b3a03",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "com.inspur.ice.impl.cluster.devdiscover.DevDiscoverProvider@4f2095f0",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)devDiscoverJobs/devices/devices"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$UpdateSourceReactor@3a4586ca",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors/update-source"
-        },
-        {
-            "notificationCount": 5,
-            "listener": "org.opendaylight.genius.interfacemanager.listeners.InterfaceConfigListener@45d5fb98",
-            "enabled": true,
-            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@7982f89a",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:vpn:config?revision=2016-11-30)vpn-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@400e580f",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:elan:config?revision=2015-07-10)elan-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@a31c84a",
-            "enabled": true,
-            "registeredPath": "/(config:aaa:authn:encrypt:service:config?revision=2016-09-15)aaa-encrypt-service-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@6610b5b3",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)dpn-teps-state/dpns-teps/dpns-teps"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.elan.l2gw.ha.listeners.ManagerListener@5f1c1ee2",
-            "enabled": true,
-            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managers, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)remote-ucast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)logical-routers, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)local-mcast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)local-ucast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)local-arp-sources, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)remote-mcast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)connection-info, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)logical-switches, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)acls, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)db-version, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)remote-arp-sources, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)logical-binding-stats, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)switches]}/(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managers/managers"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$AsIdReactor@63695aa5",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/as-id"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.netvirt.ipv6service.NeutronSubnetChangeListener@42ef4407",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/subnets/subnet/subnet"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.qosservice.QosPolicyChangeListener@59e3878a",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/qos-policies/qos-policy/qos-policy"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@ddcb2ee",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:aclservice-config?revision=2016-08-06)aclservice-config"
-        },
-        {
-            "notificationCount": 5,
-            "listener": "org.opendaylight.netvirt.aclservice.listeners.AclInterfaceListener@45ce7db6",
-            "enabled": true,
-            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.genius.itm.listeners.cache.ExternalTunnelListener@51ec855b",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)external-tunnel-list/external-tunnel/external-tunnel"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@1e2bbb92",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.ovsdb.hwvtepsouthbound.HwvtepDataChangeListener@7c260350",
-            "enabled": true,
-            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@70e8e7c8",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.netvirt.natservice.internal.UpgradeStateListener@4e53875f",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@37437e49",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:qosalert:config?revision=2017-03-01)qosalert-config"
-        },
-        {
-            "notificationCount": 10,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@6f6b0305",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:serviceutils:upgrade?revision=2018-07-02)upgrade-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@34fc6a56",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.genius.idmanager.IdPoolListener@3865ed7f",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:idmanager?revision=2016-04-06)id-pools/id-pool/id-pool"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@65cab7e5",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)switch-connection-config/switch-connection-config[{(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)instance-name=openflow-switch-connection-provider-default-impl}]"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.vpnmanager.intervpnlink.InterVpnLinkStateCacheFeeder@2114634",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:netvirt:inter-vpn-link?revision=2016-03-11)inter-vpn-link-states/inter-vpn-link-state/inter-vpn-link-state"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@5d205a02",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:controller:toaster-app-config?revision=2016-05-03)toaster-app-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@46d5cef5",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:natservice:config?revision=2017-02-06)natservice-config"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.genius.mdsalutil.internal.UpgradeStateListener@16dc7c86",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.netvirt.neutronvpn.UpgradeStateListener@183a49fb",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@79eb37fa",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:meta?revision=2017-12-10)bridge-tunnel-info/ovs-bridge-entry/ovs-bridge-entry"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@3e0235df",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 8,
-            "listener": "org.opendaylight.genius.interfacemanager.servicebindings.flowbased.listeners.FlowBasedServicesConfigListener@2dc9d1fa",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:servicebinding?revision=2016-04-06)service-bindings/services-info/services-info"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@6220fdad",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$NeighborsReactor@220e7c77",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@5fee6b02",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron:northbound-api:config?revision=2018-10-24)neutron-northbound-api-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@6c39343f",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:applications:lldp-speaker:config?revision=2016-05-12)lldp-speaker-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@646b517f",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@73a16096",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@1d4533c",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)switch-connection-config/switch-connection-config[{(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)instance-name=openflow-switch-connection-provider-legacy-impl}]"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@351b5037",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)itm-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@11a63938",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)tunnel-monitor-interval"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.vpnmanager.intervpnlink.InterVpnLinkCacheFeeder@5efbf94e",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:netvirt:inter-vpn-link?revision=2016-03-11)inter-vpn-links/inter-vpn-link/inter-vpn-link"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@5dd18207",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:ice-neutron:ice-northbound-api:config?revision=2018-10-24)ice-neutron-northbound-api-config"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$BgpReactor@740e6334",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@41dd90cd",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.ipv6service.NeutronRouterChangeListener@dad2725",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/routers/router/router"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@4dfde35a",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)tunnel-monitor-params"
-        },
-        {
-            "notificationCount": 7,
-            "listener": "org.opendaylight.ovsdb.southbound.OvsdbDataTreeChangeListener@1a343dfa",
-            "enabled": true,
-            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=ovsdb:1}]/node/node"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$NetworksReactor@144416fb",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/networks/networks"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.netvirt.ipv6service.NeutronNetworkChangeListener@7c477ab9",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/networks/network/network"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@5894a0cc",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:yang:aaa:cert?revision=2015-11-26)aaa-cert-service-config"
-        },
-        {
-            "notificationCount": 1,
-            "listener": "com.inspur.ice.impl.devices.config.vxlan.GatewayTypeConfig@62695bfa",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:gateway-type?revision=2018-10-31)gateway-type-info"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.qosservice.QosAlertConfigListener@5e2a9ba4",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:netvirt:qosalert:config?revision=2017-03-01)qosalert-config"
-        },
-        {
-            "notificationCount": 6,
-            "listener": "org.opendaylight.netvirt.elan.l2gw.listeners.ElanGroupListener@4f9ff482",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)group/group"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$AddressFamiliesReactor@617e658d",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors/address-families/address-families"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$LoggingReactor@9e2c12f",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/logging"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$GracefulRestartReactor@66cae208",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/graceful-restart"
-        },
-        {
-            "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$VrfMaxpathReactor@77614388",
-            "enabled": true,
-            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/vrfMaxpath/vrfMaxpath"
-        },
-        {
-            "notificationCount": 66,
-            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.FlowForwarder@46856810",
+            "notificationCount": 53,
+            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.FlowForwarder@41dd1d20",
             "enabled": true,
             "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)table/table/flow/flow"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.netvirt.neutronvpn.l2gw.L2GatewayListener@540fa3eb",
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronNetworkChangeListener@23ca2d1c",
             "enabled": true,
-            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/l2gateways/l2gateway/l2gateway"
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/networks/network/network"
         },
         {
-            "notificationCount": 1,
-            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1186/1573209624@2b6f765b",
+            "notificationCount": 3,
+            "listener": "org.opendaylight.netvirt.elan.l2gw.listeners.ElanGroupListener@3bdab4ba",
             "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)interface-child-info/interface-parent-entry/interface-parent-entry"
+            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)group/group"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@55bf01ad",
+            "listener": "com.inspur.ice.overlaymapper.impl.IceNeutronRouterChangeListener@5180c0c5",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-routers/ice-router/ice-router"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@73da2335",
             "enabled": true,
             "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:provider:config?revision=2016-05-10)openflow-provider-config"
         },
         {
             "notificationCount": 0,
-            "listener": "com.inspur.ice.impl.cluster.trapserver.TrapServerConfig@43bbbdcb",
+            "listener": "org.opendaylight.genius.itm.listeners.TunnelMonitorChangeListener@6d30d215",
             "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)trapServerJobs/trapServer/trapServer"
+            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)tunnel-monitor-params"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@61f8362f",
+            "listener": "org.opendaylight.netvirt.elan.internal.ElanExtnTepConfigListener@73bea7ba",
             "enabled": true,
-            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflowplugin:app:forwardingrules-manager:config?revision=2016-05-11)forwarding-rules-manager-config"
-        },
-        {
-            "notificationCount": 3,
-            "listener": "org.opendaylight.genius.interfacemanager.listeners.CacheBridgeEntryConfigListener@418970d8",
-            "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)bridge-interface-info/bridge-entry/bridge-entry"
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance/external-teps/external-teps"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1084/1247479197@4195a437",
+            "listener": "org.opendaylight.netvirt.natservice.internal.SubnetmapListener@a643ede",
             "enabled": true,
-            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:config?revision=2016-04-06)ifm-config"
+            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn?revision=2015-06-02)subnetmaps/subnetmap/subnetmap"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@46e95b7",
+            "listener": "org.opendaylight.sfc.ofrenderer.listeners.SfcOfSfgDataListener@6f50397d",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sfg?revision=2015-02-14)service-function-groups/service-function-group/service-function-group"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@5e4a36e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:yang:aaa:cert?revision=2015-11-26)aaa-cert-service-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.ServiceFunctionPathListener@77d061dc",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sfp?revision=2014-07-01)service-function-paths/service-function-path/service-function-path"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.ServiceFunctionClassifierListener@2decc1f3",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-scf?revision=2014-07-01)service-function-classifiers/service-function-classifier/service-function-classifier"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@4824c1e9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:meta?revision=2017-12-10)bridge-tunnel-info/ovs-bridge-entry/ovs-bridge-entry"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.internal.ExternalRoutersListener@251e4172",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)ext-routers/routers/routers"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.VpnElanInterfaceChangeListener@52c7ed40",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-interfaces/elan-interface/elan-interface"
+        },
+        {
+            "notificationCount": 1,
+            "listener": "org.opendaylight.genius.mdsalutil.internal.UpgradeStateListener@42dcaa99",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlayconfig.impl.IceVxlanL2ChangeListener@7de2ca6",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-vxlan-config?revision=2018-03-02)ice-device-vxlan/ice-device-vxlan-l2/ice-device-vxlan-l2"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronTrunkChangeListener@1289e06",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/trunks/trunk/trunk"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@5676ac55",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:controller:toaster-app-config?revision=2016-05-03)toaster-app-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.genius.impl.listeners.SfcGeniusSfListener@6065c0f7",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sf?revision=2014-07-01)service-functions/service-function/service-function"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@7c51c9c9",
             "enabled": true,
             "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
         },
         {
-            "notificationCount": 2,
-            "listener": "org.opendaylight.serviceutils.upgrade.impl.UpgradeStateListener@e13d925",
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.sample.toaster.provider.OpendaylightToaster@79a4c45f",
             "enabled": true,
-            "registeredPath": "/(urn:opendaylight:serviceutils:upgrade?revision=2018-07-02)upgrade-config"
+            "registeredPath": "/(http://netconfcentral.org/ns/toaster?revision=2009-11-20)toaster"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.MeterForwarder@3cfaee09",
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@15bdcda",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.ipv6service.NeutronPortChangeListener@30c91613",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports/port/port"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.ovsdb.hwvtepsouthbound.HwvtepDataChangeListener@6391478c",
+            "enabled": true,
+            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.IceRouterHwChangeListener@74a4befe",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/routers/router/router"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronBgpvpnChangeListener@3510952c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/bgpvpns/bgpvpn/bgpvpn"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.baremetal.listener.IceBaremetalConfigListener@7b22258b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-baremetal-config?revision=2018-06-08)ice-baremetal-instances/ice-baremetal-instance/ice-baremetal-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.ICENeutronFirewallDataChangeListener@52a1c0a6",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/firewalls/firewall/firewall"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronSubnetChangeListener@6ac35449",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/subnets/subnet/subnet"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.ServiceFunctionChainListener@3e5fa73c",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sfc?revision=2014-07-01)service-function-chains/service-function-chain/service-function-chain"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$UpdateSourceReactor@6a4e5433",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors/update-source"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.VpnInterfaceManager@77aa72e5",
+            "enabled": true,
+            "registeredPath": "/(urn:huawei:params:xml:ns:yang:l3vpn?revision=2014-08-15)vpn-interfaces/vpn-interface/vpn-interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@72003fae",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.ipv6service.NeutronSubnetChangeListener@ad83e5d",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/subnets/subnet/subnet"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.qosservice.QosPolicyChangeListener@67cb64d7",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/qos-policies/qos-policy/qos-policy"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.LbResourceChangeListener@6b687cf1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:lb-resource?revision=2017-08-30)lb-resources/lb-resource/lb-resource"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.itm.listeners.TunnelMonitorIntervalListener@3d5a268c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)tunnel-monitor-interval"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.cluster.devdiscover.DevDiscoverProvider@4a5106b1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)devDiscoverJobs/devices/devices"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@3122dfca",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)tunnel-monitor-params"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@ab8bc8c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice:config?revision=2017-02-06)natservice-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@20e405c2",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.sfc.classifier.listeners.NetvirtSfcAclListener@7420578a",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-access-control-list?revision=2016-02-18)access-lists/acl/acl"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.internal.ExternalSubnetVpnInstanceListener@6bc6b720",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)vpn-instance-to-vpn-id/vpn-instance/vpn-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.PoolChangeListener@6fb5270c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/pools/pool/pool"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@6b34cb48",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@33fe32c8",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:aaa:app:config?revision=2017-06-19)datastore-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$EbgpMultihopReactor@1a3142d0",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors/ebgp-multihop"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@43f5b281",
+            "enabled": true,
+            "registeredPath": "/(config:aaa:authn:encrypt:service:config?revision=2016-09-15)aaa-encrypt-service-config"
+        },
+        {
+            "notificationCount": 2,
+            "listener": "org.opendaylight.netvirt.elan.internal.ElanInterfaceConfigListener@f14fc43",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.internal.RouterPortsListener@61ce3eb",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)floating-ip-info/router-ports/router-ports"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.alivenessmonitor.internal.HwVtepTunnelsStateHandler@32006bf3",
+            "enabled": true,
+            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)switch-fault-status, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)management-ips, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnel-ips, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)hwvtep-node-name, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managed-by, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnels, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)hwvtep-node-description, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)physical-switch-uuid]}/(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnels/tunnels"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.internal.ExternalNetworksChangeListener@28bc793e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)external-networks/networks/networks"
+        },
+        {
+            "notificationCount": 1,
+            "listener": "org.opendaylight.netvirt.neutronvpn.UpgradeStateListener@43019580",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.intervpnlink.InterVpnLinkListener@37967db4",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:netvirt:inter-vpn-link?revision=2016-03-11)inter-vpn-links/inter-vpn-link/inter-vpn-link"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceNeutronNetworkChangeListener@20b88e5d",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-networks/ice-network/ice-network"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronSecurityRuleListener@3052039",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/security-rules/security-rule/security-rule"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.RenderedServicePathListener@44d9a955",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-rsp?revision=2014-07-01)rendered-service-paths/rendered-service-path/rendered-service-path"
+        },
+        {
+            "notificationCount": 2,
+            "listener": "org.opendaylight.genius.interfacemanager.listeners.InterfaceConfigListener@1ef3e9cd",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.internal.ElanInstanceDpnListener@64214f00",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.LoadBalancerChangeListener@27cf7872",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/loadbalancers/loadbalancer/loadbalancer"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.MeterForwarder@10fd4330",
             "enabled": true,
             "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)meter/meter"
         },
         {
             "notificationCount": 0,
-            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1222/1149216704@7da52aa0",
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$NeighborsReactor@45cc5efd",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors"
+        },
+        {
+            "notificationCount": 2,
+            "listener": "org.opendaylight.genius.interfacemanager.listeners.CacheBridgeEntryConfigListener@4682a56a",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)bridge-interface-info/bridge-entry/bridge-entry"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.l2gw.listeners.L2GatewayConnectionListener@63bf48a9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/l2gatewayConnections/l2gatewayConnection/l2gatewayConnection"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlayconfig.impl.IceBridgeNetworkConfChangeListener@75efcfc2",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-external-network?revision=2019-01-05)vlanBridgeNetworks/vlanBridgeNetwork/vlanBridgeNetwork"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@74b010ef",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)switch-connection-config/switch-connection-config[{(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)instance-name=openflow-switch-connection-provider-default-impl}]"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@2f6ecd9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)itm-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.LbDeviceChangeListener@6a787fe0",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:lb-basic?revision=2018-07-23)lbDevices/lbDevice/lbDevice"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.ServiceFunctionSchedulerTypeListener@401e6752",
+            "enabled": true,
+            "registeredPath": "/(urn:intel:params:xml:ns:yang:sfc-sfst?revision=2015-03-12)service-function-scheduler-types/service-function-scheduler-type/service-function-scheduler-type"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@446e3da2",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:coe:northbound:pod?revision=2017-06-11)coe/pods/pods"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.IceFloatIpHwChangeListener@7f892ad7",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)floating-ip-info/router-ports/router-ports"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.sfc.classifier.listeners.NetvirtSfcClassifierListener@7b27b926",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:sfc:classifier?revision=2015-01-05)classifiers/classifier/classifier"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.ipv6service.NeutronNetworkChangeListener@2cf369b9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/networks/network/network"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceNeutronPortChangeListener@5f473485",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-ports/ice-port/ice-port"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.IceNeutronRuleDataChangeListener@47af5331",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/firewall-rules/firewall-rule/firewall-rule"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.sfc.translator.portchain.NeutronPortPairGroupListener@57163fac",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/port-pair-groups/port-pair-group/port-pair-group"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.dhcpservice.DhcpConfigListener@3e8a63c7",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn?revision=2015-06-02)dhcp-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronPortChangeListener@7805bbb9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports/port/port"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.aclservice.listeners.AclElanInterfaceListener@1e7a3ebe",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-interfaces/elan-interface/elan-interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlayconfig.impl.IceVxlanL3ChangeListener@49ab435c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-vxlan-config?revision=2018-03-02)ice-device-vxlan/ice-device-vxlan-l3/ice-device-vxlan-l3"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlayconfig.impl.IceLeafChangeListener@2faea5f0",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-leaf-config?revision=2015-01-05)ice-leafs/ice-leaf/ice-leaf"
+        },
+        {
+            "notificationCount": 3,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@31ee37b5",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.HealthmonitorChangeListener@4c6739a1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/healthmonitors/healthmonitor/healthmonitor"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$BgpReactor@3185197e",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp"
+        },
+        {
+            "notificationCount": 5,
+            "listener": "org.opendaylight.ovsdb.southbound.OvsdbDataTreeChangeListener@6d77dcc4",
+            "enabled": true,
+            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=ovsdb:1}]/node/node"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.NeutronPortChangeListener@77ad78e1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports/port/port"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronFloatingToFixedIpMappingChangeListener@538930fd",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/floatingips/floatingip/floatingip"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$AddressFamiliesReactor@451e64f2",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/neighbors/neighbors/address-families/address-families"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.coe.listeners.ServiceListener@37ac65bf",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:coe:northbound:service?revision=2017-06-11)service-information/services/services"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.RouterChangeListener@348ad04a",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/routers/router/router"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$MultipathReactor@62e52f14",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/multipath/multipath"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.itm.listeners.InterfaceChildInfoListener@140fa8c5",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)interface-child-info/interface-parent-entry/interface-parent-entry"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@118aabf3",
             "enabled": true,
             "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
         },
         {
-            "notificationCount": 66,
-            "listener": "org.opendaylight.genius.mdsalutil.internal.MDSALManager$FlowConfigListener@527a9463",
+            "notificationCount": 3,
+            "listener": "org.opendaylight.netvirt.neutronvpn.l2gw.L2GwTransportZoneListener@121be72c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm?revision=2016-04-06)transport-zones/transport-zone/transport-zone"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.internal.FloatingIPListener@1bc3785c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)floating-ip-info/router-ports/router-ports/ports/ports/internal-to-external-port-map/internal-to-external-port-map"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.evpn.listeners.EvpnElanInstanceListener@32b792c7",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.NeutronL3VpnInterfaceListener@42f97800",
+            "enabled": true,
+            "registeredPath": "/(urn:huawei:params:xml:ns:yang:l3vpn?revision=2014-08-15)vpn-interfaces/vpn-interface/vpn-interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.VpnInstanceListener@5e2b34c8",
+            "enabled": true,
+            "registeredPath": "/(urn:huawei:params:xml:ns:yang:l3vpn?revision=2014-08-15)vpn-instances/vpn-instance/vpn-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@1373d27b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@479251ff",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.qosservice.QosNeutronPortChangeListener@1fbccd4d",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports/port/port"
+        },
+        {
+            "notificationCount": 1,
+            "listener": "com.inspur.ice.impl.devices.config.vxlan.GatewayTypeConfig@71a554bc",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:gateway-type?revision=2018-10-31)gateway-type-info"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceTenantRouterChangeListener@5b4b7aba",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-routers/ice-router/ice-router"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceBridgeNetworkChangeListener@1ab510c0",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-external-network?revision=2019-01-05)vlanBridgeNetworks/vlanBridgeNetwork/vlanBridgeNetwork"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$GracefulRestartReactor@609f8e33",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/graceful-restart"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@62990ed1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:ice-neutron:ice-northbound-api:config?revision=2018-10-24)ice-neutron-northbound-api-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.ListenerChangeListener@161b205b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/listeners/listener/listener"
+        },
+        {
+            "notificationCount": 10,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@2a1f5194",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:serviceutils:upgrade?revision=2018-07-02)upgrade-config"
+        },
+        {
+            "notificationCount": 4,
+            "listener": "org.opendaylight.genius.itm.listeners.TransportZoneListener@187e1a2b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm?revision=2016-04-06)transport-zones/transport-zone/transport-zone"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.SubnetmapChangeListener@17c571dc",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn?revision=2015-06-02)subnetmaps/subnetmap/subnetmap"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.fibmanager.VrfEntryListener@54b227dc",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:fibmanager?revision=2015-03-30)fibEntries/vrfTables/vrfTables/vrfEntry/vrfEntry"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@5608eeb2",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 3,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@765375f4",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)dpn-endpoints/DPN-TEPs-info/DPN-TEPs-info"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceLoopbackChangeListener@70569ff3",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:loopback?revision=2018-06-04)loopbackConfigs/loopbackConfig/loopbackConfig"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.IceSubnetsHwChangeListener@46e3269d",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-ports/ice-port/ice-port"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.cluster.topodiscover.TopoDiscoverProvider@62316340",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)topoDiscoverJobs/device-topo/device-topo"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$VrfsReactor@691b8e3d",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/vrfs/vrfs"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@18917c90",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@1c0ffad5",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:dhcpservice:config?revision=2015-07-10)dhcpservice-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.qosservice.QosAlertConfigListener@54f4ea70",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:qosalert:config?revision=2017-03-01)qosalert-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.aclservice.listeners.AclEventListener@36938a4d",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-access-control-list?revision=2016-02-18)access-lists/acl/acl"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@6d1a14da",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:aclservice-config?revision=2016-08-06)aclservice-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$AsIdReactor@11bc7664",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/as-id"
+        },
+        {
+            "notificationCount": 2,
+            "listener": "org.opendaylight.netvirt.aclservice.listeners.AclInterfaceListener@5d583499",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.qosservice.QosNeutronNetworkChangeListener@214f2dba",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/networks/network/network"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$NetworksReactor@67422906",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/networks/networks"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.l2gw.listeners.ElanInstanceListener@323cd72",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.coe.listeners.PodListener@33508cb6",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:coe:northbound:pod?revision=2017-06-11)coe/pods/pods"
+        },
+        {
+            "notificationCount": 1,
+            "listener": "org.opendaylight.netvirt.natservice.internal.UpgradeStateListener@287f78eb",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:mdsalutil?revision=2017-08-30)config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.sfc.translator.portchain.NeutronPortChainListener@1db270a",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/port-chains/port-chain/port-chain"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlayconfig.impl.OvsConfigsChangeListener@67f1d3e9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ovs-config?revision=2018-12-17)ovs-configs"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.internal.NatRouterInterfaceListener@5e8320e4",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn?revision=2015-06-02)router-interfaces-map/router-interfaces/router-interfaces/interfaces/interfaces"
+        },
+        {
+            "notificationCount": 10,
+            "listener": "org.opendaylight.serviceutils.upgrade.impl.UpgradeStateListener@75d74b34",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:serviceutils:upgrade?revision=2018-07-02)upgrade-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.sfc.translator.portchain.NeutronPortPairListener@2c0d361e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/port-pairs/port-pair/port-pair"
+        },
+        {
+            "notificationCount": 6,
+            "listener": "org.opendaylight.genius.interfacemanager.servicebindings.flowbased.listeners.FlowBasedServicesConfigListener@52aec34c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:servicebinding?revision=2016-04-06)service-bindings/services-info/services-info"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$ConfigServerReactor@23c50318",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/config-server"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.ofrenderer.listeners.SfcOfRendererDataListener@297bc063",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:sfc-of-renderer?revision=2015-11-23)sfc-of-renderer-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@470e8fe0",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:applications:lldp-speaker:config?revision=2016-05-12)lldp-speaker-config"
+        },
+        {
+            "notificationCount": 3,
+            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.GroupForwarder@7845fab6",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)group/group"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.NeutronRouterChangeListener@56c6acc2",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/routers/router/router"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@1aeaafc1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceNeutronSubnetChangeListener@351d5db1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-subnets/ice-subnet/ice-subnet"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@29e6bdc1",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-interfaces/elan-interface/elan-interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@6cabe04c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflowplugin:app:forwardingrules-manager:config?revision=2016-05-11)forwarding-rules-manager-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceTenantNetworkChangeListener@24ddd9ed",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-networks/ice-network/ice-network"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.l2gw.ha.listeners.HAConfigNodeListener@4e39ae80",
+            "enabled": true,
+            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.NeutronFWConnectionRouterListener@53eca268",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-fwconnectionrouters/ice-fwconnectionrouter/ice-fwconnectionrouter"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.itm.listeners.cache.ExternalTunnelListener@521dfbbe",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)external-tunnel-list/external-tunnel/external-tunnel"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.intervpnlink.InterVpnLinkStateCacheFeeder@586a6e77",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:netvirt:inter-vpn-link?revision=2016-03-11)inter-vpn-link-states/inter-vpn-link-state/inter-vpn-link-state"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.cluster.vpc.VpcProvider@5501aab9",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)vpcJobs/vpc/vpc"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@36e8481c",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:vpn:config?revision=2016-11-30)vpn-config"
+        },
+        {
+            "notificationCount": 3,
+            "listener": "org.opendaylight.netvirt.vpnmanager.TunnelEndPointChangeListener@2d4e62a6",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)dpn-endpoints/DPN-TEPs-info/DPN-TEPs-info/tunnel-end-points/tunnel-end-points"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.sfc.translator.flowclassifier.NeutronFlowClassifierListener@55087d28",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/sfc-flow-classifiers/sfc-flow-classifier/sfc-flow-classifier"
+        },
+        {
+            "notificationCount": 2,
+            "listener": "org.opendaylight.genius.interfacemanager.listeners.HwVTEPConfigListener@74d3ed14",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@4e8d34a8",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan:config?revision=2015-07-10)elan-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.intervpnlink.InterVpnLinkStateListener@11a7df0e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:netvirt:inter-vpn-link?revision=2016-03-11)inter-vpn-link-states/inter-vpn-link-state/inter-vpn-link-state"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@214502bd",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:aaa:app:config?revision=2017-06-19)shiro-configuration"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@3dc5f030",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:topology-lldp-discovery:config?revision=2016-05-11)topology-lldp-discovery-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@252d02d8",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:neutronvpn:config?revision=2016-08-06)neutronvpn-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.internal.ElanInterfaceManager@704ba030",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-interfaces/elan-interface/elan-interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@2e7b08a6",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:op?revision=2016-04-06)dpn-teps-state/dpns-teps/dpns-teps"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.intervpnlink.InterVpnLinkCacheFeeder@1285e6aa",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:netvirt:inter-vpn-link?revision=2016-03-11)inter-vpn-links/inter-vpn-link/inter-vpn-link"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@651af1e2",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)tunnel-monitor-interval"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.evpn.listeners.MacVrfEntryListener@998d58b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:fibmanager?revision=2015-03-30)fibEntries/vrfTables/vrfTables/macVrfEntry/macVrfEntry"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.ipv6service.NeutronRouterChangeListener@5815ac9e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/routers/router/router"
+        },
+        {
+            "notificationCount": 9,
+            "listener": "org.opendaylight.netvirt.qosservice.QosNodeListener@14387d9e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@1ec2b42e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.ServiceFunctionListener@4c5ae608",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sf?revision=2014-07-01)service-functions/service-function/service-function"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.internal.ElanInstanceManager@106c7c2d",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-instances/elan-instance/elan-instance"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.vpnmanager.CentralizedSwitchChangeListener@4e54bf6b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)napt-switches/router-to-napt-switch/router-to-napt-switch"
+        },
+        {
+            "notificationCount": 53,
+            "listener": "org.opendaylight.genius.mdsalutil.internal.MDSALManager$FlowConfigListener@10e89138",
             "enabled": true,
             "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)table/table/flow/flow"
+        },
+        {
+            "notificationCount": 3,
+            "listener": "org.opendaylight.genius.idmanager.IdPoolListener@5b78abb5",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:idmanager?revision=2016-04-06)id-pools/id-pool/id-pool"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.provider.listeners.ServiceFunctionForwarderListener@b234c7a",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sff?revision=2014-07-01)service-function-forwarders/service-function-forwarder/service-function-forwarder"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.aaa.shiro.realm.MDSALDynamicAuthorizationFilter$$Lambda$1125/2109468030@1037cf3d",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:aaa?revision=2016-12-14)http-authorization"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.openflowplugin.applications.frm.impl.TableForwarder@cf8c354",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)table-features/table-features"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.sfc.ovs.listener.SfcOvsSffEntryDataListener@68355628",
+            "enabled": true,
+            "registeredPath": "/(urn:cisco:params:xml:ns:yang:sfc-sff?revision=2014-07-01)service-function-forwarders/service-function-forwarder/service-function-forwarder"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceNeutronTapaasChangeListener@319586b3",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:ice-neutron?revision=2018-03-02)ice-neutron/ice-tap-services/ice-tap-service/ice-tap-service"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.natservice.ha.SnatCentralizedSwitchChangeListener@7e82d14",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)napt-switches/router-to-napt-switch/router-to-napt-switch"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.cluster.trapserver.TrapServerConfig@4a27722b",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:clusteredDataTree?revision=2018-04-15)trapServerJobs/trapServer/trapServer"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$VrfMaxpathReactor@7e55c1f1",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/vrfMaxpath/vrfMaxpath"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@1ff79731",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)switch-connection-config/switch-connection-config[{(urn:opendaylight:params:xml:ns:yang:openflow:switch:connection:config?revision=2016-05-06)instance-name=openflow-switch-connection-provider-legacy-impl}]"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.neutronvpn.l2gw.L2GatewayListener@2dd7e62e",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron?revision=2015-07-12)neutron/l2gateways/l2gateway/l2gateway"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.impl.listener.IceExternNetListener@5f7b1375",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:FwManager?revision=2017-08-30)bindDatas/bind/bind"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@6854624",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:neutron:northbound-api:config?revision=2018-10-24)neutron-northbound-api-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.bgpmanager.BgpConfigurationManager$LoggingReactor@4618f233",
+            "enabled": true,
+            "registeredPath": "/(urn:ericsson:params:xml:ns:yang:ebgp?revision=2015-09-01)bgp/logging"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@65f246a5",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:config?revision=2016-04-06)ifm-config"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.itm.listeners.VtepConfigSchemaListener@1140637",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:itm:config?revision=2016-04-06)vtep-config-schemas/vtep-config-schema/vtep-config-schema"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@4b85f56",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)interface-child-info/interface-parent-entry/interface-parent-entry"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "com.inspur.ice.overlaymapper.impl.IceLeafSwitchChangeListener@74903bd7",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:params:xml:ns:yang:device?revision=2015-01-05)device/switch/switch"
+        },
+        {
+            "notificationCount": 2,
+            "listener": "org.opendaylight.genius.interfacemanager.listeners.VlanMemberConfigListener@79e1860a",
+            "enabled": true,
+            "registeredPath": "/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces/interface/interface"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.netvirt.elan.l2gw.ha.listeners.ManagerListener@10415073",
+            "enabled": true,
+            "registeredPath": "/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managers, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)remote-ucast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)logical-routers, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)local-mcast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)local-ucast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)local-arp-sources, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)remote-mcast-macs, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)connection-info, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)logical-switches, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)acls, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)db-version, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)remote-arp-sources, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)logical-binding-stats, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)switches]}/(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managers/managers"
+        },
+        {
+            "notificationCount": 0,
+            "listener": "org.opendaylight.controller.blueprint.ext.DataStoreAppConfigMetadata$$Lambda$1059/1478452442@75f07f47",
+            "enabled": true,
+            "registeredPath": "/(urn:opendaylight:netvirt:qosalert:config?revision=2017-03-01)qosalert-config"
         }
     ],
-    "timestamp": 1564712044,
+    "timestamp": 1564714324,
     "status": 200
 }
 ```
