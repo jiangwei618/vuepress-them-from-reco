@@ -1,3 +1,4 @@
+# Jmx介绍
 ## 1.简介
 &emsp;&emsp;全称Java Management Extensions，从Java5.0开始引入到标准Java技术平台中。JMX提供了一个标准的方法去管理资源，因为JMX是一种动态技术，你可以在被管理资源创建、实例化和实现的时候监控和管理他们。你也可以使用JMX技术去监听和管理Java虚拟机。
 
@@ -12,11 +13,11 @@ JMX几乎可以在任何支持Java的设备上运行，而且只需要嵌入一�
 使Java应用可以远程管理。
 
 ## 3.JMX架构
-![image](3C6C82A4B08B46948CA751AD758BE971)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1JMX.md-2019-08-06-14-59-25.png)
 
 ---
 
-![image](3315D153FBFE4B11AFFF2BA61F01D1CD)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1JMX.md-2019-08-06-15-00-01.png)
 
 
 ## 4.基本术语
@@ -31,7 +32,7 @@ JMX几乎可以在任何支持Java的设备上运行，而且只需要嵌入一�
 
 ## 5.MBean在JDK中的应用
 &emsp;&emsp;代码逻辑主要在java.lang.management包中
-![image](D57F387B243E4BB5AD69F5CFD736891B)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1JMX.md-2019-08-06-15-00-09.png)
 
 
 平台资源 | 对应的 MXBean | 可使用的数量
@@ -160,7 +161,8 @@ public MBeanInfo getMBeanInfo();
 public void setManagedResource(Object managedResource, String managedResourceType) ;
 ```
 &emsp;&emsp;managedResourceType的值可以为ObjectReference, Handle, IOR, EJBHandle或RMIReference，但当前只支持ObjectReference.
-![image](71EF2B918FB343129A6E436C479358FE)
+
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1JMX.md-2019-08-06-15-00-32.png)
 
 &emsp;&emsp;Module MBean具有以下新的特点：
 - 持久性。定义了持久机制，可以利用Java的序列化或JDBC来存储模型MBean的状态。

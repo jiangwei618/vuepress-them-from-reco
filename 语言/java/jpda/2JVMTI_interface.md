@@ -276,10 +276,10 @@ java -agentlib:Agent=first MethodTraceTest
 
 ### 2.4 Agent 时序图
 在这里插入图片描述
-![image](BB46FB93F3D84FBFA087F777DC1086F0)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/2JVMTI_interface.md-2019-08-06-15-06-44.png)
 
 ### 2.5 补充说明：Java Agent
-![image](7FF87D724AD845F29F85F48CE66C9F9A)我们通过-javaagent来指定我们编写的agent的jar路径（./myagent.jar），以及要传给agent的参数（mode=test），在启动的时候这个agent就可以做一些我们希望的事了。
+我们通过-javaagent来指定我们编写的agent的jar路径（./myagent.jar），以及要传给agent的参数（mode=test），在启动的时候这个agent就可以做一些我们希望的事了。
 
 javaagent的主要功能如下：
 

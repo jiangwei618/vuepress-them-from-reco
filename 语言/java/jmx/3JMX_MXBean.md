@@ -1,4 +1,5 @@
-## 虚拟机Java活动应用服务器Bean 
+# jmx中的mxben
+## 1. 虚拟机Java活动应用服务器Bean
 &emsp;&emsp;JAVA 平台MXBean 是一种托管 Bean，它符合 JMX Instrumentation Specification,提供管理接口，用于监视和管理 Java 虚拟机以及 Java 虚拟机在其上运行的操作系统。
 
 **JAVA 平台MXBean:**
@@ -26,7 +27,7 @@ RuntimeMXBean       |   java.lang:type=Runtime
 OperatingSystemMXBean | java.lang:type=OperatingSystem 
 MemoryManagerMXBean   | java.lang:type=MemoryManager
 
-## 获得平台MXBean的方法:
+## 2. 获得平台MXBean的方法:
 1. 通过调用 ManagementFactory.getClassLoadingMXBean() 方法
 2. 平台 MBeanServer 方法获得.
 ```

@@ -1,3 +1,4 @@
+# jpda
 ## 1.概述
 &emsp;&emsp;Java 程序都是运行在 Java 虚拟机上的，我们要调试 Java 程序，事实上就需要向 Java 虚拟机请求当前运行态的状态，并对虚拟机发出一定的指令，设置一些回调等等，那么 Java 的调试体系，就是虚拟机的一整套用于调试的工具和接口。
 对于 Java 虚拟机接口熟悉的人来说，您一定还记得 Java 提供了两个接口体系，JVMPI（Java Virtual Machine Profiler Interface）和 JVMDI（Java Virtual Machine Debug Interface），而它们，以及在 Java SE 5 中准备代替它们的 JVMTI（Java Virtual Machine Tool Interface），都是Java 平台调试体系（Java Platform Debugger Architecture，JPDA）的重要组成部分。 Java SE 自 1.2.2 版就开始推出 Java 平台调试体系结构（JPDA）工具集，而从 JDK 1.3.x 开始，Java SDK 就提供了对 Java 平台调试体系结构的直接支持。顾名思义，这个体系为开发人员提供了一整套用于调试 Java 程序的 API，是一套用于开发 Java 调试工具的接口和协议。本质上说，它是我们通向虚拟机，考察虚拟机运行态的一个通道，一套工具。理解这一点对于学习 JPDA 非常重要。
@@ -13,7 +14,7 @@
 &emsp;&emsp;JDI (Java Debug Interface): 高层的Java语言接口，调试工具开发者可基于该接口开发自己的调试工具。
 在这里插入图片描述
 
-![image](C9CE3C8CF961495381AA50D58202F7E6)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1概述.md-2019-08-06-15-05-23.png)
 
 ### 1.2关于JPDA中各层说明
 &emsp;&emsp;调试开发者可使用JPDA中各层接口进行开发。但是JDI是JPDA中最高层的，也是使用起来最简单的，鼓励调试工具开发者使用该层接口开发。如果某个公司需要开发调试器，则可参考“JDI参看实现”。

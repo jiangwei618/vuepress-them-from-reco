@@ -9,7 +9,7 @@
 &emsp;&emsp;JDWP 是语言无关的。理论上我们可以选用任意语言实现 JDWP。然而我们注意到，在 JDWP 的两端分别是 target vm 和 debugger。Target vm 端，JDWP 模块必须以 Agent library 的形式在 Java 虚拟机启动时加载，并且它必须通过 Java 虚拟机提供的 JVMTI 接口实现各种 debug 的功能，所以必须使用 C/C++ 语言编写。而 debugger 端就没有这样的限制，可以使用任意语言编写，只要遵守 JDWP 规范即可。JDI（Java Debug Interface）就包含了一个 Java 的 JDWP debugger 端的实现（JDI 将在该系列的下一篇文章中介绍），JDK 中调试工具 jdb 也是使用 JDI 完成其调试功能的。
 
 在这里插入图片描述
-![image](D5F376EE62164D0D9810209C5A1BC7B6)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/3JDWP.md-2019-08-06-15-08-14.png)
 
 ### 3.1 协议分析
 
@@ -22,7 +22,7 @@ Target Java 虚拟机回复“JDWP-Handshake”
 
 &emsp;&emsp;JDWP 的握手协议
 在这里插入图片描述
-![image](B230B6D185C14A4BBCB8F834537A1F1E)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/3JDWP.md-2019-08-06-15-08-25.png)
 
 
 &emsp;&emsp;握手完成，debugger 就可以向 target Java 虚拟机发送命令了。JDWP 是通过命令（command）和回复（reply）进行通信的，这与 HTTP 有些相似。JDWP 本身是无状态的，因此对 command 出现的顺序并不受限制。

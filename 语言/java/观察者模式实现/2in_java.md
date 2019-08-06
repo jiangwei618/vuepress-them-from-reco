@@ -1,9 +1,10 @@
-## 主要类
+# 观察者模式在java中的实现
+## 1. 主要类
 java.util.Observable（主题）
 
 java.util.Observer(观察者)
 
-## 实现
+## 2. 实现
 ```
 package com.gzmu.observer.observable;
 

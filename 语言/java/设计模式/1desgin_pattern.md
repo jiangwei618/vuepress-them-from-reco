@@ -1,4 +1,5 @@
-## 一、设计模式类：
+# 设计模式
+## 一、设计模式分类：
 
 **创建型模式**，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。
 
@@ -8,8 +9,7 @@
 
 其实还有两类：并发型模式和线程池模式。用一个图片来整体描述一下：
 
-![image](1AC77E6772F1416DA724BBDF0E3FA436)
-
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1desgin_pattern.md-2019-08-06-16-08-33.png)
  
 
 ## 二、设计模式的六大原则

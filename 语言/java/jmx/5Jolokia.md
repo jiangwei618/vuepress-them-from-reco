@@ -1,4 +1,5 @@
-## jolokia架构
+# Jolokia的架构与使用介绍
+## 1. jolokia架构
 &emsp;&emsp;虽然jolokia是为了满足JSR-160的要求，但是他和JSR-160连接器有巨大的差异。其中最引人注目的区别是jolokia传递数据是无类型的数据（说白了就是使用了Json数据传递，替代了RMI传递Java序列化数据的方式）。
 
 &emsp;&emsp;2003年提交的JSR-160规定客户端可以透明的调用MBean服务，无论被调用的MBean是驻留在本地还是在远程的MBean服务中。这样做的好处是提供了一个简洁通用的Java API接口。但是JSR-160的实现存在许多问题：
@@ -10,8 +11,8 @@
 
 &emsp;&emsp;Jolokia是无类型的数据，使用了Json这种轻量化的序列化方案来替代RMI方案。使用这样的方法当然存在一些缺点（比如需要额外增加一层代理），但是带来了一些优势，至少这样的实现方案在JMX世界是独一无二的。
 
-## Jolokia植入模式（Agent mode）
-![image](CA9DB8920311415C8C3978098C5C43E5)
+## 2. Jolokia植入模式（Agent mode）
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/5Jolokia.md-2019-08-06-15-02-50.png)
 
 &emsp;&emsp;上图展示了Jolokia 植入模式的体系结构，说明了与之有关的运行环境。
 
@@ -21,13 +22,13 @@
 
 &emsp;&emsp;==附注——关于“植入模式”的称呼的说明：官方名为“Agent mode”，按照字面意思应该译为“代理者模式”。但是后面又一个模式叫代理模式（Proxy Mode），为了更便于理解和表达中文意思，这里命名其为“植入模式”。==
 
-## Jolokia代理模式
+## 3. Jolokia代理模式
 &emsp;&emsp;代理模式用于无法将Jolokia部署到目标平台上（说白了就是无法部署到同一台服务器）。在这个模式下，唯一可用的方式就是目标服务开启了JSR-160连接。这样做大部分是规范原因（原文是“political reasons”——政治原因-_-）——有时候根本不允许在目标服务器部署一个额外的软件系统，或者是这样做需要等待一个漫长的审批流程。还有一个原因是目标服务器已经通过RMI开启了JSR-160连接，并且我们不想额外再去在本地部署Jolokia。
 
 可以将jolokia.war部署到servlet容器中（这个war包也可用于植入模式）。下图是一个典型的代理模式架构。
-![image](DE295EABE6CF441E93ED48C602E69B2F)
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/5Jolokia.md-2019-08-06-15-03-01.png)
 
 一个jolokia客户端发送常规的请求到jolokia代理服务，这个请求包含了额外的数据用于标记要查询的目标。所有的路由信息包含在请求信息中，使得代理服务无需特别的配置即可工作。
 
-## 结尾
+## 4. 结尾
 如果没有什么特别的限制，优先使用植入模式。植入模式比代理模式有更多的优势，因为他没有附加层、减少了维度成本和技术复杂性、而且性能也优于代理模式。此外，一些jolokia特性也无法在代理模式中使用，例如“merging of MBeanServers”。

@@ -1,4 +1,4 @@
-{% uml %}
+# 主要架构
 
 ```plantuml
 @startuml
@@ -100,5 +100,3 @@ distributeL2VxlanConfig -->[硬件] vxlanService \n vxlanConfigl2Dynamic
 @enduml
 
 ```
-
-{% enduml %}

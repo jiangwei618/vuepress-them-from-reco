@@ -1,3 +1,4 @@
+# java线程池讲解
 ## 一、概述 
 1、ThreadPoolExecutor作为java.util.concurrent包对外提供基础实现，以内部线程池的形式对外提供管理任务执行，线程调度，线程池管理等等服务； 
 2、Executors方法提供的线程服务，都是通过参数设置来实现不同的线程池机制。 
