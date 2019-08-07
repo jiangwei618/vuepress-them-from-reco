@@ -13,6 +13,7 @@ JMX几乎可以在任何支持Java的设备上运行，而且只需要嵌入一�
 使Java应用可以远程管理。
 
 ## 3.JMX架构
+
 ![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/1JMX.md-2019-08-06-14-59-25.png)
 
 ---

@@ -178,3 +178,4 @@ OutputStreamWriter--> FileWriter
 ### 3.1. InputStream原始流处理器中的适配器模式
 
 
+![](https://gitee.com/jiangwei_618/note/blob/master/assets/image/1JMX.md-2019-08-06-14-59-25.png)

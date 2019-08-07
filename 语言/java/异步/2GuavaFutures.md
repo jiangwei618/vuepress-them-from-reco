@@ -1,4 +1,4 @@
-#Guava future 源码解析
+# Guava future 源码解析
 ## 1、前言
 &emsp;&emsp; 在前两篇文章中简单阐述了Java Future 和Guava ListenableFuture及其相关的应用。我们发现Guava ListenableFuture提供了比Java Future更加强大的功能，而在Google Guava并发包中，某些情况下，Futures这个类起到了不可或缺的作用，而ListenableFuture实现非阻塞的原理是其提供了回调机制(机制)，下面将阐述其中的回调机制的实现，主要对Futures的addCallback方法源码进行详细的剖析。
 

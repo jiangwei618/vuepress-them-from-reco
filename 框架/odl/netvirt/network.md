@@ -234,3 +234,35 @@ end
 
 
 ## 3.remove
+***
+<strong><center> **第一步** </center></strong>
+
+```plantuml
+@startuml
+start
+    #99FF99:neutron/network/network;
+    :remove; 
+    fork
+        :bundle:neutronVpn; 
+        :NeutronNetworkChangeListener;
+        :外部网络处理;
+        #99FF99:elan-instances/elan-instance;
+        if (readDs ElanInstance isPresent?) then (yes)
+            :delete ds elan instance; 
+        else (no)
+        endif
+    fork again
+        :bundle:ipv6Service;
+        :NeutronNetworkChangeListener;
+    fork again
+        :bundle:qosservice;
+        :QosNeutronNetworkChangeListener;
+    end fork
+    
+end
+
+@enduml
+
+```
+    
+&emsp;&emsp;删除数据库中的elan instance数据后，触发相关的其他流程。
