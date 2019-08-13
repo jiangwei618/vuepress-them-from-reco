@@ -51,7 +51,7 @@ public void update(Observable o, Object arg) {
 
 ---
 
-```
+```java
 package com.gzmu.observer.test;
 
 

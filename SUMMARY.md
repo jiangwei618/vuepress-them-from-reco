@@ -1,8 +1,8 @@
+# 目录
 ## 语言
-- [语言](README)
-    - [java](README)
-        - [基础](README)
-            - [基础脑图](1java_base_introduce)
+### [java](README)
+#### [基础](README)
+##### [基础脑图](1java_base_introduce)
         - [io](README)
             - [概述](1io_introduce)
             - [隐藏的设计模式](2the_design_patterns_in_java)

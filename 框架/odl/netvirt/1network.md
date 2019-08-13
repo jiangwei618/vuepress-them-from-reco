@@ -524,3 +524,30 @@ deactivate ElanInterfaceManager
 
 ```
 
+创建vlan 网络 下发流表示例
+```text
+table=0, priority=4,in_port=3,vlan_tci=0x0000/0x1fff actions=write_metadata:0x90000000001/0xffffff0000000001,goto_table:17
+table=0, priority=10,in_port=3,dl_vlan=10 actions=pop_vlan,write_metadata:0xa0000000001/0xffffff0000000001,goto_table:17
+table=17, priority=10,metadata=0xa0000000000/0xffffff0000000000 actions=load:0xa->NXM_NX_REG1[0..19],load:0x138a->NXM_NX_REG7[0..15],write_metadata:0xa0000a138a000000/0xfffffffffffffffe,goto_table:43
+table=52, priority=5,metadata=0x138a000000/0xffff000001 actions=write_actions(group:210004)
+table=52, priority=5,metadata=0x138a000001/0xffff000001 actions=write_actions(group:210003)
+table=55, priority=10,tun_id=0xa,metadata=0xa0000000000/0xfffff0000000000 actions=drop
+table=55, priority=9,tun_id=0xa actions=load:0xa00->NXM_NX_REG6[],resubmit(,220)
+table=220, priority=10,reg6=0x900,metadata=0x1/0x1 actions=drop
+table=220, priority=10,reg6=0xa00,metadata=0x1/0x1 actions=drop
+table=220, priority=9,reg6=0x900 actions=output:3
+table=220, priority=9,reg6=0xa00 actions=push_vlan:0x8100,set_field:4106->vlan_vid,output:3
+```
+```text
+group_id=210003,type=all
+group_id=210004,type=all,bucket=actions=group:210003,bucket=actions=load:0xa00->NXM_NX_REG6[],resubmit(,220)
+```
+
+<details>
+  <summary><mark><font color=darkred>点击查看详细内容</font></mark></summary>
+  <p> - 测试 测试测试</p>
+  <pre><code>  
+for i in a:
+    print(i)
+  </code></pre>
+</details>
