@@ -1,20 +1,20 @@
-## 2.JVMTI:Java 虚拟机工具接口
+# JVMTI:Java 虚拟机工具接口
 &emsp;&emsp;JVMTI（Java Virtual Machine Tool Interface）即指 Java 虚拟机工具接口，它是一套由虚拟机直接提供的 native 接口，它处于整个 JPDA 体系的最底层，所有调试功能本质上都需要通过 JVMTI 来提供。通过这些接口，开发人员不仅调试在该虚拟机上运行的 Java 程序，还能查看它们运行的状态，设置回调函数，控制某些环境变量，从而优化程序性能。
 
 &emsp;&emsp;JVMTI 并不一定在所有的 Java 虚拟机上都有实现，不同的虚拟机的实现也不尽相同。不过在一些主流的虚拟机中，比如 Sun 和 IBM，以及一些开源的如 Apache Harmony DRLVM 中，都提供了标准 JVMTI 实现。
 
-### 2.1JVMTI与Agent的关系
+## 1. JVMTI与Agent的关系
 &emsp;&emsp;JVM TI is implemented by HotSpot and allows a native code ‘agent’ to inspect and modify the state of the JVM.（参看http://openjdk.java.net/groups/hotspot/docs/Serviceability.html#battach 中的说明）
 **Agent 即 JVMTI 的客户端，它和执行 Java 程序的虚拟机运行在同一个进程上，通过调用 JVMTI 提供的接口和虚拟机交互，负责获取并返回当前虚拟机的状态或者转发控制命令**。把 Agent 编译成一个动态链接库之后，我们就可以在 Java 程序启动的时候来加载它（启动加载模式），也可以在 Java 5 之后使用运行时加载（活动加载模式）。
 
 &emsp;&emsp;总结：个人感觉，JVMTI一种操作JVM的规范与接口。开发者通过Agent的方式使用该套接口。同时Agent的逻辑运行机制依赖与JVMTI接口的实现。
 
-### 2.2gent的工作过程
+## 2. gent的工作过程
 &emsp;&emsp;我们使用 JVMTI 的过程，主要是设置 JVMTI 环境，监听虚拟机所产生的事件，以及在某些事件上加上我们所希望的回调函数。
 
 &emsp;&emsp;Agent 的主要功能是通过一系列的在虚拟机上设置的回调（callback）函数完成的，一旦某些事件发生，Agent 所设置的回调函数就会被调用，来完成特定的需求。
 
-#### 2.2.1JVM启动时加载
+## 3. JVM启动时加载
 &emsp;&emsp;Agent 是在 Java 虚拟机启动之时加载的，这个加载处于虚拟机初始化的早期，在这个时间点上：
 
 1. 所有的 Java 类都未被初始化；
@@ -23,13 +23,13 @@
 操作 JVMTI 的 Capability 参数；
 使用系统参数；
 
-#### 2.2.2 JVM运行态加载
+## 4. JVM运行态加载
 基于jvm attach机制。
 关于dynamic attach: Dynamic Attach. This is a Sun private mechanism that allows an external process to start a thread in HotSpot that can then be used to launch an agent to run in that HotSpot, and to send information about the state of HotSpot back to the external process.(参见 http://openjdk.java.net/groups/hotspot/docs/Serviceability.html#battach )
 
 &emsp;&emsp;++attach是Sun的私有实现（并不是所有的jvm都提供该功能），该机制允许 外部进程 在JVM（该JVM指运行被监控、需要被操控的Java程序的JVM）中启动一个线程,该线程随后会启动加载agent，并且将本JVM的状态发送给 外部进程。++
 
-### 2.3 JVMTIAgent 示例
+## 5. JVMTIAgent 示例
 &emsp;&emsp;该Agent通过监听 JVMTI_EVENT_METHOD_ENTRY 事件，注册对应的回调函数来响应这个事件，来输出所有被调用函数名。
 
 &emsp;&emsp;具体实现都在 MethodTraceAgent 这个类里提供。按照顺序，他会处理环境初始化、参数解析、注册功能、注册事件响应，每个功能都被抽象在一个具体的函数里。
@@ -274,11 +274,11 @@ java -agentlib:Agent=first MethodTraceTest
 
 &emsp;&emsp;当程序运行到到 MethodTraceTest 的 first 方法是，Agent 会输出这个事件。“ first ”是 Agent 运行的参数，如果不指定话，所有的进入方法的触发的事件都会被输出，如果读者把这个参数去掉再运行的话，会发现在运行 main 函数前，已经有非常基本的类库函数被调用了。
 
-### 2.4 Agent 时序图
+## 6. Agent 时序图
 在这里插入图片描述
 ![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/2JVMTI_interface.md-2019-08-06-15-06-44.png)
 
-### 2.5 补充说明：Java Agent
+## 7. 补充说明：Java Agent
 我们通过-javaagent来指定我们编写的agent的jar路径（./myagent.jar），以及要传给agent的参数（mode=test），在启动的时候这个agent就可以做一些我们希望的事了。
 
 javaagent的主要功能如下：
@@ -342,7 +342,7 @@ struct _JPLISEnvironment {
 
 1. mIsRetransformer：如果在javaagent的MANIFEST.MF文件里定义了Can-Retransform-Classes:true，将会设置mRetransformEnvironment的mIsRetransformer为true。
 
-### 2.5.1在启动时加载instrument agent
+## 8. 在启动时加载instrument agent
 &emsp;&emsp;正如前面“概述”里提到的方式，就是启动时加载instrument agent，具体过程都在InvocationAdapter.c的Agent_OnLoad方法里，这里简单描述下过程：
 
 1. 创建并初始化JPLISAgent
@@ -352,7 +352,7 @@ struct _JPLISEnvironment {
 1. 调用InstrumentationImpl的loadClassAndCallPremain方法，在这个方法里会调用javaagent里MANIFEST.MF里指定的Premain-Class类的premain方法
 解析javaagent里MANIFEST.MF里的参数，并根据这些参数来设置JPLISAgent里的一些内容
 
-### 2.5.2 在运行时加载instrument agent
+## 9. 在运行时加载instrument agent
 &emsp;&emsp;上面会通过JVM的attach机制来请求目标JVM加载对应的agent，过程大致如下：
 
 1. 创建并初始化JPLISAgent

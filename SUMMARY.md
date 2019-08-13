@@ -26,16 +26,16 @@
 
         - [异步](README)
             - [阻塞和异步](1async_introduce)
-            - [GuavaFutures异步回调机制源码解析](2GuavaFutures)
+            - [GuavaFutures异步回调机制源码解析](2guavafutures)
             - [线程池-ThreadPoolExecutor机制](3ThreadPool)
 
         - [虚拟机](README)
             - [阻塞和异步](1jvm_introduce)
-            - [GuavaFutures异步回调机制源码解析](2memory )
+            - [内存机制](2memory)
 
         - [观察者模式实现](README)
             - [观察者模式](1Observer_Pattern)
-            - [GuavaFutures异步回调机制源码解析](2in_java)
+            - [观察者模式在java中的实现](2in_java)
 
         - [设计模式](README)
             - [设计模式](1desgin_pattern)
@@ -48,11 +48,11 @@
         - [ftp](ftp)
     
     - [git](README)
-        - [概述](1git-summary)
+        - [概述](git-summary)
         - [命令](git-tip)
     
     - [gitbook](README)
-        - [概述](1gibook_introduce)
+        - [概述](1gitbook_introduce)
         - [插件](2plugin)
 
 
@@ -67,13 +67,18 @@
             - [operational_ds](operational_ds)
 
         - [netvirt](README)
-            - [network](network)
+            - [network](1network)
         
         - [openflow](README)
             - [服务端创建](server_create)
 
     - [openstack](README)
         - [错误集锦](error)
+
+    - [openvswitch](README)
+        - [ovs全面解读](1ovs_introduce)
+        - [常用命令](2order)
+        - [ovs-appctl中文翻译](3ovs_appctl)
 
 
 ## 工作

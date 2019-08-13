@@ -1,5 +1,4 @@
-
-## 3.JDWP协议介绍
+# JDWP协议介绍
 &emsp;&emsp;JDWP 是 Java Debug Wire Protocol 的缩写，它定义了调试器（debugger）和被调试的 Java 虚拟机（target vm）之间的通信协议。
 
 &emsp;&emsp;这里首先要说明一下 debugger 和 target vm。Target vm 中运行着我们希望要调试的程序，它与一般运行的 Java 虚拟机没有什么区别，只是在启动时加载了 ==Agent JDWP ==从而具备了调试功能。而 debugger 就是我们熟知的调试器，它向运行中的 target vm 发送命令来获取 target vm 运行时的状态和控制 Java 程序的执行。Debugger 和 target vm 分别在各自的进程中运行，他们之间的通信协议就是 JDWP。
@@ -11,7 +10,7 @@
 在这里插入图片描述
 ![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/3JDWP.md-2019-08-06-15-08-14.png)
 
-### 3.1 协议分析
+## 1. 协议分析
 
 &emsp;&emsp;JDWP 大致分为两个阶段：握手和应答。握手是在传输层连接建立完成后，做的第一件事：
 
@@ -39,7 +38,7 @@ Target Java 虚拟机回复“JDWP-Handshake”
 
 &emsp;&emsp;还有一点需要注意的是，JDWP 是异步的：command packet 的发送方不需要等待接收到 reply packet 就可以继续发送下一个 command packet。
 
-### 3.2 JDWP 传输接口（Java Debug Wire Protocol Transport Interface）
+## 2. JDWP 传输接口（Java Debug Wire Protocol Transport Interface）
 
 &emsp;&emsp;前面提到 JDWP 的定义是与传输层独立的，但如何使 JDWP 能够无缝的使用不同的传输实现，而又无需修改 JDWP 本身的代码？ JDWP 传输接口（Java Debug Wire Protocol Transport Interface）为我们解决了这个问题。
 
@@ -49,7 +48,7 @@ Target Java 虚拟机回复“JDWP-Handshake”
 
 &emsp;&emsp;当 JDWP agent 被 Java 虚拟机加载后，JDWP 会根据参数去加载指定的传输层实现（Sun 的 JDK 在 Windows 提供 socket 和 share memory 两种传输方式，而在 Linux 上只有 socket 方式）。传输层实现的动态链接库实现必须暴露 jdwpTransport_OnLoad 接口，JDWP agent 在加载传输层动态链接库后会调用该接口进行传输层的初始化。
 
-### 3.3 连接管理
+## 3. 连接管理
 
 &emsp;&emsp;连接管理接口主要负责连接的建立和关闭。一个连接为 JDWP 和 debugger 提供了可靠的数据流。Packet 被接收的顺序严格的按照被写入连接的顺序。
 
@@ -65,7 +64,7 @@ Target Java 虚拟机回复“JDWP-Handshake”
 
 &emsp;&emsp;JDWP 等待 debugger 连接的方式，首先需要调用 StartListening 方法。该方法将使 JDWP 处于监听状态，随后调用 Accept 方法接收连接
 
-### 3.4 JDWP 的命令实现机制
+## 4. JDWP 的命令实现机制
 
 &emsp;&emsp;下面将通过讲解一个 JDWP 命令的实例来介绍 JDWP 命令的实现机制。JDWP 作为一种协议，它的作用就在于充当了调试器与 Java 虚拟机的沟通桥梁。通俗点讲，调试器在调试过程中需要不断向 Java 虚拟机查询各种信息，那么 JDWP 就规定了查询的具体方式。
 
@@ -114,7 +113,7 @@ vmVersion    = 1.6.0
 vmName       = IBM J9 VM
 ```
 
-### 3.5 JDWP 的事件处理机制
+## 5. JDWP 的事件处理机制
 
 &emsp;&emsp;前面介绍的 VirtualMachine 的 Version 命令过程非常简单，就是一个查询和信息返回的过程。在实际调试过程中，一个 JDI 的命令往往会有数条这类简单的查询命令参与，而且会涉及到很多更为复杂的命令。要了解更为复杂的 JDWP 命令实现机制，就必须介绍 JDWP 的事件处理机制。
 
@@ -171,18 +170,18 @@ vmName       = IBM J9 VM
 
 &emsp;&emsp;在这里，我们在事件触发的 Java 线程和 EventDispatcher 线程之间添加了一个同步机制，当事件发送出去后，事件触发的 Java 线程会把 JDWP 中的该事件删除，到这里，整个 JDWP 事件处理就完成了。
 
-### 3.6 小节
+## 6. 小节
 
 &emsp;&emsp;我们在调试 Java 程序的时候，往往需要对虚拟机内部的运行状态进行观察和调试，JDWP Agent 就充当了调试器与 Java 虚拟机的沟通桥梁。它的工作原理简单来说就是对于 JDWP 命令的处理和事件的管理。由于 JDWP 在 JPDA 中处于相对底层的位置，调试器发出一个 JDI 指令，往往要通过很多 JDWP 命令来完成。
 
-## 4. JDI ：Java 调试接口
+## 7. JDI ：Java 调试接口
 
 &emsp;&emsp;JDI（Java Debug Interface）是 JPDA 三层模块中最高层的接口，定义了调试器（Debugger）所需要的一些调试接口。基于这些接口，调试器可以及时地了解目标虚拟机的状态，例如查看目标虚拟机上有哪些类和实例等。另外，调试者还可以控制目标虚拟机的执行，例如挂起和恢复目标虚拟机上的线程，设置断点等。
 
 
 &emsp;&emsp;目前，大多数的 JDI 实现都是通过 Java 语言编写的。比如，Java 开发者再熟悉不过的 Eclipse IDE，它的调试工具相信大家都使用过。它的两个插件 org.eclipse.jdt.debug.ui 和 org.eclipse.jdt.debug 与其强大的调试功能密切相关，其中 org.eclipse.jdt.debug.ui 是 Eclipse 调试工具界面的实现，而 org.eclipse.jdt.debug 则是 JDI 的一个完整实现。
 
-### 4.1 JDI 工作方式
+## 8. JDI 工作方式
 
 &emsp;&emsp;工作方式：
 
