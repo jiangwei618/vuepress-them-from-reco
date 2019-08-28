@@ -1,4 +1,25 @@
-# config 数据库监听
+---
+title: config数据库监听
+date: 2019-08-22 17:09:22 
+categories:
+- 框架
+- odl
+- datastore
+tags: 
+- odl
+- datastore
+description: config数据库监听
+export_on_save:
+    html: true
+html:
+  embed_local_images: false
+  embed_svg: true
+  offline: false
+  toc: false
+  
+---
+
+## config 数据库监听
 ```
 {
     "request": {

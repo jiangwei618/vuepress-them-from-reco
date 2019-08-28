@@ -1,4 +1,25 @@
-# operational 数据库监听
+---
+title: operational
+date: 2019-08-22 17:09:22 
+categories:
+- 框架
+- odl
+- datastore
+tags: 
+- odl
+- datastore
+description: operational
+export_on_save:
+    html: true
+html:
+  embed_local_images: false
+  embed_svg: true
+  offline: false
+  toc: false
+  
+---
+
+## 1. operational 数据库监听
 ```
 {
     "request": {

@@ -1,0 +1,736 @@
+---
+title:  java线程池讲解
+date: 2019-08-26 10:57:34  
+categories:
+- 语言
+- java
+- 异步
+tags: 
+- 异步
+description: java线程池讲解
+export_on_save: 
+    html: true
+html:
+  embed_local_images: false
+  embed_svg: true
+  offline: false
+  toc: false
+---
+<!DOCTYPE html><html><head>
+      <title>java&#x7EBF;&#x7A0B;&#x6C60;&#x8BB2;&#x89E3;</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css">
+      
+      
+
+      
+      
+      
+      
+      
+      
+
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h2 class="mume-header" id="%E4%B8%80-%E6%A6%82%E8%BF%B0">&#x4E00;&#x3001;&#x6982;&#x8FF0;</h2>
+
+<p>1&#x3001;ThreadPoolExecutor&#x4F5C;&#x4E3A;java.util.concurrent&#x5305;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x57FA;&#x7840;&#x5B9E;&#x73B0;&#xFF0C;&#x4EE5;&#x5185;&#x90E8;&#x7EBF;&#x7A0B;&#x6C60;&#x7684;&#x5F62;&#x5F0F;&#x5BF9;&#x5916;&#x63D0;&#x4F9B;&#x7BA1;&#x7406;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#xFF0C;&#x7EBF;&#x7A0B;&#x8C03;&#x5EA6;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x7BA1;&#x7406;&#x7B49;&#x7B49;&#x670D;&#x52A1;&#xFF1B;<br>
+2&#x3001;Executors&#x65B9;&#x6CD5;&#x63D0;&#x4F9B;&#x7684;&#x7EBF;&#x7A0B;&#x670D;&#x52A1;&#xFF0C;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;&#x6765;&#x5B9E;&#x73B0;&#x4E0D;&#x540C;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x673A;&#x5236;&#x3002;<br>
+3&#x3001;&#x5148;&#x6765;&#x4E86;&#x89E3;&#x5176;&#x7EBF;&#x7A0B;&#x6C60;&#x7BA1;&#x7406;&#x7684;&#x673A;&#x5236;&#xFF0C;&#x6709;&#x52A9;&#x4E8E;&#x6B63;&#x786E;&#x4F7F;&#x7528;&#xFF0C;&#x907F;&#x514D;&#x9519;&#x8BEF;&#x4F7F;&#x7528;&#x5BFC;&#x81F4;&#x4E25;&#x91CD;&#x6545;&#x969C;&#x3002;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x6C42;&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;</p>
+<h2 class="mume-header" id="%E4%BA%8C-%E6%A0%B8%E5%BF%83%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95%E8%AE%B2%E8%A7%A3">&#x4E8C;&#x3001;&#x6838;&#x5FC3;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x8BB2;&#x89E3;</h2>
+
+<p>&#x4E0B;&#x9762;&#x662F;ThreadPoolExecutor&#x6700;&#x6838;&#x5FC3;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;<br>
+Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span>  
+                              <span class="token keyword">int</span> maximumPoolSize<span class="token punctuation">,</span>  
+                              <span class="token keyword">long</span> keepAliveTime<span class="token punctuation">,</span>  
+                              <span class="token class-name">TimeUnit</span> unit<span class="token punctuation">,</span>  
+                              <span class="token class-name">BlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span> workQueue<span class="token punctuation">,</span>  
+                              <span class="token class-name">ThreadFactory</span> threadFactory<span class="token punctuation">,</span>  
+                              <span class="token class-name">RejectedExecutionHandler</span> handler<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>corePoolSize <span class="token operator">&lt;</span> <span class="token number">0</span> <span class="token operator">||</span>  
+            maximumPoolSize <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token operator">||</span>  
+            maximumPoolSize <span class="token operator">&lt;</span> corePoolSize <span class="token operator">||</span>  
+            keepAliveTime <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span>  
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">IllegalArgumentException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>workQueue <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> threadFactory <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> handler <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>  
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NullPointerException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>corePoolSize <span class="token operator">=</span> corePoolSize<span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>maximumPoolSize <span class="token operator">=</span> maximumPoolSize<span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>workQueue <span class="token operator">=</span> workQueue<span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>keepAliveTime <span class="token operator">=</span> unit<span class="token punctuation">.</span><span class="token function">toNanos</span><span class="token punctuation">(</span>keepAliveTime<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>threadFactory <span class="token operator">=</span> threadFactory<span class="token punctuation">;</span>  
+        <span class="token keyword">this</span><span class="token punctuation">.</span>handler <span class="token operator">=</span> handler<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+</pre><p>&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x53C2;&#x6570;&#x8BB2;&#x89E3;</p>
+<table>
+<thead>
+<tr>
+<th>&#x53C2;&#x6570;&#x540D;</th>
+<th>&#x4F5C;&#x7528;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>corePoolSize</td>
+<td>&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;</td>
+</tr>
+<tr>
+<td>maximumPoolSize</td>
+<td>&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;</td>
+</tr>
+<tr>
+<td>keepAliveTime</td>
+<td>&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x8D85;&#x8FC7;corePoolSize&#x6570;&#x76EE;&#x7684;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x6700;&#x5927;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;&#xFF1B;&#x53EF;&#x4EE5;allowCoreThreadTimeOut(true)&#x4F7F;&#x5F97;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6709;&#x6548;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>TimeUnit</td>
+<td>keepAliveTime&#x65F6;&#x95F4;&#x5355;&#x4F4D;</td>
+</tr>
+<tr>
+<td>workQueue</td>
+<td>&#x963B;&#x585E;&#x4EFB;&#x52A1;&#x961F;&#x5217;</td>
+</tr>
+<tr>
+<td>threadFactory</td>
+<td>&#x65B0;&#x5EFA;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;</td>
+</tr>
+<tr>
+<td>RejectedExecutionHandler</td>
+<td>&#x5F53;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x6570;&#x8D85;&#x8FC7;maxmumPoolSize+workQueue&#x4E4B;&#x548C;&#x65F6;&#xFF0C;&#x4EFB;&#x52A1;&#x4F1A;&#x4EA4;&#x7ED9;RejectedExecutionHandler&#x6765;&#x5904;&#x7406;</td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="%E9%87%8D%E7%82%B9%E8%AE%B2%E8%A7%A3">&#x91CD;&#x70B9;&#x8BB2;&#x89E3;&#xFF1A;</h2>
+
+<p>&#x2003;&#x2003;&#x5176;&#x4E2D;&#x6BD4;&#x8F83;&#x5BB9;&#x6613;&#x8BA9;&#x4EBA;&#x8BEF;&#x89E3;&#x7684;&#x662F;&#xFF1A;corePoolSize&#xFF0C;maximumPoolSize&#xFF0C;workQueue&#x4E4B;&#x95F4;&#x5173;&#x7CFB;&#x3002;</p>
+<ul>
+<li>&#x5F53;&#x7EBF;&#x7A0B;&#x6C60;&#x5C0F;&#x4E8E;corePoolSize&#x65F6;&#xFF0C;&#x65B0;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x5C06;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#xFF0C;&#x5373;&#x4F7F;&#x6B64;&#x65F6;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x5B58;&#x5728;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x3002;</li>
+<li>&#x5F53;&#x7EBF;&#x7A0B;&#x6C60;&#x8FBE;&#x5230;corePoolSize&#x65F6;&#xFF0C;&#x65B0;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x5C06;&#x88AB;&#x653E;&#x5165;workQueue&#x4E2D;&#xFF0C;&#x7B49;&#x5F85;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x6267;&#x884C;</li>
+<li>&#x5F53;workQueue&#x5DF2;&#x6EE1;&#xFF0C;&#x4E14;maximumPoolSize&gt;corePoolSize&#x65F6;&#xFF0C;&#x65B0;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x4EFB;&#x52A1;</li>
+<li>&#x5F53;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x6570;&#x8D85;&#x8FC7;maximumPoolSize&#x65F6;&#xFF0C;&#x65B0;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x7531;RejectedExecutionHandler&#x5904;&#x7406;</li>
+<li>&#x5F53;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x8D85;&#x8FC7;corePoolSize&#x7EBF;&#x7A0B;&#xFF0C;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x8FBE;&#x5230;keepAliveTime&#x65F6;&#xFF0C;&#x5173;&#x95ED;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;</li>
+<li>&#x5F53;&#x8BBE;&#x7F6E;allowCoreThreadTimeOut(true)&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;corePoolSize&#x7EBF;&#x7A0B;&#x7A7A;&#x95F2;&#x65F6;&#x95F4;&#x8FBE;&#x5230;keepAliveTime&#x4E5F;&#x5C06;&#x5173;&#x95ED;</li>
+</ul>
+<p>&#x7EBF;&#x7A0B;&#x7BA1;&#x7406;&#x673A;&#x5236;&#x56FE;&#x793A;&#xFF1A;</p>
+<h2 class="mume-header" id="%E4%B8%89-executors%E6%8F%90%E4%BE%9B%E7%9A%84%E7%BA%BF%E7%A8%8B%E6%B1%A0%E9%85%8D%E7%BD%AE%E6%96%B9%E6%A1%88">&#x4E09;&#x3001;Executors&#x63D0;&#x4F9B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x914D;&#x7F6E;&#x65B9;&#x6848;</h2>
+
+<ul>
+<li>1&#x3001;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7EBF;&#x7A0B;&#x6570;&#x76EE;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x914D;&#x7F6E;&#x7684;corePoolSize&#x4E0E;maximumPoolSize&#x5927;&#x5C0F;&#x76F8;&#x540C;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x65E0;&#x754C;LinkedBlockingQueue&#x5B58;&#x653E;&#x963B;&#x585E;&#x4EFB;&#x52A1;&#xFF0C;&#x56E0;&#x6B64;&#x591A;&#x4F59;&#x7684;&#x4EFB;&#x52A1;&#x5C06;&#x5B58;&#x5728;&#x518D;&#x963B;&#x585E;&#x961F;&#x5217;&#xFF0C;&#x4E0D;&#x4F1A;&#x7531;RejectedExecutionHandler&#x5904;&#x7406;<br>
+Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ExecutorService</span> <span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token keyword">int</span> nThreads<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span>nThreads<span class="token punctuation">,</span> nThreads<span class="token punctuation">,</span>  
+                                      <span class="token number">0L</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">,</span>  
+                                      <span class="token keyword">new</span> <span class="token class-name">LinkedBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+</pre><ul>
+<li>2&#x3001;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x7F13;&#x51B2;&#x529F;&#x80FD;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x914D;&#x7F6E;corePoolSize=0&#xFF0C;maximumPoolSize=Integer.MAX_VALUE&#xFF0C;keepAliveTime=60s,&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;&#x65E0;&#x5BB9;&#x91CF;&#x7684;&#x963B;&#x585E;&#x961F;&#x5217; SynchronousQueue&#xFF0C;&#x56E0;&#x6B64;&#x4EFB;&#x52A1;&#x63D0;&#x4EA4;&#x4E4B;&#x540E;&#xFF0C;&#x5C06;&#x4F1A;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#xFF1B;&#x7EBF;&#x7A0B;&#x7A7A;&#x95F2;&#x8D85;&#x8FC7;60s&#x5C06;&#x4F1A;&#x9500;&#x6BC1;<br>
+Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</li>
+</ul>
+<pre data-role="codeBlock" data-info class="language-"><code>public static ExecutorService newCachedThreadPool() {  
+        return new ThreadPoolExecutor(0, Integer.MAX_VALUE,  
+                                      60L, TimeUnit.SECONDS,  
+                                      new SynchronousQueue&lt;Runnable&gt;());  
+    }  
+</code></pre><ul>
+<li>3&#x3001;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x53EA;&#x652F;&#x6301;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x914D;&#x7F6E;corePoolSize=maximumPoolSize=1&#xFF0C;&#x65E0;&#x754C;&#x963B;&#x585E;&#x961F;&#x5217;LinkedBlockingQueue&#xFF1B;&#x4FDD;&#x8BC1;&#x4EFB;&#x52A1;&#x7531;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x4E32;&#x884C;&#x6267;&#x884C;<br>
+Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ExecutorService</span> <span class="token function">newSingleThreadExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">FinalizableDelegatedExecutorService</span>  
+            <span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span>  
+                                    <span class="token number">0L</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MILLISECONDS<span class="token punctuation">,</span>  
+                                    <span class="token keyword">new</span> <span class="token class-name">LinkedBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+</pre><ul>
+<li>4&#x3001;&#x6784;&#x9020;&#x6709;&#x5B9A;&#x65F6;&#x529F;&#x80FD;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x914D;&#x7F6E;corePoolSize&#xFF0C;&#x65E0;&#x754C;&#x5EF6;&#x8FDF;&#x963B;&#x585E;&#x961F;&#x5217;DelayedWorkQueue&#xFF1B;&#x6709;&#x610F;&#x601D;&#x7684;&#x662F;&#xFF1A;maximumPoolSize=Integer.MAX_VALUE&#xFF0C;&#x7531;&#x4E8E;DelayedWorkQueue&#x662F;&#x65E0;&#x754C;&#x961F;&#x5217;&#xFF0C;&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x503C;&#x662F;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x7684;<br>
+Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ScheduledExecutorService</span> <span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ScheduledThreadPoolExecutor</span><span class="token punctuation">(</span>corePoolSize<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+  
+<span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">ScheduledExecutorService</span> <span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span>  
+            <span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span> <span class="token class-name">ThreadFactory</span> threadFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">ScheduledThreadPoolExecutor</span><span class="token punctuation">(</span>corePoolSize<span class="token punctuation">,</span> threadFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+  
+<span class="token keyword">public</span> <span class="token class-name">ScheduledThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token keyword">int</span> corePoolSize<span class="token punctuation">,</span>  
+                             <span class="token class-name">ThreadFactory</span> threadFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">super</span><span class="token punctuation">(</span>corePoolSize<span class="token punctuation">,</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span>MAX_VALUE<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>NANOSECONDS<span class="token punctuation">,</span>  
+              <span class="token keyword">new</span> <span class="token class-name">DelayedWorkQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> threadFactory<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+</pre><h2 class="mume-header" id="%E5%9B%9B-%E5%AE%9A%E5%88%B6%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%BA%BF%E7%A8%8B%E6%B1%A0">&#x56DB;&#x3001;&#x5B9A;&#x5236;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x975E;&#x963B;&#x585E;&#x7EBF;&#x7A0B;&#x6C60;</h2>
+
+<p>Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ArrayBlockingQueue</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ExecutorService</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">RejectedExecutionHandler</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ThreadFactory</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">TimeUnit</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>atomic</span><span class="token punctuation">.</span><span class="token class-name">AtomicInteger</span><span class="token punctuation">;</span>  
+  
+  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomThreadPoolExecutor</span> <span class="token punctuation">{</span>  
+  
+      
+    <span class="token keyword">private</span> <span class="token class-name">ThreadPoolExecutor</span> pool <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>  
+      
+      
+    <span class="token comment">/** 
+     * &#x7EBF;&#x7A0B;&#x6C60;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5; 
+     *  
+     * corePoolSize &#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;----10 
+     * maximumPoolSize &#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;----30 
+     * keepAliveTime &#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x8D85;&#x8FC7;corePoolSize&#x6570;&#x76EE;&#x7684;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x6700;&#x5927;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;----30+&#x5355;&#x4F4D;TimeUnit 
+     * TimeUnit keepAliveTime&#x65F6;&#x95F4;&#x5355;&#x4F4D;----TimeUnit.MINUTES 
+     * workQueue &#x963B;&#x585E;&#x961F;&#x5217;----new ArrayBlockingQueue&lt;Runnable&gt;(10)====10&#x5BB9;&#x91CF;&#x7684;&#x963B;&#x585E;&#x961F;&#x5217; 
+     * threadFactory &#x65B0;&#x5EFA;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;----new CustomThreadFactory()====&#x5B9A;&#x5236;&#x7684;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382; 
+     * rejectedExecutionHandler &#x5F53;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x6570;&#x8D85;&#x8FC7;maxmumPoolSize+workQueue&#x4E4B;&#x548C;&#x65F6;, 
+     *                          &#x5373;&#x5F53;&#x63D0;&#x4EA4;&#x7B2C;41&#x4E2A;&#x4EFB;&#x52A1;&#x65F6;(&#x524D;&#x9762;&#x7EBF;&#x7A0B;&#x90FD;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x5B8C;,&#x6B64;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E2D;&#x7528;sleep(100)), 
+     *                                &#x4EFB;&#x52A1;&#x4F1A;&#x4EA4;&#x7ED9;RejectedExecutionHandler&#x6765;&#x5904;&#x7406; 
+     */</span>  
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        pool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span>  
+                <span class="token number">10</span><span class="token punctuation">,</span>  
+                <span class="token number">30</span><span class="token punctuation">,</span>  
+                <span class="token number">30</span><span class="token punctuation">,</span>  
+                <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MINUTES<span class="token punctuation">,</span>  
+                <span class="token keyword">new</span> <span class="token class-name">ArrayBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+                <span class="token keyword">new</span> <span class="token class-name">CustomThreadFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+                <span class="token keyword">new</span> <span class="token class-name">CustomRejectedExecutionHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+  
+      
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pool <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            pool<span class="token punctuation">.</span><span class="token function">shutdownNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+      
+      
+    <span class="token keyword">public</span> <span class="token class-name">ExecutorService</span> <span class="token function">getCustomThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pool<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+      
+    <span class="token keyword">private</span> <span class="token keyword">class</span> <span class="token class-name">CustomThreadFactory</span> <span class="token keyword">implements</span> <span class="token class-name">ThreadFactory</span> <span class="token punctuation">{</span>  
+  
+        <span class="token keyword">private</span> <span class="token class-name">AtomicInteger</span> count <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+          
+        <span class="token annotation punctuation">@Override</span>  
+        <span class="token keyword">public</span> <span class="token class-name">Thread</span> <span class="token function">newThread</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token class-name">String</span> threadName <span class="token operator">=</span> <span class="token class-name">CustomThreadPoolExecutor</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> count<span class="token punctuation">.</span><span class="token function">addAndGet</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>threadName<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            t<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>threadName<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">return</span> t<span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+      
+      
+    <span class="token keyword">private</span> <span class="token keyword">class</span> <span class="token class-name">CustomRejectedExecutionHandler</span> <span class="token keyword">implements</span> <span class="token class-name">RejectedExecutionHandler</span> <span class="token punctuation">{</span>  
+  
+        <span class="token annotation punctuation">@Override</span>  
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rejectedExecution</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> r<span class="token punctuation">,</span> <span class="token class-name">ThreadPoolExecutor</span> executor<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token comment">// &#x8BB0;&#x5F55;&#x5F02;&#x5E38;  </span>
+            <span class="token comment">// &#x62A5;&#x8B66;&#x5904;&#x7406;&#x7B49;  </span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;error.............&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+      
+      
+      
+    <span class="token comment">// &#x6D4B;&#x8BD5;&#x6784;&#x9020;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;  </span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token class-name">CustomThreadPoolExecutor</span> exec <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CustomThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token comment">// 1.&#x521D;&#x59CB;&#x5316;  </span>
+        exec<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+          
+        <span class="token class-name">ExecutorService</span> pool <span class="token operator">=</span> exec<span class="token punctuation">.</span><span class="token function">getCustomThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x63D0;&#x4EA4;&#x7B2C;&quot;</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">&quot;&#x4E2A;&#x4EFB;&#x52A1;!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            pool<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                <span class="token annotation punctuation">@Override</span>  
+                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                    <span class="token keyword">try</span> <span class="token punctuation">{</span>  
+                        <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                    <span class="token punctuation">}</span>  
+                    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;running=====&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token punctuation">}</span>  
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+          
+          
+          
+        <span class="token comment">// 2.&#x9500;&#x6BC1;----&#x6B64;&#x5904;&#x4E0D;&#x80FD;&#x9500;&#x6BC1;,&#x56E0;&#x4E3A;&#x4EFB;&#x52A1;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x6267;&#x884C;&#x5B8C;,&#x5982;&#x679C;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;&#x6C60;,&#x4EFB;&#x52A1;&#x4E5F;&#x5C31;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x4E86;  </span>
+        <span class="token comment">// exec.destory();  </span>
+          
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>  
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>  
+</pre><p>&#x65B9;&#x6CD5;&#x4E2D;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#x4E3A;30&#x4E2A;&#xFF0C;&#x7F13;&#x51B2;&#x961F;&#x5217;&#x6709;10&#x4E2A;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;&#x3002;&#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x4EFB;&#x52A1;&#xFF0C;&#x6267;&#x884C;&#x65F6;&#x4F1A;&#x5148;&#x7761;&#x7720;3&#x79D2;&#xFF0C;&#x4FDD;&#x8BC1;&#x63D0;&#x4EA4;10&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x7EBF;&#x7A0B;&#x6570;&#x76EE;&#x88AB;&#x5360;&#x7528;&#x5B8C;&#xFF0C;&#x518D;&#x63D0;&#x4EA4;30&#x4EFB;&#x52A1;&#x65F6;&#xFF0C;&#x963B;&#x585E;&#x961F;&#x5217;&#x88AB;&#x5360;&#x7528;&#x5B8C;&#xFF0C;&#xFF0C;&#x8FD9;&#x6837;&#x63D0;&#x4EA4;&#x7B2C;41&#x4E2A;&#x4EFB;&#x52A1;&#x662F;&#xFF0C;&#x4F1A;&#x4EA4;&#x7ED9;CustomRejectedExecutionHandler &#x5F02;&#x5E38;&#x5904;&#x7406;&#x7C7B;&#x6765;&#x5904;&#x7406;&#x3002;</p>
+<p>&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;<br>
+Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> command<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>command <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>  
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NullPointerException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token comment">/* 
+         * Proceed in 3 steps: 
+         * 
+         * 1. If fewer than corePoolSize threads are running, try to 
+         * start a new thread with the given command as its first 
+         * task.  The call to addWorker atomically checks runState and 
+         * workerCount, and so prevents false alarms that would add 
+         * threads when it shouldn&apos;t, by returning false. 
+         * 
+         * 2. If a task can be successfully queued, then we still need 
+         * to double-check whether we should have added a thread 
+         * (because existing ones died since last checking) or that 
+         * the pool shut down since entry into this method. So we 
+         * recheck state and if necessary roll back the enqueuing if 
+         * stopped, or start a new thread if there are none. 
+         * 
+         * 3. If we cannot queue task, then we try to add a new 
+         * thread.  If it fails, we know we are shut down or saturated 
+         * and so reject the task. 
+         */</span>  
+        <span class="token keyword">int</span> c <span class="token operator">=</span> ctl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">workerCountOf</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&lt;</span> corePoolSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">addWorker</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                <span class="token keyword">return</span><span class="token punctuation">;</span>  
+            c <span class="token operator">=</span> ctl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isRunning</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> workQueue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">int</span> recheck <span class="token operator">=</span> ctl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token function">isRunning</span><span class="token punctuation">(</span>recheck<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">remove</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                <span class="token function">reject</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">workerCountOf</span><span class="token punctuation">(</span>recheck<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>  
+                <span class="token function">addWorker</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">addWorker</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+            <span class="token function">reject</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+</pre><p>&#x6CE8;&#x610F;&#xFF1A;41&#x4EE5;&#x540E;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x5C31;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5904;&#x7406;&#x4E86;&#xFF0C;&#x56E0;&#x4E3A;&#xFF0C;execute&#x4E2D;&#x63D0;&#x4EA4;&#x5230;&#x4EFB;&#x52A1;&#x961F;&#x5217;&#x662F;&#x7528;&#x7684;offer&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x662F;&#x975E;&#x963B;&#x585E;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5C31;&#x4F1A;&#x4EA4;&#x7ED9;CustomRejectedExecutionHandler &#x6765;&#x5904;&#x7406;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x5927;&#x6570;&#x636E;&#x91CF;&#x7684;&#x4EFB;&#x52A1;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x79CD;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x957F;&#x5EA6;&#x4F1A;OOM&#xFF0C;&#x8BBE;&#x7F6E;&#x961F;&#x5217;&#x957F;&#x5EA6;&#xFF0C;&#x4F1A;&#x6709;&#x4EFB;&#x52A1;&#x5F97;&#x4E0D;&#x5230;&#x5904;&#x7406;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x963B;&#x585E;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;&#x6C60;</p>
+<h2 class="mume-header" id="%E4%BA%94-%E5%AE%9A%E5%88%B6%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E9%98%BB%E5%A1%9E%E7%BA%BF%E7%A8%8B%E6%B1%A0">&#x4E94;&#x3001;&#x5B9A;&#x5236;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x963B;&#x585E;&#x7EBF;&#x7A0B;&#x6C60;</h2>
+
+<p>Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>tongbanjie<span class="token punctuation">.</span>trade<span class="token punctuation">.</span>test<span class="token punctuation">.</span>commons</span><span class="token punctuation">;</span>  
+  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ArrayBlockingQueue</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ExecutorService</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">RejectedExecutionHandler</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ThreadFactory</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent</span><span class="token punctuation">.</span><span class="token class-name">TimeUnit</span><span class="token punctuation">;</span>  
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>concurrent<span class="token punctuation">.</span>atomic</span><span class="token punctuation">.</span><span class="token class-name">AtomicInteger</span><span class="token punctuation">;</span>  
+  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CustomThreadPoolExecutor</span> <span class="token punctuation">{</span>    
+        
+        
+    <span class="token keyword">private</span> <span class="token class-name">ThreadPoolExecutor</span> pool <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>    
+        
+        
+    <span class="token comment">/**  
+     * &#x7EBF;&#x7A0B;&#x6C60;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;  
+     *   
+     * corePoolSize &#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;----1  
+     * maximumPoolSize &#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6C60;&#x5927;&#x5C0F;----3  
+     * keepAliveTime &#x7EBF;&#x7A0B;&#x6C60;&#x4E2D;&#x8D85;&#x8FC7;corePoolSize&#x6570;&#x76EE;&#x7684;&#x7A7A;&#x95F2;&#x7EBF;&#x7A0B;&#x6700;&#x5927;&#x5B58;&#x6D3B;&#x65F6;&#x95F4;----30+&#x5355;&#x4F4D;TimeUnit  
+     * TimeUnit keepAliveTime&#x65F6;&#x95F4;&#x5355;&#x4F4D;----TimeUnit.MINUTES  
+     * workQueue &#x963B;&#x585E;&#x961F;&#x5217;----new ArrayBlockingQueue&lt;Runnable&gt;(5)====5&#x5BB9;&#x91CF;&#x7684;&#x963B;&#x585E;&#x961F;&#x5217;  
+     * threadFactory &#x65B0;&#x5EFA;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;----new CustomThreadFactory()====&#x5B9A;&#x5236;&#x7684;&#x7EBF;&#x7A0B;&#x5DE5;&#x5382;  
+     * rejectedExecutionHandler &#x5F53;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x6570;&#x8D85;&#x8FC7;maxmumPoolSize+workQueue&#x4E4B;&#x548C;&#x65F6;,  
+     *                          &#x5373;&#x5F53;&#x63D0;&#x4EA4;&#x7B2C;41&#x4E2A;&#x4EFB;&#x52A1;&#x65F6;(&#x524D;&#x9762;&#x7EBF;&#x7A0B;&#x90FD;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x5B8C;,&#x6B64;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x4E2D;&#x7528;sleep(100)),  
+     *                                &#x4EFB;&#x52A1;&#x4F1A;&#x4EA4;&#x7ED9;RejectedExecutionHandler&#x6765;&#x5904;&#x7406;  
+     */</span>    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        pool <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor</span><span class="token punctuation">(</span>    
+                <span class="token number">1</span><span class="token punctuation">,</span>    
+                <span class="token number">3</span><span class="token punctuation">,</span>    
+                <span class="token number">30</span><span class="token punctuation">,</span>    
+                <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>MINUTES<span class="token punctuation">,</span>    
+                <span class="token keyword">new</span> <span class="token class-name">ArrayBlockingQueue</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Runnable</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    
+                <span class="token keyword">new</span> <span class="token class-name">CustomThreadFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>    
+                <span class="token keyword">new</span> <span class="token class-name">CustomRejectedExecutionHandler</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+    
+        
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">destory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        <span class="token keyword">if</span><span class="token punctuation">(</span>pool <span class="token operator">!=</span> <span class="token keyword">null</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+            pool<span class="token punctuation">.</span><span class="token function">shutdownNow</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span>    
+        
+        
+    <span class="token keyword">public</span> <span class="token class-name">ExecutorService</span> <span class="token function">getCustomThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+        <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span>pool<span class="token punctuation">;</span>    
+    <span class="token punctuation">}</span>    
+        
+    <span class="token keyword">private</span> <span class="token keyword">class</span> <span class="token class-name">CustomThreadFactory</span> <span class="token keyword">implements</span> <span class="token class-name">ThreadFactory</span> <span class="token punctuation">{</span>    
+    
+        <span class="token keyword">private</span> <span class="token class-name">AtomicInteger</span> count <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">AtomicInteger</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            
+        <span class="token annotation punctuation">@Override</span>    
+        <span class="token keyword">public</span> <span class="token class-name">Thread</span> <span class="token function">newThread</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> r<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+            <span class="token class-name">Thread</span> t <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token class-name">String</span> threadName <span class="token operator">=</span> <span class="token class-name">CustomThreadPoolExecutor</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> count<span class="token punctuation">.</span><span class="token function">addAndGet</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>threadName<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            t<span class="token punctuation">.</span><span class="token function">setName</span><span class="token punctuation">(</span>threadName<span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            <span class="token keyword">return</span> t<span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span>    
+        
+        
+    <span class="token keyword">private</span> <span class="token keyword">class</span> <span class="token class-name">CustomRejectedExecutionHandler</span> <span class="token keyword">implements</span> <span class="token class-name">RejectedExecutionHandler</span> <span class="token punctuation">{</span>    
+    
+        <span class="token annotation punctuation">@Override</span>    
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">rejectedExecution</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> r<span class="token punctuation">,</span> <span class="token class-name">ThreadPoolExecutor</span> executor<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>  
+                                <span class="token comment">// &#x6838;&#x5FC3;&#x6539;&#x9020;&#x70B9;&#xFF0C;&#x7531;blockingqueue&#x7684;offer&#x6539;&#x6210;put&#x963B;&#x585E;&#x65B9;&#x6CD5;  </span>
+                executor<span class="token punctuation">.</span><span class="token function">getQueue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span>    
+        
+        
+        
+    <span class="token comment">// &#x6D4B;&#x8BD5;&#x6784;&#x9020;&#x7684;&#x7EBF;&#x7A0B;&#x6C60;    </span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+          
+        <span class="token class-name">CustomThreadPoolExecutor</span> exec <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CustomThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token comment">// 1.&#x521D;&#x59CB;&#x5316;    </span>
+        exec<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            
+        <span class="token class-name">ExecutorService</span> pool <span class="token operator">=</span> exec<span class="token punctuation">.</span><span class="token function">getCustomThreadPoolExecutor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x63D0;&#x4EA4;&#x7B2C;&quot;</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">&quot;&#x4E2A;&#x4EFB;&#x52A1;!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+            pool<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Runnable</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+                <span class="token annotation punctuation">@Override</span>    
+                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+                    <span class="token keyword">try</span> <span class="token punctuation">{</span>    
+                        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&gt;&gt;&gt;task is running=====&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
+                        <span class="token class-name">TimeUnit</span><span class="token punctuation">.</span>SECONDS<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                    <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+                        e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+                    <span class="token punctuation">}</span>    
+                <span class="token punctuation">}</span>    
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>    
+            
+            
+        <span class="token comment">// 2.&#x9500;&#x6BC1;----&#x6B64;&#x5904;&#x4E0D;&#x80FD;&#x9500;&#x6BC1;,&#x56E0;&#x4E3A;&#x4EFB;&#x52A1;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x6267;&#x884C;&#x5B8C;,&#x5982;&#x679C;&#x9500;&#x6BC1;&#x7EBF;&#x7A0B;&#x6C60;,&#x4EFB;&#x52A1;&#x4E5F;&#x5C31;&#x65E0;&#x6CD5;&#x6267;&#x884C;&#x4E86;    </span>
+        <span class="token comment">// exec.destory();    </span>
+            
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>    
+            <span class="token class-name">Thread</span><span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">10000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>    
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    
+        <span class="token punctuation">}</span>    
+    <span class="token punctuation">}</span>    
+<span class="token punctuation">}</span>    
+
+</pre><p>&#x89E3;&#x91CA;&#xFF1A;&#x5F53;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x88AB;&#x62D2;&#x7EDD;&#x65F6;&#xFF0C;&#x8FDB;&#x5165;&#x62D2;&#x7EDD;&#x673A;&#x5236;&#xFF0C;&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x62D2;&#x7EDD;&#x65B9;&#x6CD5;&#xFF0C;&#x628A;&#x4EFB;&#x52A1;&#x91CD;&#x65B0;&#x7528;&#x963B;&#x585E;&#x63D0;&#x4EA4;&#x65B9;&#x6CD5;put&#x63D0;&#x4EA4;&#xFF0C;&#x5B9E;&#x73B0;&#x963B;&#x585E;&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x529F;&#x80FD;&#xFF0C;&#x9632;&#x6B62;&#x961F;&#x5217;&#x8FC7;&#x5927;&#xFF0C;OOM&#xFF0C;&#x63D0;&#x4EA4;&#x88AB;&#x62D2;&#x7EDD;&#x65B9;&#x6CD5;&#x5728;&#x4E0B;&#x9762;</p>
+<p>Java&#x4EE3;&#x7801;  &#x6536;&#x85CF;&#x4EE3;&#x7801;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">execute</span><span class="token punctuation">(</span><span class="token class-name">Runnable</span> command<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>command <span class="token operator">==</span> <span class="token keyword">null</span><span class="token punctuation">)</span>  
+            <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">NullPointerException</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+  
+        <span class="token keyword">int</span> c <span class="token operator">=</span> ctl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">workerCountOf</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&lt;</span> corePoolSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">addWorker</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                <span class="token keyword">return</span><span class="token punctuation">;</span>  
+            c <span class="token operator">=</span> ctl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">isRunning</span><span class="token punctuation">(</span>c<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> workQueue<span class="token punctuation">.</span><span class="token function">offer</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">int</span> recheck <span class="token operator">=</span> ctl<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span> <span class="token function">isRunning</span><span class="token punctuation">(</span>recheck<span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">remove</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">)</span>  
+                <span class="token function">reject</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">workerCountOf</span><span class="token punctuation">(</span>recheck<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>  
+                <span class="token function">addWorker</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">addWorker</span><span class="token punctuation">(</span>command<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+            <span class="token comment">// &#x8FDB;&#x5165;&#x62D2;&#x7EDD;&#x673A;&#x5236;&#xFF0C; &#x6211;&#x4EEC;&#x628A;runnable&#x4EFB;&#x52A1;&#x62FF;&#x51FA;&#x6765;&#xFF0C;&#x91CD;&#x65B0;&#x7528;&#x963B;&#x585E;&#x64CD;&#x4F5C;put&#xFF0C;&#x6765;&#x5B9E;&#x73B0;&#x63D0;&#x4EA4;&#x963B;&#x585E;&#x529F;&#x80FD;  </span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>command<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+
+</pre><h2 class="mume-header" id="%E6%80%BB%E7%BB%93">&#x603B;&#x7ED3;&#xFF1A;</h2>
+
+<ul>
+<li>1&#x3001;&#x7528;ThreadPoolExecutor&#x81EA;&#x5B9A;&#x4E49;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x770B;&#x7EBF;&#x7A0B;&#x662F;&#x7684;&#x7528;&#x9014;&#xFF0C;&#x5982;&#x679C;&#x4EFB;&#x52A1;&#x91CF;&#x4E0D;&#x5927;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x65E0;&#x754C;&#x961F;&#x5217;&#xFF0C;&#x5982;&#x679C;&#x4EFB;&#x52A1;&#x91CF;&#x975E;&#x5E38;&#x5927;&#xFF0C;&#x8981;&#x7528;&#x6709;&#x754C;&#x961F;&#x5217;&#xFF0C;&#x9632;&#x6B62;OOM</li>
+<li>2&#x3001;&#x5982;&#x679C;&#x4EFB;&#x52A1;&#x91CF;&#x5F88;&#x5927;&#xFF0C;&#x8FD8;&#x8981;&#x6C42;&#x6BCF;&#x4E2A;&#x4EFB;&#x52A1;&#x90FD;&#x5904;&#x7406;&#x6210;&#x529F;&#xFF0C;&#x8981;&#x5BF9;&#x63D0;&#x4EA4;&#x7684;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x963B;&#x585E;&#x63D0;&#x4EA4;&#xFF0C;&#x91CD;&#x5199;&#x62D2;&#x7EDD;&#x673A;&#x5236;&#xFF0C;&#x6539;&#x4E3A;&#x963B;&#x585E;&#x63D0;&#x4EA4;&#x3002;&#x4FDD;&#x8BC1;&#x4E0D;&#x629B;&#x5F03;&#x4E00;&#x4E2A;&#x4EFB;&#x52A1;</li>
+<li>3&#x3001;&#x6700;&#x5927;&#x7EBF;&#x7A0B;&#x6570;&#x4E00;&#x822C;&#x8BBE;&#x4E3A;2N+1&#x6700;&#x597D;&#xFF0C;N&#x662F;CPU&#x6838;&#x6570;</li>
+<li>4&#x3001;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;&#xFF0C;&#x770B;&#x5E94;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x4EFB;&#x52A1;&#xFF0C;&#x4E00;&#x5929;&#x8DD1;&#x4E00;&#x6B21;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;0&#xFF0C;&#x5408;&#x9002;&#xFF0C;&#x56E0;&#x4E3A;&#x8DD1;&#x5B8C;&#x5C31;&#x505C;&#x6389;&#x4E86;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5E38;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#xFF0C;&#x770B;&#x4EFB;&#x52A1;&#x91CF;&#xFF0C;&#x662F;&#x4FDD;&#x7559;&#x4E00;&#x4E2A;&#x6838;&#x5FC3;&#x8FD8;&#x662F;&#x51E0;&#x4E2A;&#x6838;&#x5FC3;&#x7EBF;&#x7A0B;&#x6570;</li>
+<li>5&#x3001;&#x5982;&#x679C;&#x8981;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7ED3;&#x679C;&#xFF0C;&#x7528;CompletionService&#xFF0C;&#x4F46;&#x662F;&#x6CE8;&#x610F;&#xFF0C;&#x83B7;&#x53D6;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;&#x7684;&#x8981;&#x91CD;&#x65B0;&#x5F00;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x4E3B;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#xFF0C;&#x5C31;&#x8981;&#x7B49;&#x4EFB;&#x52A1;&#x90FD;&#x63D0;&#x4EA4;&#x540E;&#x624D;&#x83B7;&#x53D6;&#xFF0C;&#x5C31;&#x4F1A;&#x963B;&#x585E;&#x5927;&#x91CF;&#x4EFB;&#x52A1;&#x7ED3;&#x679C;&#xFF0C;&#x961F;&#x5217;&#x8FC7;&#x5927;OOM&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x597D;&#x5F02;&#x6B65;&#x5F00;&#x4E2A;&#x7EBF;&#x7A0B;&#x83B7;&#x53D6;&#x7ED3;&#x679C;</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

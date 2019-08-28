@@ -1,18 +1,34 @@
-# 配置文件
+---
+title: ftp介绍  
+date:  2019-08-26 10:55:29
+categories:
+- 工具
+- linux
+tags: 
+- linux
+description: ftp介绍 
+export_on_save:
+    html: true
+html:
+  embed_local_images: false
+  embed_svg: true
+  offline: false
+  toc: false
+---
 
-## 基本介绍
+## 1. 基本介绍
 
 匿名用户使用的登陆名为ftp或anonymous，口令为空；匿名用户不能离开匿名用户家目录/var/ftp,且只能下载不能上传 。  
  本地用户的登录名为本地用户名，口令为此本地用户的口令；本地用户可以在自己家目录中进行读写操作；本地用户可以离开自家目录切换至有权限访问的其他目录，并在权限允许的情况下进行上传/下载 。  
  写在文件/etc/vsftpd.ftpusers中的本地用户禁止登陆 。
 
-## 配置文件格式：
+## 2. 配置文件格式：
 
 vsftpd.conf?的内容非常单纯，每一行即为一项设定 。  若是空白行或是开头为\#的一行，将会被忽略 。  内容的格式只有一种，如下所示  
  option=value  
  要注意的是，等号两边不能加空白 。
 
-## 匿名用户（anonymous）设置
+## 3. 匿名用户（anonymous）设置
 
 anonymous\_enable=YES/NO（YES）  
 控制是否允许匿名用户登入，YES?为允许匿名登入，NO?为不允许 。  默认值为YES 。
@@ -57,7 +73,7 @@ deny\_email\_enable=YES/NO（NO）
 banned\_email\_file=/etc/vsftpd/banner\_emails  
 此文件用来输入email?address，只有在deny\_email\_enable=YES时，才会使用到此档案 。  若是使用匿名登入，则会要求输入email?address，若输入的email?address?在此档案内，则不允许进入 。
 
-## 本地用户设置
+## 4. 本地用户设置
 
 local\_enable=YES/NO（YES）  
 控制是否允许本地用户登入，YES?为允许本地用户登入，NO为不允许 。  默认值为YES 。
@@ -74,7 +90,7 @@ local\_umask=022
 file\_open\_mode=0755  
 本地用户上传档案后的档案权限，与chmod?所使用的数值相同 。  默认值为0666 。
 
-## 欢迎语设置
+## 5. 欢迎语设置
 
 dirmessage\_enable=YES/NO（YES）  
 如果启动这个选项，那么使用者第一次进入一个目录时，会检查该目录下是否有.message这个档案，如果有，则会出现此档案的内容，通常这个档案会放置欢迎话语，或是对该目录的说明 。  默认值为开启 。
@@ -88,7 +104,7 @@ banner\_file=/etc/vsftpd/banner
 ftpd\_banner=Welcome?to?BOB’s?FTP?server  
 这里用来定义欢迎话语的字符串，banner\_file是档案的形式，而ftpd\_banner?则是字符串的形式 。  预设为无 。
 
-## 控制用户是否允许切换到上级目录
+## 6. 控制用户是否允许切换到上级目录
 
 在默认配置下，本地用户登入FTP后可以使用cd命令切换到其他目录，这样会对系统带来安全隐患 。  可以通过以下三条配置文件来控制用户切换目录 。
 
@@ -107,7 +123,7 @@ chroot\_local\_user=YES/NO（NO）
 ③当chroot\_list\_enable=NO，chroot\_local\_user=YES时，所有的用户均不能切换到其他目录 。  
 ④当chroot\_list\_enable=NO，chroot\_local\_user=NO时，所有的用户均可以切换到其他目录 。
 
-## 数据传输模式设置
+## 7. 数据传输模式设置
 
 FTP在传输数据时，可以使用二进制方式，也可以使用ASCII模式来上传或下载数据 。
 
@@ -117,7 +133,7 @@ ascii\_upload\_enable=YES/NO（NO）
 ascii\_download\_enable=YES/NO（NO）  
 设置是否启用ASCII?模式下载数据 。  默认值为NO 。
 
-## 访问控制设置
+## 8. 访问控制设置
 
 两种控制方式：一种控制主机访问，另一种控制用户访问 。
 
@@ -143,7 +159,7 @@ userlist\_deny=YES/NO（YES）
 /etc/vsftpd/ftpusers  
 文件专门用于定义不允许访问FTP服务器的用户列表（注意:如果?userlist\_enable=YES,userlist\_deny=NO,此时如果在vsftpd.user\_list和ftpusers中都有某个?用户时，那么这个用户是不能够访问FTP的，即ftpusers的优先级要高） 。  默认情况下vsftpd.user\_list和ftpusers，这两个?文件已经预设置了一些不允许访问FTP服务器的系统内部账户 。如果系统没有这两个文件，那么新建这两个文件，将用户添加进去即可 。
 
-## 访问速率设置
+## 9. 访问速率设置
 
 anon\_max\_rate=0  
 设置匿名登入者使用的最大传输速度，单位为B/s，0?表示不限制速度 。  默认值为0 。
@@ -151,7 +167,7 @@ anon\_max\_rate=0
 local\_max\_rate=0  
 本地用户使用的最大传输速度，单位为B/s，0?表示不限制速度 。  预设值为0 。
 
-## 超时时间设置
+## 10. 超时时间设置
 
 accept\_timeout=60  
 设置建立FTP连接的超时时间，单位为秒 。  默认值为60 。
@@ -165,7 +181,7 @@ data\_connection\_timeout=120
 idle\_session\_timeout=300  
 设置多长时间不对FTP服务器进行任何操作，则断开该FTP连接，单位为秒 。  默认值为300? 。
 
-## 日志文件设置
+## 11. 日志文件设置
 
 xferlog\_enable=?YES/NO（YES）  
 是否启用上传/下载日志记录 。  如果启用，则上传与下载的信息将被完整纪录在xferlog\_file?所定义的档案中 。  预设为开启 。
@@ -179,7 +195,7 @@ xferlog\_std\_format=YES/NO（NO）
 log\_ftp\_protocol=YES\|NO（NO）  
 如果启用此选项，所有的FTP请求和响应都会被记录到日志中，默认日志文件在/var/log/vsftpd.log 。  启用此选项时，xferlog\_std\_format不能被激活 。  这个选项有助于调试 。  默认值为NO 。
 
-## 定义用户配置文件
+## 12. 定义用户配置文件
 
 在vsftpd中，可以通过定义用户配置文件来实现不同的用户使用不同的配置 。
 
@@ -187,7 +203,7 @@ user\_config\_dir=/etc/vsftpd/userconf
 设置用户配置文件所在的目录 。  当设置了该配置项后，用户登陆服务器后，系统就会到/etc/vsftpd/userconf目录下，读取与当前用户名相同的文件，并根据文件中的配置命令，对当前用户进行更进一步的配置 。  
 例如：定义user\_config\_dir=/etc/vsftpd/userconf，且主机上有使用者?test1,test2，那么我们就在user\_config\_dir?的目录新增文件名为test1和test2两个文件 。  若是test1?登入，则会读取user\_config\_dir?下的test1?这个档案内的设定 。  默认值为无 。  利用用户配置文件，可以实现对不同用户进行访问速度的控制，在各用户配置文件中定义local\_max\_rate=XX，?即可 。
 
-## FTP的工作方式与端口设置
+## 13. FTP的工作方式与端口设置
 
 FTP有两种工作方式：PORT?FTP（主动模式）和PASV?FTP（被动模式）
 
@@ -209,7 +225,7 @@ pasv\_max\_port=0
 pasv\_min\_port=0  
 在PASV工作模式下，数据连接可以使用的端口范围的最小端口，0?表示任意端口 。  默认值为0 。
 
-## 与连接相关的设置
+## 14. 与连接相关的设置
 
 listen=YES/NO（YES）  
 设置vsftpd服务器是否以standalone模式运行 。  以standalone模式运行是一种较好的方式，此时listen必须设置为YES，此为默?认值 。  建议不要更改，有很多与服务器运行相关的配置命令，需要在此模式下才有效 。  若设置为NO，则vsftpd不是以独立的服务运行，要受到xinetd?服务的管控，功能上会受到限制 。
@@ -226,7 +242,7 @@ listen\_address=IP地址
 setproctitle\_enable=YES/NO（NO）  
 设置每个与FTP服务器的连接，是否以不同的进程表现出来 。  默认值为NO，此时使用ps?aux?\|grep?ftp只会有一个vsftpd的进程 。  若设置为YES，则每个连接都会有一个vsftpd的进程 。
 
-## 虚拟用户设置
+## 15. 虚拟用户设置
 
 虚拟用户使用PAM认证方式 。
 
@@ -242,7 +258,7 @@ guest\_username=ftp
 virtual\_use\_local\_privs=YES/NO（NO）  
 当该参数激活（YES）时，虚拟用户使用与本地用户相同的权限 。  当此参数关闭（NO）时，虚拟用户使用与匿名用户相同的权限 。  默认情况下此参数是关闭的（NO） 。
 
-## 其他设置
+## 16. 其他设置
 
 text\_userdb\_names=?YES/NO（NO）  
 设置在执行ls?–la之类的命令时，是显示UID、GID还是显示出具体的用户名和组名 。  默认值为NO，即以UID和GID方式显示 。  若希望显示用户名和组名，则设置为YES 。
@@ -256,7 +272,7 @@ hide\_ids=YES/NO（NO）
 download\_enable=YES/NO（YES）  
 如果设置为NO，所有的文件都不能下载到本地，文件夹不受影响 。  默认值为YES 。
 
-# 常见问题
+## 17. 常见问题
 
 1：本地用户无法登陆  
     检查本地用户是否存在，是否有密码  

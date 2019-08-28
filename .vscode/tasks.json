@@ -1,0 +1,15 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "node_deploy",
+            "type": "shell",
+            "command": "powershell.exe -Command \"& {docker.exe cp F:\\gitbook\\gitbook\\source  39ef:/mnt/note/}\";powershell.exe -Command \"& {docker.exe exec   39ef bash -c \"/root/deploy_note.sh\"}\"",
+            "problemMatcher": []
+        }
+    ]
+}
+
+

@@ -1,2 +1,0 @@
-- [概述](git-summary.md)
-- [命令](git-tip.md)

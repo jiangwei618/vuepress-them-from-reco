@@ -1,2 +1,0 @@
-- [config_ds](框架/odl/datastore_listener/config_ds.md)
-- [operational_ds](框架/odl/datastore_listener/operational_ds.md)
