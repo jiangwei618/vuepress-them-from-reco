@@ -1,15 +1,15 @@
 ---
-title:  控制台io
-date: 2019-08-26 10:57:34  
+title: 控制台io
+date: 2019-08-26 10:57:34
 categories:
-- 语言
-- java
-- io
-tags: 
-- io
+  - 语言
+  - java
+  - io
+tags:
+  - io
 description: 控制台io
-export_on_save: 
-    html: true
+export_on_save:
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
@@ -280,43 +280,45 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h2 class="mume-header" id="1-%E4%BD%BF%E7%94%A8%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E4%B8%B2systemin">1. <a href="http://xn--System-9w7ix2g88fy1aq40pl66ab11e.in">&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x4E32;System.in</a></h2>
+      <h2 class="mume-header" id="1-%E4%BD%BF%E7%94%A8%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E4%B8%B2-systemin">1. &#x4F7F;&#x7528;&#x6807;&#x51C6;&#x8F93;&#x5165;&#x4E32; <a href="http://System.in">System.in</a></h2>
 
 <p><a href="..\..\..\System.in.read">//System.in.read</a>()&#x4E00;&#x6B21;&#x53EA;&#x8BFB;&#x5165;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x6211;&#x4EEC;&#x901A;&#x5E38;&#x8981;&#x53D6;&#x5F97;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E00;&#x7EC4;&#x6570;&#x5B57;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>//System.in.read()&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;
-//&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;
-//int read = 0;
-char read = &apos;0&apos;;
-System.out.println(&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;);
-try {
- //read = System.in.read();
- read = (char) System.in.read();
-}catch(Exception e){
- e.printStackTrace();
-}
-System.out.println(&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;+read);
-</code></pre><h2>2. &#x4F7F;&#x7528;Scanner&#x53D6;&#x5F97;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E00;&#x7EC4;&#x6570;&#x5B57;</h2>
-<pre data-role="codeBlock" data-info class="language-"><code>  System.out.print(&quot;&#x8F93;&#x5165;&quot;);
-  Scanner scan = new Scanner(System.in);
-  String read = scan.nextLine();
-  System.out.println(&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;+read); 
-</code></pre><p>/<em>&#x5728;&#x65B0;&#x589E;&#x4E00;&#x4E2A;Scanner&#x5BF9;&#x8C61;&#x65F6;&#x9700;&#x8981;&#x4E00;&#x4E2A;System.in&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x662F;System.in&#x5728;&#x53D6;&#x5F97;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;Scanner&#x7684;next()&#x65B9;&#x6CD5;&#x7528;&#x4EE5;&#x53D6;&#x5F97;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;nextInt()&#x5C06;&#x53D6;&#x5F97;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x6574;&#x6570;&#x7C7B;&#x578B;&#xFF1B;&#x540C;&#x6837;&#xFF0C;nextFloat()&#x8F6C;&#x6362;&#x6210;&#x6D6E;&#x70B9;&#x578B;&#xFF1B;nextBoolean()&#x8F6C;&#x6362;&#x6210;&#x5E03;&#x5C14;&#x578B;&#x3002;</em>/</p>
-<h2>3. &#x4F7F;&#x7528;BufferedReader&#x53D6;&#x5F97;&#x542B;&#x7A7A;&#x683C;&#x7684;&#x8F93;&#x5165;</h2>
-<p>//Scanner&#x53D6;&#x5F97;&#x7684;&#x8F93;&#x5165;&#x4EE5;space, tab, enter &#x952E;&#x4E3A;&#x7ED3;&#x675F;&#x7B26;&#xFF0C;<br>
-//&#x8981;&#x60F3;&#x53D6;&#x5F97;&#x5305;&#x542B;space&#x5728;&#x5185;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;java.io.BufferedReader&#x7C7B;&#x6765;&#x5B9E;&#x73B0;<br>
-//&#x4F7F;&#x7528;BufferedReader&#x7684;readLine( )&#x65B9;&#x6CD5;<br>
-<a href="..\..\..\xn--java-fr6gx95abw9a459a4f2a.io.xn--IOException-fb9us3f">//&#x5FC5;&#x987B;&#x8981;&#x5904;&#x7406;java.io.IOException&#x5F02;&#x5E38;</a></p>
-<pre data-role="codeBlock" data-info class="language-"><code>BufferedReader br = new BufferedReader(new InputStreamReader(System.in ));
-//java.io.InputStreamReader&#x7EE7;&#x627F;&#x4E86;Reader&#x7C7B;
-String read = null;
-System.out.print(&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;);
-try {
- read = br.readLine();
-} catch (IOException e) {
- e.printStackTrace();
-}
-System.out.println(&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;+read); 
-</code></pre>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token comment">//System.in.read()&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6574;&#x6570;</span>
+<span class="token comment">//&#x5FC5;&#x987B;&#x521D;&#x59CB;&#x5316;</span>
+<span class="token comment">//int read = 0;</span>
+<span class="token keyword">char</span> read <span class="token operator">=</span> <span class="token string">&apos;0&apos;</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+ <span class="token comment">//read = System.in.read();</span>
+ read <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">char</span><span class="token punctuation">)</span> <span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span><span class="token class-name">Exception</span> e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+ e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;</span><span class="token operator">+</span>read<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="2-%E4%BD%BF%E7%94%A8-scanner-%E5%8F%96%E5%BE%97%E4%B8%80%E4%B8%AA%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%88%96%E4%B8%80%E7%BB%84%E6%95%B0%E5%AD%97">2. &#x4F7F;&#x7528; Scanner &#x53D6;&#x5F97;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x6216;&#x4E00;&#x7EC4;&#x6570;&#x5B57;</h2>
+
+<pre data-role="codeBlock" data-info="java" class="language-java">  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8F93;&#x5165;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">Scanner</span> scan <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">String</span> read <span class="token operator">=</span> scan<span class="token punctuation">.</span><span class="token function">nextLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;</span><span class="token operator">+</span>read<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p>/<em>&#x5728;&#x65B0;&#x589E;&#x4E00;&#x4E2A; Scanner &#x5BF9;&#x8C61;&#x65F6;&#x9700;&#x8981;&#x4E00;&#x4E2A; <a href="http://System.in">System.in</a> &#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x4E3A;&#x5B9E;&#x9645;&#x4E0A;&#x8FD8;&#x662F; <a href="http://System.in">System.in</a> &#x5728;&#x53D6;&#x5F97;&#x7528;&#x6237;&#x8F93;&#x5165;&#x3002;Scanner &#x7684; next()&#x65B9;&#x6CD5;&#x7528;&#x4EE5;&#x53D6;&#x5F97;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#xFF1B;nextInt()&#x5C06;&#x53D6;&#x5F97;&#x7684;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x4E3A;&#x6574;&#x6570;&#x7C7B;&#x578B;&#xFF1B;&#x540C;&#x6837;&#xFF0C;nextFloat()&#x8F6C;&#x6362;&#x6210;&#x6D6E;&#x70B9;&#x578B;&#xFF1B;nextBoolean()&#x8F6C;&#x6362;&#x6210;&#x5E03;&#x5C14;&#x578B;&#x3002;</em>/</p>
+<h2 class="mume-header" id="3-%E4%BD%BF%E7%94%A8-bufferedreader-%E5%8F%96%E5%BE%97%E5%90%AB%E7%A9%BA%E6%A0%BC%E7%9A%84%E8%BE%93%E5%85%A5">3. &#x4F7F;&#x7528; BufferedReader &#x53D6;&#x5F97;&#x542B;&#x7A7A;&#x683C;&#x7684;&#x8F93;&#x5165;</h2>
+
+<p>//Scanner &#x53D6;&#x5F97;&#x7684;&#x8F93;&#x5165;&#x4EE5; space, tab, enter &#x952E;&#x4E3A;&#x7ED3;&#x675F;&#x7B26;&#xFF0C;<br>
+//&#x8981;&#x60F3;&#x53D6;&#x5F97;&#x5305;&#x542B; space &#x5728;&#x5185;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x53EF;&#x4EE5;&#x7528; java.io.BufferedReader &#x7C7B;&#x6765;&#x5B9E;&#x73B0;<br>
+//&#x4F7F;&#x7528; BufferedReader &#x7684; readLine( )&#x65B9;&#x6CD5;<br>
+//&#x5FC5;&#x987B;&#x8981;&#x5904;&#x7406; java.io.IOException &#x5F02;&#x5E38;</p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">BufferedReader</span> br <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span><span class="token class-name">System</span><span class="token punctuation">.</span>in <span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//java.io.InputStreamReader&#x7EE7;&#x627F;&#x4E86;Reader&#x7C7B;</span>
+<span class="token class-name">String</span> read <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">try</span> <span class="token punctuation">{</span>
+ read <span class="token operator">=</span> br<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+ e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;&#x8F93;&#x5165;&#x6570;&#x636E;&#xFF1A;&quot;</span><span class="token operator">+</span>read<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre>
       </div>
       
       

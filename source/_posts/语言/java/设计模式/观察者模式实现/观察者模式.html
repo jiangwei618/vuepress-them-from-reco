@@ -1,22 +1,21 @@
 ---
 title: 观察者模式
-date: 2019-08-22 17:09:22 
+date: 2019-08-22 17:09:22
 categories:
-- 语言
-- java
-- 设计模式
-- 观察者模式
-tags: 
-- 观察者模式
+  - 语言
+  - java
+  - 设计模式
+  - 观察者模式
+tags:
+  - 观察者模式
 description: 观察者模式
 export_on_save:
-    html: true
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
   offline: false
   toc: false
-  
 ---
 <!DOCTYPE html><html><head>
       <title>&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;</title>
@@ -304,7 +303,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <p>&#x2003;&#x2003;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6A21;&#x578B;&#x6709;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x65B9;&#x9762;&#x4F9D;&#x8D56;&#x4E8E;&#x53E6;&#x4E00;&#x4E2A;&#x65B9;&#x9762;&#x3002;&#x5C06;&#x8FD9;&#x4E9B;&#x65B9;&#x9762;&#x5C01;&#x88C5;&#x5728;&#x72EC;&#x7ACB;&#x7684;&#x5BF9;&#x8C61;&#x4E2D;&#x4F7F;&#x5B83;&#x4EEC;&#x53EF;&#x4EE5;&#x5404;&#x81EA;&#x72EC;&#x7ACB;&#x5730;&#x6539;&#x53D8;&#x548C;&#x590D;&#x7528;&#x3002;<br>
 &#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x6539;&#x53D8;&#x5C06;&#x5BFC;&#x81F4;&#x5176;&#x4ED6;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;&#x4E5F;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x800C;&#x4E0D;&#x77E5;&#x9053;&#x5177;&#x4F53;&#x6709;&#x591A;&#x5C11;&#x5BF9;&#x8C61;&#x5C06;&#x53D1;&#x751F;&#x6539;&#x53D8;&#xFF0C;&#x53EF;&#x4EE5;&#x964D;&#x4F4E;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x8026;&#x5408;&#x5EA6;&#x3002;<br>
 &#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x5FC5;&#x987B;&#x901A;&#x77E5;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#xFF0C;&#x800C;&#x5E76;&#x4E0D;&#x77E5;&#x9053;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x662F;&#x8C01;&#x3002;<br>
-&#x9700;&#x8981;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x89E6;&#x53D1;&#x94FE;&#xFF0C;A&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x5C06;&#x5F71;&#x54CD;B&#x5BF9;&#x8C61;&#xFF0C;B&#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x5C06;&#x5F71;&#x54CD;C&#x5BF9;&#x8C61;&#x2026;&#x2026;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x4E00;&#x79CD;&#x94FE;&#x5F0F;&#x89E6;&#x53D1;&#x673A;&#x5236;&#x3002;</p>
+&#x9700;&#x8981;&#x5728;&#x7CFB;&#x7EDF;&#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x89E6;&#x53D1;&#x94FE;&#xFF0C;A &#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x5C06;&#x5F71;&#x54CD; B &#x5BF9;&#x8C61;&#xFF0C;B &#x5BF9;&#x8C61;&#x7684;&#x884C;&#x4E3A;&#x5C06;&#x5F71;&#x54CD; C &#x5BF9;&#x8C61;&#x2026;&#x2026;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x521B;&#x5EFA;&#x4E00;&#x79CD;&#x94FE;&#x5F0F;&#x89E6;&#x53D1;&#x673A;&#x5236;&#x3002;</p>
 <p><strong>&#x6CE8;&#x610F;&#x4E8B;&#x9879;</strong>&#xFF1A;</p>
 <p>&#x2003;&#x2003;1&#x3001;JAVA &#x4E2D;&#x5DF2;&#x7ECF;&#x6709;&#x4E86;&#x5BF9;&#x89C2;&#x5BDF;&#x8005;&#x6A21;&#x5F0F;&#x7684;&#x652F;&#x6301;&#x7C7B;&#x3002;</p>
 <p>&#x2003;&#x2003;2&#x3001;&#x907F;&#x514D;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x3002;</p>
@@ -317,106 +316,106 @@ pre[data-line] .line-highlight[data-end]:after {
 <img src="image/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F.md-2019-07-19-16-06-31.png" alt></p>
 <p><strong>&#x6B65;&#x9AA4; 1</strong><br>
 &#x521B;&#x5EFA; Subject &#x7C7B;&#x3002;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>Subject.java
-import java.util.ArrayList;
-import java.util.List;
- 
-public class Subject {
-   
-   private List&lt;Observer&gt; observers 
-      = new ArrayList&lt;Observer&gt;();
-   private int state;
- 
-   public int getState() {
-      return state;
-   }
- 
-   public void setState(int state) {
-      this.state = state;
-      notifyAllObservers();
-   }
- 
-   public void attach(Observer observer){
-      observers.add(observer);      
-   }
- 
-   public void notifyAllObservers(){
-      for (Observer observer : observers) {
-         observer.update();
-      }
-   }  
-}
-</code></pre><p><strong>&#x6B65;&#x9AA4; 2</strong></p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Subject</span><span class="token punctuation">.</span>java
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">ArrayList</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> <span class="token namespace">java<span class="token punctuation">.</span>util</span><span class="token punctuation">.</span><span class="token class-name">List</span><span class="token punctuation">;</span>
+
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Subject</span> <span class="token punctuation">{</span>
+
+   <span class="token keyword">private</span> <span class="token class-name">List</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Observer</span><span class="token punctuation">&gt;</span></span> observers
+      <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token generics"><span class="token punctuation">&lt;</span><span class="token class-name">Observer</span><span class="token punctuation">&gt;</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token keyword">private</span> <span class="token keyword">int</span> state<span class="token punctuation">;</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> state<span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setState</span><span class="token punctuation">(</span><span class="token keyword">int</span> state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>state <span class="token operator">=</span> state<span class="token punctuation">;</span>
+      <span class="token function">notifyAllObservers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">attach</span><span class="token punctuation">(</span><span class="token class-name">Observer</span> observer<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      observers<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>observer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">notifyAllObservers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token class-name">Observer</span> observer <span class="token operator">:</span> observers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         observer<span class="token punctuation">.</span><span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p><strong>&#x6B65;&#x9AA4; 2</strong></p>
 <p>&#x521B;&#x5EFA; Observer &#x7C7B;&#x3002;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>Observer.java
-public abstract class Observer {
-   protected Subject subject;
-   public abstract void update();
-}
-</code></pre><p><strong>&#x6B65;&#x9AA4; 3</strong></p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Observer</span><span class="token punctuation">.</span>java
+<span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Observer</span> <span class="token punctuation">{</span>
+   <span class="token keyword">protected</span> <span class="token class-name">Subject</span> subject<span class="token punctuation">;</span>
+   <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</pre><p><strong>&#x6B65;&#x9AA4; 3</strong></p>
 <p>&#x521B;&#x5EFA;&#x5B9E;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x7C7B;&#x3002;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>BinaryObserver.java
-public class BinaryObserver extends Observer{
- 
-   public BinaryObserver(Subject subject){
-      this.subject = subject;
-      this.subject.attach(this);
-   }
- 
-   @Override
-   public void update() {
-      System.out.println( &quot;Binary String: &quot; 
-      + Integer.toBinaryString( subject.getState() ) ); 
-   }
-}
-OctalObserver.java
-public class OctalObserver extends Observer{
- 
-   public OctalObserver(Subject subject){
-      this.subject = subject;
-      this.subject.attach(this);
-   }
- 
-   @Override
-   public void update() {
-     System.out.println( &quot;Octal String: &quot; 
-     + Integer.toOctalString( subject.getState() ) ); 
-   }
-}
-HexaObserver.java
-public class HexaObserver extends Observer{
- 
-   public HexaObserver(Subject subject){
-      this.subject = subject;
-      this.subject.attach(this);
-   }
- 
-   @Override
-   public void update() {
-      System.out.println( &quot;Hex String: &quot; 
-      + Integer.toHexString( subject.getState() ).toUpperCase() ); 
-   }
-}
-</code></pre><p><strong>&#x6B65;&#x9AA4; 4</strong></p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">BinaryObserver</span><span class="token punctuation">.</span>java
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">BinaryObserver</span> <span class="token keyword">extends</span> <span class="token class-name">Observer</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">BinaryObserver</span><span class="token punctuation">(</span><span class="token class-name">Subject</span> subject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subject <span class="token operator">=</span> subject<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subject<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@Override</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token string">&quot;Binary String: &quot;</span>
+      <span class="token operator">+</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toBinaryString</span><span class="token punctuation">(</span> subject<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">OctalObserver</span><span class="token punctuation">.</span>java
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">OctalObserver</span> <span class="token keyword">extends</span> <span class="token class-name">Observer</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">OctalObserver</span><span class="token punctuation">(</span><span class="token class-name">Subject</span> subject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subject <span class="token operator">=</span> subject<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subject<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@Override</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+     <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token string">&quot;Octal String: &quot;</span>
+     <span class="token operator">+</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toOctalString</span><span class="token punctuation">(</span> subject<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token class-name">HexaObserver</span><span class="token punctuation">.</span>java
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HexaObserver</span> <span class="token keyword">extends</span> <span class="token class-name">Observer</span><span class="token punctuation">{</span>
+
+   <span class="token keyword">public</span> <span class="token class-name">HexaObserver</span><span class="token punctuation">(</span><span class="token class-name">Subject</span> subject<span class="token punctuation">)</span><span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subject <span class="token operator">=</span> subject<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>subject<span class="token punctuation">.</span><span class="token function">attach</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+
+   <span class="token annotation punctuation">@Override</span>
+   <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">update</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span> <span class="token string">&quot;Hex String: &quot;</span>
+      <span class="token operator">+</span> <span class="token class-name">Integer</span><span class="token punctuation">.</span><span class="token function">toHexString</span><span class="token punctuation">(</span> subject<span class="token punctuation">.</span><span class="token function">getState</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p><strong>&#x6B65;&#x9AA4; 4</strong></p>
 <p>&#x4F7F;&#x7528; Subject &#x548C;&#x5B9E;&#x4F53;&#x89C2;&#x5BDF;&#x8005;&#x5BF9;&#x8C61;&#x3002;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>ObserverPatternDemo.java
-public class ObserverPatternDemo {
-   public static void main(String[] args) {
-      Subject subject = new Subject();
- 
-      new HexaObserver(subject);
-      new OctalObserver(subject);
-      new BinaryObserver(subject);
- 
-      System.out.println(&quot;First state change: 15&quot;);   
-      subject.setState(15);
-      System.out.println(&quot;Second state change: 10&quot;);  
-      subject.setState(10);
-   }
-}
-</code></pre><p><strong>&#x6B65;&#x9AA4; 5</strong></p>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">ObserverPatternDemo</span><span class="token punctuation">.</span>java
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ObserverPatternDemo</span> <span class="token punctuation">{</span>
+   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token class-name">Subject</span> subject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Subject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token keyword">new</span> <span class="token class-name">HexaObserver</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">new</span> <span class="token class-name">OctalObserver</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">new</span> <span class="token class-name">BinaryObserver</span><span class="token punctuation">(</span>subject<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;First state change: 15&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      subject<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token number">15</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Second state change: 10&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      subject<span class="token punctuation">.</span><span class="token function">setState</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p><strong>&#x6B65;&#x9AA4; 5</strong></p>
 <p>&#x6267;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</p>
-<pre data-role="codeBlock" data-info class="language-"><code>First state change: 15
+<pre data-role="codeBlock" data-info="bash" class="language-bash">First state change: 15
 Hex String: F
 Octal String: 17
 Binary String: 1111
@@ -424,7 +423,7 @@ Second state change: 10
 Hex String: A
 Octal String: 12
 Binary String: 1010
-</code></pre>
+</pre>
       </div>
       
       

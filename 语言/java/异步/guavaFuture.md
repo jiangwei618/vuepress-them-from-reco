@@ -1,15 +1,15 @@
 ---
-title:  Guavafuture源码解析
-date: 2019-08-26 10:57:34  
+title: Guavafuture源码解析
+date: 2019-08-26 10:57:34
 categories:
-- 语言
-- java
-- 异步
-tags: 
-- 异步
+  - 语言
+  - java
+  - 异步
+tags:
+  - 异步
 description: Guava future 源码解析
 export_on_save:
-    html: true
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
@@ -17,29 +17,31 @@ html:
   toc: false
 ---
 
-
 ## 1、前言
-&emsp;&emsp; 在前两篇文章中简单阐述了Java Future 和Guava ListenableFuture及其相关的应用。我们发现Guava ListenableFuture提供了比Java Future更加强大的功能，而在Google Guava并发包中，某些情况下，Futures这个类起到了不可或缺的作用，而ListenableFuture实现非阻塞的原理是其提供了回调机制(机制)，下面将阐述其中的回调机制的实现，主要对Futures的addCallback方法源码进行详细的剖析。
 
-## 2、Guava Futures简介
-&emsp;&emsp;Google Guava框架的 com.google.common.util.concurrent包是并发相关的包，它是对JDK自带concurrent包中Future和线程池相关类的扩展，从而衍生出一些新类，并提供了更为广泛的功能。在项目中常用的该包中类如下所示：
+&emsp;&emsp; 在前两篇文章中简单阐述了 Java Future 和 Guava ListenableFuture 及其相关的应用。我们发现 Guava ListenableFuture 提供了比 Java Future 更加强大的功能，而在 Google Guava 并发包中，某些情况下，Futures 这个类起到了不可或缺的作用，而 ListenableFuture 实现非阻塞的原理是其提供了回调机制(机制)，下面将阐述其中的回调机制的实现，主要对 Futures 的 addCallback 方法源码进行详细的剖析。
 
-&emsp;&emsp;**ListenableFuture**：该接口扩展了Future接口，增加了addListener方法，该方法在给定的excutor上注册一个监听器，当计算完成时会马上调用该监听器。不能够确保监听器执行的顺序，但可以在计算完成时确保马上被调用。
+## 2、Guava Futures 简介
 
-&emsp;&emsp;**FutureCallback**：该接口提供了OnSuccess和onFailure方法。获取异步计算的结果并回调。 
+&emsp;&emsp;Google Guava 框架的 com.google.common.util.concurrent 包是并发相关的包，它是对 JDK 自带 concurrent 包中 Future 和线程池相关类的扩展，从而衍生出一些新类，并提供了更为广泛的功能。在项目中常用的该包中类如下所示：
 
-&emsp;&emsp;**MoreExecutors**：该类是final类型的工具类，提供了很多静态方法。例如listeningDecorator方法初始化ListeningExecutorService方法，使用此实例submit方法即可初始化ListenableFuture对象。 
+&emsp;&emsp;**ListenableFuture**：该接口扩展了 Future 接口，增加了 addListener 方法，该方法在给定的 excutor 上注册一个监听器，当计算完成时会马上调用该监听器。不能够确保监听器执行的顺序，但可以在计算完成时确保马上被调用。
 
-&emsp;&emsp; **ListenableFutureTask**：该类是一个适配器，可以将其它Future适配成ListenableFuture。
+&emsp;&emsp;**FutureCallback**：该接口提供了 OnSuccess 和 onFailure 方法。获取异步计算的结果并回调。
 
-&emsp;&emsp; **ListeningExecutorService**：该类是对ExecutorService的扩展，重写了ExecutorService类中的submit方法，并返回ListenableFuture对象。 
+&emsp;&emsp;**MoreExecutors**：该类是 final 类型的工具类，提供了很多静态方法。例如 listeningDecorator 方法初始化 ListeningExecutorService 方法，使用此实例 submit 方法即可初始化 ListenableFuture 对象。
 
-&emsp;&emsp; **JdkFutureAdapters**：该类扩展了FutureTask类并实现ListenableFuture接口，增加了addListener方法。 
+&emsp;&emsp; **ListenableFutureTask**：该类是一个适配器，可以将其它 Future 适配成 ListenableFuture。
+
+&emsp;&emsp; **ListeningExecutorService**：该类是对 ExecutorService 的扩展，重写了 ExecutorService 类中的 submit 方法，并返回 ListenableFuture 对象。
+
+&emsp;&emsp; **JdkFutureAdapters**：该类扩展了 FutureTask 类并实现 ListenableFuture 接口，增加了 addListener 方法。
 
 &emsp;&emsp; **Futures**：该类提供和很多实用的静态方法以供使用。
 
-## 3、Futures.addCallback方法源码剖析
-&emsp;&emsp; 下面将模拟异步发送请求，并对请求结果进行(回调)监听。这里使用Spring框架提供的AsyncRestTemplate，来发送http请求，并获取一个org.springframework.util.concurrent.ListenableFuture对象，此时的对象是spring框架中的ListenableFuture对象。由于org.springframework.util.concurrent包中只提供了最基本的监听功能，没有其它额外功能，这里将<font color=red>**其转化成Guava中的ListenableFuture，用到了JdkFutureAdapters这个适配器类。**</font>(以下源码来自guava-18.0.jar)
+## 3、Futures.addCallback 方法源码剖析
+
+&emsp;&emsp; 下面将模拟异步发送请求，并对请求结果进行(回调)监听。这里使用 Spring 框架提供的 AsyncRestTemplate，来发送 http 请求，并获取一个 org.springframework.util.concurrent.ListenableFuture 对象，此时的对象是 spring 框架中的 ListenableFuture 对象。由于 org.springframework.util.concurrent 包中只提供了最基本的监听功能，没有其它额外功能，这里将<font color=red>**其转化成 Guava 中的 ListenableFuture，用到了 JdkFutureAdapters 这个适配器类。**</font>(以下源码来自 guava-18.0.jar)
 
 ```java
   AsyncRestTemplate tp = new AsyncRestTemplate();
@@ -62,7 +64,7 @@ html:
 
 ---
 
-&emsp;&emsp;Futures的addCallback方法通过传入ListenableFuture和FutureCallback（一般情况FutureCallback实现为内部类）来实现回调机制。
+&emsp;&emsp;Futures 的 addCallback 方法通过传入 ListenableFuture 和 FutureCallback（一般情况 FutureCallback 实现为内部类）来实现回调机制。
 
 ```java
 //com.google.common.util.concurrent.Futures
@@ -72,7 +74,7 @@ html:
   }
 ```
 
-&emsp;&emsp;在addCallback方法中，我们发现多了一个 directExecutor()方法，这里的 directExecutor()方法返回的是一个枚举类型的线程池，这样做的目的是提高性能，而线程池中的execute方法实质执行的是所的传入参数Runnable 的run方法，可以把这里的线程池看作一个”架子”。
+&emsp;&emsp;在 addCallback 方法中，我们发现多了一个 directExecutor()方法，这里的 directExecutor()方法返回的是一个枚举类型的线程池，这样做的目的是提高性能，而线程池中的 execute 方法实质执行的是所的传入参数 Runnable 的 run 方法，可以把这里的线程池看作一个”架子”。
 
 //创建一个单实例的线程 接口需要显著的性能开销 提高性能
 
@@ -89,7 +91,8 @@ html:
     }
   }
 ```
-&emsp;&emsp; 在具体的addCallback方法中，首先判断FutureCallback是否为空，然后创建一个线程，这个线程的run方法中会获取到一个value值，这里的value值即为http请求的结果，然后将value值传入FutureCallback的onSuccess方法，然后我们就可以在onSuccess方法中执行业务逻辑了。这个线程是如何执行的呢？继续往下看，发现调用了ListenableFuture的addListener方法，将刚才创建的线程和上一步创建的枚举线程池传入。
+
+&emsp;&emsp; 在具体的 addCallback 方法中，首先判断 FutureCallback 是否为空，然后创建一个线程，这个线程的 run 方法中会获取到一个 value 值，这里的 value 值即为 http 请求的结果，然后将 value 值传入 FutureCallback 的 onSuccess 方法，然后我们就可以在 onSuccess 方法中执行业务逻辑了。这个线程是如何执行的呢？继续往下看，发现调用了 ListenableFuture 的 addListener 方法，将刚才创建的线程和上一步创建的枚举线程池传入。
 
 //增加回调
 
@@ -128,7 +131,7 @@ html:
   }
 ```
 
-&emsp;&emsp; 在addListener方法中，将待执行的任务和枚举型线程池加入ExecutionList中，ExecutionList的本质是一个链表，将这些任务链接起来。具体可参考下方代码注释。
+&emsp;&emsp; 在 addListener 方法中，将待执行的任务和枚举型线程池加入 ExecutionList 中，ExecutionList 的本质是一个链表，将这些任务链接起来。具体可参考下方代码注释。
 
 ```java
       @Override
@@ -181,7 +184,7 @@ html:
   }
 ```
 
-&emsp;&emsp; 在ExecutionList的add方法中，判断是否执行完成，如果没有执行完成，则放入待执行的链表中并返回，否则调用executeListener方法执行任务，在executeListener方法中，我们发现执行的是线程池的execute方法，而execute方法实质的是调用了任务线程的run方法，这样最终会调用OnSuccess方法获取到执行结果。
+&emsp;&emsp; 在 ExecutionList 的 add 方法中，判断是否执行完成，如果没有执行完成，则放入待执行的链表中并返回，否则调用 executeListener 方法执行任务，在 executeListener 方法中，我们发现执行的是线程池的 execute 方法，而 execute 方法实质的是调用了任务线程的 run 方法，这样最终会调用 OnSuccess 方法获取到执行结果。
 
 ```java
   //将任务放入ExecutionList中
@@ -210,8 +213,8 @@ html:
     executeListener(runnable, executor);
   }
 ```
- 
-&emsp;&emsp; execute方法是执行任务链表中的任务，由于先加入的任务会依次排列在链表的末尾，所以需要将链表翻转。然后从链表头开始依次取出任务执行并放入枚举线程池中执行。
+
+&emsp;&emsp; execute 方法是执行任务链表中的任务，由于先加入的任务会依次排列在链表的末尾，所以需要将链表翻转。然后从链表头开始依次取出任务执行并放入枚举线程池中执行。
 
 ```java
     //执行监听链表中的任务
@@ -233,11 +236,11 @@ html:
     // If we succeeded then list holds all the runnables we to execute.  The pairs in the stack are
     // in the opposite order from how they were added so we need to reverse the list to fulfill our
     // contract.
-    // This is somewhat annoying, but turns out to be very fast in practice.  Alternatively, we 
+    // This is somewhat annoying, but turns out to be very fast in practice.  Alternatively, we
     // could drop the contract on the method that enforces this queue like behavior since depending
     // on it is likely to be a bug anyway.
 
-    // N.B. All writes to the list and the next pointers must have happened before the above 
+    // N.B. All writes to the list and the next pointers must have happened before the above
     // synchronized block, so we can iterate the list without the lock held here.
 
     //因为先加入的监听任务会在连边的末尾，所以需要将链表翻转
@@ -256,7 +259,9 @@ html:
     }
   }
 ```
-&emsp;&emsp; 在上文中，可以发现每当对一个ListenerFuture增加回调时，都会创建一个线程，而这个线程的run方法中会获取一个value值，这个value值就是通过下面的getUninterruptibly方法获取到的，我们可以发现在方法中调用了while进行阻塞，一直等到future获取到结果，即发送的http请求获取到数据后才会终止并返回。可以看出，回调机制将获取结果中的阻塞分散开来，即使现在有100个线程在并发地发送http请求，那么也只是创建了100个独立的线程并行阻塞，那么运行的总时间则会是这100个线程中最长的时间，而不是100个线程的时间相加，这样就实现了异步非阻塞机制。
+
+&emsp;&emsp; 在上文中，可以发现每当对一个 ListenerFuture 增加回调时，都会创建一个线程，而这个线程的 run 方法中会获取一个 value 值，这个 value 值就是通过下面的 getUninterruptibly 方法获取到的，我们可以发现在方法中调用了 while 进行阻塞，一直等到 future 获取到结果，即发送的 http 请求获取到数据后才会终止并返回。可以看出，回调机制将获取结果中的阻塞分散开来，即使现在有 100 个线程在并发地发送 http 请求，那么也只是创建了 100 个独立的线程并行阻塞，那么运行的总时间则会是这 100 个线程中最长的时间，而不是 100 个线程的时间相加，这样就实现了异步非阻塞机制。
+
 ```java
   //用while阻塞直到获取到结果
     public static <V> V getUninterruptibly(Future<V> future)
@@ -277,10 +282,12 @@ html:
     }
   }
 ```
-&emsp;&emsp; 这里实质上执行了线程的run方法，并进行阻塞。
 
- //执行监听器，调用线程池的execute方法，这里线程池并没有提供额外的功能，只提供了执行架子，实际上执行的是监听任务runnable的run方法
-  //而在监听任务的run方法中，会阻塞获取请求结果，请求完成后回调，已达到异步执行的效果
+&emsp;&emsp; 这里实质上执行了线程的 run 方法，并进行阻塞。
+
+//执行监听器，调用线程池的 execute 方法，这里线程池并没有提供额外的功能，只提供了执行架子，实际上执行的是监听任务 runnable 的 run 方法
+//而在监听任务的 run 方法中，会阻塞获取请求结果，请求完成后回调，已达到异步执行的效果
+
 ```java
     private static void executeListener(Runnable runnable, Executor executor) {
     try {
@@ -294,8 +301,10 @@ html:
     }
   }
 ```
-&emsp;&emsp; 使用JdkFutureAdaoter适配Spring中的ListenableFuture达到异步调用的结果。在future.get方法中到底阻塞在什么地方呢？ 
-通过调试发现最后调用的是BasicFuture中的阻塞方法。详情见下方源码和中文注释，这里不累赘。
+
+&emsp;&emsp; 使用 JdkFutureAdaoter 适配 Spring 中的 ListenableFuture 达到异步调用的结果。在 future.get 方法中到底阻塞在什么地方呢？
+通过调试发现最后调用的是 BasicFuture 中的阻塞方法。详情见下方源码和中文注释，这里不累赘。
+
 ```java
  FutureAdapter:
     //这里的get方法会调用BasicFuture中的get方法进行阻塞，直到获取到结果
@@ -304,8 +313,10 @@ html:
         return adaptInternal(this.adaptee.get());
     }
 ```
+
     BasicFuture:
     //在这里会判断当前future是否执行完成，如果没有完成则会等待，一旦执行完成则返回结果。
+
 ```java
    public synchronized T get() throws InterruptedException, ExecutionException {
         while (!this.completed) {
@@ -317,7 +328,7 @@ html:
 
     FutureAdapter:
     //这里通过判断状态是否success，如果success则返回成功，如果new, 则阻塞等待结果直到返回，然后改变状态。
-    
+
 ```java
     @SuppressWarnings("unchecked")
     final T adaptInternal(S adapteeResult) throws ExecutionException {
@@ -351,7 +362,9 @@ html:
         }
     }
 ```
-  //这个方法判断
+
+//这个方法判断
+
 ```java
     public boolean completed(final T result) {
         synchronized(this) {
@@ -368,8 +381,9 @@ html:
         return true;
     }
 ```
-    
-## 4、总结
-&emsp;&emsp;本文主要剖析了Futures.callback方法的源码，我们只需要一个ListenableFuture的实例，就可以使用该方法来实现回调机制。假设在我们的主线程中，有n个子方法要发送http请求，这时，我们可以创建n个ListenableFuture，对这n个ListenableFuture增加监听，这n个请求就是异步且非阻塞的，这样不旦主线程不会阻塞，而且会大大减少总的响应时间。那Futures.callback是如何实现并发的呢？通过源码，我们发现，对于每一个ListenableFuture，都会创建一个独立的线程对其进行监听，也就是这n个ListenableFuture对应着n个相互独立的线程，而在每一个独立的线程中会各自调用Future.get方法阻塞。
 
-&emsp;&emsp; 本文只是简单地讲解了Futures.callback方法，并未作深入的探讨和研究，希望本文对你有所帮助
+## 4、总结
+
+&emsp;&emsp;本文主要剖析了 Futures.callback 方法的源码，我们只需要一个 ListenableFuture 的实例，就可以使用该方法来实现回调机制。假设在我们的主线程中，有 n 个子方法要发送 http 请求，这时，我们可以创建 n 个 ListenableFuture，对这 n 个 ListenableFuture 增加监听，这 n 个请求就是异步且非阻塞的，这样不旦主线程不会阻塞，而且会大大减少总的响应时间。那 Futures.callback 是如何实现并发的呢？通过源码，我们发现，对于每一个 ListenableFuture，都会创建一个独立的线程对其进行监听，也就是这 n 个 ListenableFuture 对应着 n 个相互独立的线程，而在每一个独立的线程中会各自调用 Future.get 方法阻塞。
+
+&emsp;&emsp; 本文只是简单地讲解了 Futures.callback 方法，并未作深入的探讨和研究，希望本文对你有所帮助

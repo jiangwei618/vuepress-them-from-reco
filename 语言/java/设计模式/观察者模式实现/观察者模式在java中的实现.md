@@ -1,16 +1,16 @@
 ---
-title:  观察者模式在java中的实现
-date:  
+title: 观察者模式在java中的实现
+date:
 categories:
-- 语言
-- java
-- 设计模式
-- 观察者模式
-tags: 
-- 观察者模式
+  - 语言
+  - java
+  - 设计模式
+  - 观察者模式
+tags:
+  - 观察者模式
 description: 观察者模式在java中的实现
 export_on_save:
-    html: true
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
@@ -18,13 +18,14 @@ html:
   toc: false
 ---
 
-
 ## 1. 主要类
+
 java.util.Observable（主题）
 
 java.util.Observer(观察者)
 
 ## 2. 实现
+
 ```java
 package com.gzmu.observer.observable;
 

@@ -1,15 +1,15 @@
 ---
-title:  java 内存机制介绍
-date: 2019-08-26 10:57:34  
+title: java 内存机制介绍
+date: 2019-08-26 10:57:34
 categories:
-- 语言
-- java
-- 虚拟机
-tags: 
-- jvm
-description:  java 内存机制介绍
-export_on_save: 
-    html: true
+  - 语言
+  - java
+  - 虚拟机
+tags:
+  - jvm
+description: java 内存机制介绍
+export_on_save:
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
@@ -286,7 +286,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <h2 class="mume-header" id="2-%E8%99%9A%E6%8B%9F%E5%86%85%E5%AD%98%E6%9C%BA%E5%88%B6%E5%A6%82%E5%9B%BE">2. &#x865A;&#x62DF;&#x5185;&#x5B58;&#x673A;&#x5236;&#x5982;&#x56FE;</h2>
 
 <p><img src="https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/2memory.md-2019-08-06-16-04-49.png" alt></p>
-<h2 class="mume-header" id="3-gc%E7%AE%97%E6%B3%95">3. Gc&#x7B97;&#x6CD5;</h2>
+<h2 class="mume-header" id="3-gc-%E7%AE%97%E6%B3%95">3. Gc &#x7B97;&#x6CD5;</h2>
 
 <table>
 <thead>
@@ -304,21 +304,21 @@ pre[data-line] .line-highlight[data-end]:after {
 <td>&#x6807;&#x8BB0;-&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#xFF08;&#x57FA;&#x7840;&#x7B97;&#x6CD5;&#xFF09;</td>
 <td colspan="2">1&#xFF1A;&#x6807;&#x8BB0;&#x9700;&#x8981;&#x56DE;&#x6536;&#x5BF9;&#x8C61;<br>2&#xFF1A;&#x6E05;&#x9664;&#x88AB;&#x6807;&#x8BB0;&#x7684;&#x5BF9;&#x8C61;</td>
 
-<td colspan="3">1&#x6548;&#x7387;&#x95EE;&#x9898;&#xFF0C;&#x6807;&#x8BB0;&#x548C;&#x6E05;&#x695A;&#x7684;&#x6548;&#x7387;&#x5747;&#x4E0D;&#x8DB3;<br>2&#xFF1A;&#x7A7A;&#x95F4;&#x95EE;&#x9898;&#x3002;&#x5927;&#x91CF;&#x7684;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#xFF0C;&#x5BFC;&#x81F4;&#x5728;&#x5B58;&#x50A8;&#x5927;&#x5BF9;&#x8C61;&#x65F6;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x8FDE;&#x7EED;&#x5185;&#x5B58;&#x800C;&#x89E6;&#x53D1;GC</td>
+<td colspan="3">1 &#x6548;&#x7387;&#x95EE;&#x9898;&#xFF0C;&#x6807;&#x8BB0;&#x548C;&#x6E05;&#x695A;&#x7684;&#x6548;&#x7387;&#x5747;&#x4E0D;&#x8DB3;<br>2&#xFF1A;&#x7A7A;&#x95F4;&#x95EE;&#x9898;&#x3002;&#x5927;&#x91CF;&#x7684;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#xFF0C;&#x5BFC;&#x81F4;&#x5728;&#x5B58;&#x50A8;&#x5927;&#x5BF9;&#x8C61;&#x65F6;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x627E;&#x5230;&#x8FDE;&#x7EED;&#x5185;&#x5B58;&#x800C;&#x89E6;&#x53D1; GC</td>
 
 
 </tr>
 <tr>
 <td>&#x590D;&#x5236;&#x7B97;&#x6CD5;</td>
-<td>1&#xFF1A;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF08;A&#xFF0C;B&#xFF09;<br>2&#xFF1A;A&#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5B8C;&#xFF0C;&#x5C06;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x5230;B&#xFF0C;&#x5E76;&#x6E05;&#x9664;A</td>
+<td>1&#xFF1A;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x4E24;&#x90E8;&#x5206;&#xFF08;A&#xFF0C;B&#xFF09;<br>2&#xFF1A;A &#x5185;&#x5B58;&#x4F7F;&#x7528;&#x5B8C;&#xFF0C;&#x5C06;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x5230; B&#xFF0C;&#x5E76;&#x6E05;&#x9664; A</td>
 <td>1&#xFF1A;&#x4E0D;&#x7528;&#x8003;&#x8651;&#x5185;&#x5B58;&#x788E;&#x7247;</td>
 <td>&#x5185;&#x5B58;&#x7F29;&#x5C0F;&#x4E00;&#x534A;</td>
 <td>1&#xFF1A;&#x865A;&#x62DF;&#x673A;&#x591A;&#x7528;&#x6765;&#x56DE;&#x6536;&#x65B0;&#x751F;&#x4EE3;</td>
-<td>&#x5C06;&#x5185;&#x5B58;&#x5206;&#x4E3A;Eden&#x548C;&#x4E24;&#x5757;survivor&#xFF0C;&#x5E73;&#x65F6;&#x4F7F;&#x7528;Eden&#x548C;&#x4E00;&#x5757;survivor&#xFF0C;&#x7EA6;&#x5360;90%&#xFF0C;&#x5F53;&#x4F59;&#x4E0B;&#x7684;&#x4E00;&#x5757;survivor&#x4E0D;&#x8DB3;&#x4EE5;&#x590D;&#x5236;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#xFF08;&#x5206;&#x914D;&#x62C5;&#x4FDD;&#xFF09;</td>
+<td>&#x5C06;&#x5185;&#x5B58;&#x5206;&#x4E3A; Eden &#x548C;&#x4E24;&#x5757; survivor&#xFF0C;&#x5E73;&#x65F6;&#x4F7F;&#x7528; Eden &#x548C;&#x4E00;&#x5757; survivor&#xFF0C;&#x7EA6;&#x5360; 90%&#xFF0C;&#x5F53;&#x4F59;&#x4E0B;&#x7684;&#x4E00;&#x5757; survivor &#x4E0D;&#x8DB3;&#x4EE5;&#x590D;&#x5236;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#xFF08;&#x5206;&#x914D;&#x62C5;&#x4FDD;&#xFF09;</td>
 </tr>
 <tr>
 <td>&#x6807;&#x8BB0;&#x6574;&#x7406;&#x7B97;&#x6CD5;</td>
-<td>1&#xFF1A;&#x6807;&#x8BB0;&#x9700;&#x8981;&#x56DE;&#x6536;&#x5BF9;&#x8C61;2&#xFF1A;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x5411;&#x4E00;&#x7AEF;&#x79FB;&#x52A8;&#xFF0C;&#x6E05;&#x9664;&#x6389;&#x7AEF;&#x8FB9;&#x754C;&#x4EE5;&#x5916;&#x7684;&#x5185;&#x5B58;</td>
+<td>1&#xFF1A;&#x6807;&#x8BB0;&#x9700;&#x8981;&#x56DE;&#x6536;&#x5BF9;&#x8C61; 2&#xFF1A;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x5411;&#x4E00;&#x7AEF;&#x79FB;&#x52A8;&#xFF0C;&#x6E05;&#x9664;&#x6389;&#x7AEF;&#x8FB9;&#x754C;&#x4EE5;&#x5916;&#x7684;&#x5185;&#x5B58;</td>
 <td colspan="2">1&#xFF1A;&#x6CA1;&#x6709;&#x5185;&#x5B58;&#x788E;&#x7247;<br>2&#xFF1A;&#x6CA1;&#x6709;&#x7A7A;&#x95F4;&#x6D6A;&#x8D39;<br>3&#xFF1A;&#x6CA1;&#x6709;&#x8F83;&#x591A;&#x7684;&#x590D;&#x5236;&#x64CD;&#x4F5C;</td>
 
 <td colspan="2">1&#xFF1A;&#x8001;&#x5E74;&#x4EE3;&#xFF08;&#x8001;&#x5E74;&#x4EE3;&#x5BF9;&#x8C61;&#x591A;&#x957F;&#x65F6;&#x95F4;&#x5B58;&#x6D3B;&#xFF09;</td>
@@ -330,12 +330,12 @@ pre[data-line] .line-highlight[data-end]:after {
 
 
 
-<td>1&#xFF1A;&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x5B58;&#x6D3B;&#x5468;&#x671F;&#x5C06;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x51E0;&#x5757;&#xFF08;&#x4E00;&#x822C;15&#x5C81;&#xFF09;</td>
+<td>1&#xFF1A;&#x6839;&#x636E;&#x5BF9;&#x8C61;&#x5B58;&#x6D3B;&#x5468;&#x671F;&#x5C06;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x51E0;&#x5757;&#xFF08;&#x4E00;&#x822C; 15 &#x5C81;&#xFF09;</td>
 </tr>
 <tr>
-<td>HotSpot&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</td>
-<td>1&#xFF1A;safePoint safe Region&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x8BA4;&#x4E3A;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x6267;&#x884C;GC<br>2&#xFF1A;&#x62A2;&#x5148;&#x5F0F;&#x4E2D;&#x65AD;,GC&#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x4E0D;&#x5904;&#x4E8E;&#x5B89;&#x5168;&#x72B6;&#x6001;&#xFF0C;&#x5219;&#x6062;&#x590D;&#x7EBF;&#x7A0B;&#x8FBE;&#x5230;&#x5B89;&#x5168;&#x72B6;&#x6001;&#x540E;&#x4E2D;&#x65AD;<br>3&#xFF1A;&#x4E3B;&#x52A8;&#x5F0F;&#x4E2D;&#x65AD;&#xFF0C;GC&#x8BBE;&#x5B9A;&#x6807;&#x5FD7;&#xFF0C;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#x67E5;&#x770B;&#x6807;&#x5FD7;&#xFF0C;&#x4E3A;&#x771F;&#x65F6;&#x4E2D;&#x65AD;</td>
-<td colspan="4">&#x5728;&#x679A;&#x4E3E;GC Root&#x7684;&#x65F6;&#x5019;&#x5FC5;&#x987B;&#x6682;&#x505C;&#x6240;&#x6709;&#x7EBF;&#x7A0B;</td>
+<td>HotSpot &#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</td>
+<td>1&#xFF1A;safePoint safe Region&#xFF0C;&#x5F53;&#x7EBF;&#x7A0B;&#x5904;&#x4E8E;&#x8FD9;&#x4E24;&#x4E2A;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x8BA4;&#x4E3A;&#x5F15;&#x7528;&#x5173;&#x7CFB;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x6267;&#x884C; GC<br>2&#xFF1A;&#x62A2;&#x5148;&#x5F0F;&#x4E2D;&#x65AD;,GC &#x4E2D;&#x65AD;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x7EBF;&#x7A0B;&#x4E0D;&#x5904;&#x4E8E;&#x5B89;&#x5168;&#x72B6;&#x6001;&#xFF0C;&#x5219;&#x6062;&#x590D;&#x7EBF;&#x7A0B;&#x8FBE;&#x5230;&#x5B89;&#x5168;&#x72B6;&#x6001;&#x540E;&#x4E2D;&#x65AD;<br>3&#xFF1A;&#x4E3B;&#x52A8;&#x5F0F;&#x4E2D;&#x65AD;&#xFF0C;GC &#x8BBE;&#x5B9A;&#x6807;&#x5FD7;&#xFF0C;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x65F6;&#x67E5;&#x770B;&#x6807;&#x5FD7;&#xFF0C;&#x4E3A;&#x771F;&#x65F6;&#x4E2D;&#x65AD;</td>
+<td colspan="4">&#x5728;&#x679A;&#x4E3E; GC Root &#x7684;&#x65F6;&#x5019;&#x5FC5;&#x987B;&#x6682;&#x505C;&#x6240;&#x6709;&#x7EBF;&#x7A0B;</td>
 
 
 
@@ -356,13 +356,13 @@ pre[data-line] .line-highlight[data-end]:after {
 <tbody>
 <tr>
 <td>Serial&#xFF08;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#xFF09;</td>
-<td colspan="3">1&#xFF1A;&#x5355;&#x7EBF;&#x7A0B;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x505C;&#x6B62;&#x6240;&#x6709;&#x5DE5;&#x4F5C;<br>2&#xFF1A;&#x80FD;&#x4E0E;CMS&#x534F;&#x4F5C;</td>
+<td colspan="3">1&#xFF1A;&#x5355;&#x7EBF;&#x7A0B;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x505C;&#x6B62;&#x6240;&#x6709;&#x5DE5;&#x4F5C;<br>2&#xFF1A;&#x80FD;&#x4E0E; CMS &#x534F;&#x4F5C;</td>
 
 
 </tr>
 <tr>
-<td>ParNew&#x6536;&#x96C6;&#x5668;&#xFF08;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#xFF09;</td>
-<td colspan="3">1&#xFF1A;&#x591A;&#x7EBF;&#x7A0B;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x505C;&#x6B62;&#x6240;&#x6709;&#x7EBF;&#x7A0B;<br>2&#xFF1A;&#x80FD;&#x4E0E;CMS&#x534F;&#x4F5C;</td>
+<td>ParNew &#x6536;&#x96C6;&#x5668;&#xFF08;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#xFF09;</td>
+<td colspan="3">1&#xFF1A;&#x591A;&#x7EBF;&#x7A0B;&#x6536;&#x96C6;&#x5668;&#xFF0C;&#x505C;&#x6B62;&#x6240;&#x6709;&#x7EBF;&#x7A0B;<br>2&#xFF1A;&#x80FD;&#x4E0E; CMS &#x534F;&#x4F5C;</td>
 
 
 </tr>
@@ -374,24 +374,14 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td>Serial old&#xFF08;&#x6807;&#x8BB0;&#x6574;&#x7406;&#x7B97;&#x6CD5;&#xFF09;</td>
-<td colspan="3">1&#xFF1A;&#x4E0E;Paraller Scanvenge&#x7ED3;&#x5408;&#x4F7F;&#x7528;<br>2&#xFF1A;&#x4F5C;&#x4E3A;CMS&#x6536;&#x96C6;&#x5668;&#x7684;&#x540E;&#x5907;</td>
+<td colspan="3">1&#xFF1A;&#x4E0E; Paraller Scanvenge &#x7ED3;&#x5408;&#x4F7F;&#x7528;<br>2&#xFF1A;&#x4F5C;&#x4E3A; CMS &#x6536;&#x96C6;&#x5668;&#x7684;&#x540E;&#x5907;</td>
 
 
-</tr>
-<tr>
-<td colspan="4">Paraller old&#xA0;&#xFF08;&#x6807;&#x8BB0;&#x6574;&#x7406;&#x7B97;&#x6CD5;&#xFF09;</td>
-
-
-
-</tr>
-<tr>
-<td>CMS&#xFF08;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#xFF09;</td>
-<td>1&#xFF1A;&#x521D;&#x59CB;&#x6807;&#x8BB0;&#xFF0C;&#x6807;&#x8BB0;GC root&#x76F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x505C;&#x6B62;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF09;<br>2&#xFF1A;&#x5E76;&#x53D1;&#x6807;&#x8BB0;<br>3&#xFF1A;&#x91CD;&#x65B0;&#x6807;&#x8BB0;&#xFF0C;&#x4FEE;&#x6B63;&#x5F15;&#x7528;&#x53D8;&#x5316;&#x7684;&#x90E8;&#x5206;&#xFF08;&#x505C;&#x6B62;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF09;<br>4&#xFF1A;&#x5E76;&#x53D1;&#x6E05;&#x9664;&#xFF08;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#xFF09;</td>
-<td>1&#xFF1A;&#x6700;&#x77ED;&#x505C;&#x987F;</td>
-<td>1&#xFF1A;cpu&#x8D44;&#x6E90;&#x654F;&#x611F;<br>2&#xFF1A;&#x4F1A;&#x4EA7;&#x751F;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#xFF08;&#x5BFC;&#x81F4;full GC&#xFF09;</td>
 </tr>
 </tbody>
 </table>
+<p>|Paraller old&#xA0;&#xFF08;&#x6807;&#x8BB0;&#x6574;&#x7406;&#x7B97;&#x6CD5;&#xFF09;<br>
+|CMS&#xFF08;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#xFF09;| 1&#xFF1A;&#x521D;&#x59CB;&#x6807;&#x8BB0;&#xFF0C;&#x6807;&#x8BB0; GC root &#x76F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x505C;&#x6B62;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF09;<br>2&#xFF1A;&#x5E76;&#x53D1;&#x6807;&#x8BB0;<br>3&#xFF1A;&#x91CD;&#x65B0;&#x6807;&#x8BB0;&#xFF0C;&#x4FEE;&#x6B63;&#x5F15;&#x7528;&#x53D8;&#x5316;&#x7684;&#x90E8;&#x5206;&#xFF08;&#x505C;&#x6B62;&#x6240;&#x6709;&#x7EBF;&#x7A0B;&#xFF09;<br>4&#xFF1A;&#x5E76;&#x53D1;&#x6E05;&#x9664;&#xFF08;&#x4E0E;&#x7528;&#x6237;&#x7EBF;&#x7A0B;&#x5E76;&#x53D1;&#xFF09;| 1&#xFF1A;&#x6700;&#x77ED;&#x505C;&#x987F; | 1&#xFF1A;cpu &#x8D44;&#x6E90;&#x654F;&#x611F;<br>2&#xFF1A;&#x4F1A;&#x4EA7;&#x751F;&#x7A7A;&#x95F4;&#x788E;&#x7247;&#xFF08;&#x5BFC;&#x81F4; full GC&#xFF09;</p>
 <h2 class="mume-header" id="5-%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86%E7%9B%B8%E5%85%B3%E7%9A%84%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0">5. &#x5783;&#x573E;&#x6536;&#x96C6;&#x76F8;&#x5173;&#x7684;&#x5E38;&#x7528;&#x53C2;&#x6570;</h2>
 
 <table>
@@ -404,27 +394,27 @@ pre[data-line] .line-highlight[data-end]:after {
 <tbody>
 <tr>
 <td>UseSerialGC</td>
-<td>&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5728;Client&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528;Serial+Serial Old&#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;</td>
+<td>&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5728; Client &#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528; Serial+Serial Old &#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;</td>
 </tr>
 <tr>
 <td>UseParNewGC</td>
-<td>&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528;ParNew+Serial Old&#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;</td>
+<td>&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528; ParNew+Serial Old &#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;</td>
 </tr>
 <tr>
 <td>UseConcMarkSweepGC</td>
-<td>&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528;ParNew+CMS+Serial Old&#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x3002;Serial Old&#x6536;&#x96C6;&#x5668;&#x5C06;&#x4F5C;&#x4E3A;CMS&#x6536;&#x96C6;&#x5668;&#x51FA;&#x73B0;</td>
+<td>&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528; ParNew+CMS+Serial Old &#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x3002;Serial Old &#x6536;&#x96C6;&#x5668;&#x5C06;&#x4F5C;&#x4E3A; CMS &#x6536;&#x96C6;&#x5668;&#x51FA;&#x73B0;</td>
 </tr>
 <tr>
 <td>UseParallelGC</td>
-<td>&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5728;Server&#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528;Parallel Scavenge + Serial Old&#xFF08;PS MarkSweep&#xFF09;&#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;</td>
+<td>&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x5728; Server &#x6A21;&#x5F0F;&#x4E0B;&#x7684;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528; Parallel Scavenge + Serial Old&#xFF08;PS MarkSweep&#xFF09;&#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;</td>
 </tr>
 <tr>
 <td>UseParallelOldGC</td>
-<td>&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528;Parallel Scavenge + Parallel Old&#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;</td>
+<td>&#x6253;&#x5F00;&#x6B64;&#x5F00;&#x5173;&#x540E;&#xFF0C;&#x4F7F;&#x7528; Parallel Scavenge + Parallel Old &#x7684;&#x6536;&#x96C6;&#x5668;&#x7EC4;&#x5408;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;</td>
 </tr>
 <tr>
 <td>SurvivorRatio</td>
-<td>&#x65B0;&#x751F;&#x4EE3;&#x4E2D;Eden&#x533A;&#x57DF;&#x4E0E;Survivor&#x533A;&#x57DF;&#x7684;&#x5BB9;&#x91CF;&#x6BD4;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;8&#xFF0C;&#x4EE3;&#x8868;Eden&#xFF1A;Survivor=8&#xFF1A;1</td>
+<td>&#x65B0;&#x751F;&#x4EE3;&#x4E2D; Eden &#x533A;&#x57DF;&#x4E0E; Survivor &#x533A;&#x57DF;&#x7684;&#x5BB9;&#x91CF;&#x6BD4;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 8&#xFF0C;&#x4EE3;&#x8868; Eden&#xFF1A;Survivor=8&#xFF1A;1</td>
 </tr>
 <tr>
 <td>PretenureSizeThreshold</td>
@@ -432,41 +422,41 @@ pre[data-line] .line-highlight[data-end]:after {
 </tr>
 <tr>
 <td>MaxTenuringThreshold</td>
-<td>&#x664B;&#x5347;&#x5230;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5BF9;&#x8C61;&#x5E74;&#x9F84;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x575A;&#x6301;&#x8FC7;&#x4E00;&#x6B21;Minor GC&#x4E4B;&#x540E;&#xFF0C;&#x5E74;&#x9F84;&#x5C31;&#x589E;&#x52A0;1&#xFF0C;&#x5F53;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x65F6;&#x5C31;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;</td>
+<td>&#x664B;&#x5347;&#x5230;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5BF9;&#x8C61;&#x5E74;&#x9F84;&#xFF0C;&#x6BCF;&#x4E2A;&#x5BF9;&#x8C61;&#x5728;&#x575A;&#x6301;&#x8FC7;&#x4E00;&#x6B21; Minor GC &#x4E4B;&#x540E;&#xFF0C;&#x5E74;&#x9F84;&#x5C31;&#x589E;&#x52A0; 1&#xFF0C;&#x5F53;&#x8D85;&#x8FC7;&#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x65F6;&#x5C31;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;</td>
 </tr>
 <tr>
 <td>UseAdaptiveSizePolicy</td>
-<td>&#x52A8;&#x6001;&#x8C03;&#x6574;Java&#x5806;&#x4E2D;&#x5404;&#x4E2A;&#x533A;&#x57DF;&#x7684;&#x5927;&#x5C0F;&#x4EE5;&#x53CA;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5E74;&#x9F84;</td>
+<td>&#x52A8;&#x6001;&#x8C03;&#x6574; Java &#x5806;&#x4E2D;&#x5404;&#x4E2A;&#x533A;&#x57DF;&#x7684;&#x5927;&#x5C0F;&#x4EE5;&#x53CA;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5E74;&#x9F84;</td>
 </tr>
 <tr>
 <td>HandlePromotionFailure</td>
-<td>&#x662F;&#x5426;&#x5141;&#x8BB8;&#x5206;&#x914D;&#x62C5;&#x4FDD;&#x5931;&#x8D25;&#xFF0C;&#x5373;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#x4EE5;&#x5E94;&#x4ED8;&#x65B0;&#x751F;&#x4EE3;&#x7684;&#x6574;&#x4E2A;Eden&#x548C;Survivor&#x533A;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x5B58;&#x6D3B;&#x7684;&#x6781;&#x7AEF;&#x60C5;&#x51B5;</td>
+<td>&#x662F;&#x5426;&#x5141;&#x8BB8;&#x5206;&#x914D;&#x62C5;&#x4FDD;&#x5931;&#x8D25;&#xFF0C;&#x5373;&#x8001;&#x5E74;&#x4EE3;&#x7684;&#x5269;&#x4F59;&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;&#x4EE5;&#x5E94;&#x4ED8;&#x65B0;&#x751F;&#x4EE3;&#x7684;&#x6574;&#x4E2A; Eden &#x548C; Survivor &#x533A;&#x7684;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x90FD;&#x5B58;&#x6D3B;&#x7684;&#x6781;&#x7AEF;&#x60C5;&#x51B5;</td>
 </tr>
 <tr>
 <td>ParallelGCThreads</td>
-<td>&#x8BBE;&#x7F6E;&#x5E76;&#x884C;GC&#x65F6;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x7684;&#x7EBF;&#x7A0B;&#x6570;</td>
+<td>&#x8BBE;&#x7F6E;&#x5E76;&#x884C; GC &#x65F6;&#x8FDB;&#x884C;&#x5185;&#x5B58;&#x56DE;&#x6536;&#x7684;&#x7EBF;&#x7A0B;&#x6570;</td>
 </tr>
 <tr>
 <td>GCTimeRatio</td>
-<td>GC&#x65F6;&#x95F4;&#x5360;&#x603B;&#x65F6;&#x95F4;&#x7684;&#x6BD4;&#x7387;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;99&#xFF0C;&#x5373;&#x5141;&#x8BB8;1%&#x7684;GC&#x65F6;&#x95F4;&#x3002;&#x4EC5;&#x5728;&#x4F7F;&#x7528;Parallel Scavenge&#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;</td>
+<td>GC &#x65F6;&#x95F4;&#x5360;&#x603B;&#x65F6;&#x95F4;&#x7684;&#x6BD4;&#x7387;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 99&#xFF0C;&#x5373;&#x5141;&#x8BB8; 1%&#x7684; GC &#x65F6;&#x95F4;&#x3002;&#x4EC5;&#x5728;&#x4F7F;&#x7528; Parallel Scavenge &#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;</td>
 </tr>
 <tr>
 <td>MaxGCPauseMillis</td>
-<td>&#x8BBE;&#x7F6E;GC&#x7684;&#x6700;&#x5927;&#x505C;&#x987F;&#x65F6;&#x95F4;&#xFF0C;&#x4EC5;&#x5728;&#x4F7F;&#x7528;Parallel Scavenge&#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;</td>
+<td>&#x8BBE;&#x7F6E; GC &#x7684;&#x6700;&#x5927;&#x505C;&#x987F;&#x65F6;&#x95F4;&#xFF0C;&#x4EC5;&#x5728;&#x4F7F;&#x7528; Parallel Scavenge &#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;</td>
 </tr>
 <tr>
 <td>CMSInitingOccupancyFraction</td>
-<td>&#x8BBE;&#x7F6E;CMS&#x6536;&#x96C6;&#x5668;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x7A7A;&#x95F4;&#x88AB;&#x4F7F;&#x7528;&#x591A;&#x5C11;&#x540E;&#x89E6;&#x53D1;&#x5783;&#x573E;&#x6536;&#x96C6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A;68%&#xFF0C;&#x4EC5;&#x5728;&#x4F7F;&#x7528;CMS&#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;</td>
+<td>&#x8BBE;&#x7F6E; CMS &#x6536;&#x96C6;&#x5668;&#x5728;&#x8001;&#x5E74;&#x4EE3;&#x7A7A;&#x95F4;&#x88AB;&#x4F7F;&#x7528;&#x591A;&#x5C11;&#x540E;&#x89E6;&#x53D1;&#x5783;&#x573E;&#x6536;&#x96C6;&#x3002;&#x9ED8;&#x8BA4;&#x503C;&#x4E3A; 68%&#xFF0C;&#x4EC5;&#x5728;&#x4F7F;&#x7528; CMS &#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;</td>
 </tr>
 </tbody>
 </table>
-<p>UseCMSCompactAtFullCollection&#xFF1A;&#x8BBE;&#x7F6E;CMS&#x6536;&#x96C6;&#x5668;&#x5728;&#x5B8C;&#x6210;&#x5783;&#x573E;&#x6536;&#x96C6;&#x540E;&#x662F;&#x5426;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x5185;&#x5B58;&#x788E;&#x7247;&#x6574;&#x7406;&#xFF0C;&#x4EC5;&#x5728;&#x4F7F;&#x7528;CMS&#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;<br>
-CMSFullGCsBeforeCompaction&#xFF1A;&#x8BBE;&#x7F6E;CMS&#x6536;&#x96C6;&#x5668;&#x5728;&#x8FDB;&#x884C;&#x82E5;&#x5E72;&#x6B21;&#x5783;&#x573E;&#x6536;&#x96C6;&#x540E;&#x518D;&#x542F;&#x52A8;&#x4E00;&#x6B21;&#x5185;&#x5B58;&#x788E;&#x7247;&#x6574;&#x7406;&#x3002;&#x4EC5;&#x5728;&#x4F7F;&#x7528;CMS&#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;<br>
+<p>UseCMSCompactAtFullCollection&#xFF1A;&#x8BBE;&#x7F6E; CMS &#x6536;&#x96C6;&#x5668;&#x5728;&#x5B8C;&#x6210;&#x5783;&#x573E;&#x6536;&#x96C6;&#x540E;&#x662F;&#x5426;&#x8981;&#x8FDB;&#x884C;&#x4E00;&#x6B21;&#x5185;&#x5B58;&#x788E;&#x7247;&#x6574;&#x7406;&#xFF0C;&#x4EC5;&#x5728;&#x4F7F;&#x7528; CMS &#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;<br>
+CMSFullGCsBeforeCompaction&#xFF1A;&#x8BBE;&#x7F6E; CMS &#x6536;&#x96C6;&#x5668;&#x5728;&#x8FDB;&#x884C;&#x82E5;&#x5E72;&#x6B21;&#x5783;&#x573E;&#x6536;&#x96C6;&#x540E;&#x518D;&#x542F;&#x52A8;&#x4E00;&#x6B21;&#x5185;&#x5B58;&#x788E;&#x7247;&#x6574;&#x7406;&#x3002;&#x4EC5;&#x5728;&#x4F7F;&#x7528; CMS &#x6536;&#x96C6;&#x5668;&#x65F6;&#x751F;&#x6548;<br>
 &#x5185;&#x5B58;&#x5206;&#x914D;<br>
-1&#xFF1A;&#x4F18;&#x5148;&#x5728;eden&#x5206;&#x914D;<br>
+1&#xFF1A;&#x4F18;&#x5148;&#x5728; eden &#x5206;&#x914D;<br>
 2&#xFF1A;&#x5927;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;<br>
 3&#xFF1A;&#x957F;&#x671F;&#x5B58;&#x6D3B;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;<br>
-4&#xFF1A;&#x76F8;&#x540C;&#x5E74;&#x9F84;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;&#x7EFC;&#x5408;&#x5360;survivor&#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x534A;&#xFF0C;&#x5219;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x5E74;&#x9F84;&#x7684;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#xFEFF;&#x200B;</p>
+4&#xFF1A;&#x76F8;&#x540C;&#x5E74;&#x9F84;&#x5BF9;&#x8C61;&#x7684;&#x5927;&#x5C0F;&#x7EFC;&#x5408;&#x5360; survivor &#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x534A;&#xFF0C;&#x5219;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x6B64;&#x5E74;&#x9F84;&#x7684;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3; &#xFEFF;&#x200B;</p>
 
       </div>
       

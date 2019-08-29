@@ -1,20 +1,19 @@
 ---
 title: ovs常用命令
-date: 2019-08-22 17:09:22 
+date: 2019-08-22 17:09:22
 categories:
-- 框架
-- openvswitch
-tags: 
-- openvswitch
+  - 框架
+  - openvswitch
+tags:
+  - openvswitch
 description: ovs常用命令
 export_on_save:
-    html: true
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
   offline: false
   toc: false
-  
 ---
 <!DOCTYPE html><html><head>
       <title>ovs&#x5E38;&#x7528;&#x547D;&#x4EE4;</title>
@@ -280,7 +279,7 @@ pre[data-line] .line-highlight[data-end]:after {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview  ">
-      <h2 class="mume-header" id="1-ovs%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">1. ovs&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+      <h2 class="mume-header" id="1-ovs-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">1. ovs &#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
 
 <h3 class="mume-header" id="11-%E6%9F%A5%E7%9C%8B%E8%99%9A%E6%8B%9F%E6%9C%BA">1.1. &#x67E5;&#x770B;&#x865A;&#x62DF;&#x673A;</h3>
 
@@ -297,7 +296,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <td>virsh list</td>
 </tr>
 <tr>
-<td>&#x67E5;&#x770B;&#x865A;&#x62DF;&#x673A;xml</td>
+<td>&#x67E5;&#x770B;&#x865A;&#x62DF;&#x673A; xml</td>
 <td>virsh dumpxml instance-00000038</td>
 </tr>
 <tr>
@@ -305,7 +304,7 @@ pre[data-line] .line-highlight[data-end]:after {
 <td>virsh dumpxml instance-00000038</td>
 </tr>
 <tr>
-<td>&#x67E5;&#x770B;&#x865A;&#x62DF;&#x673A;&#x5BF9;&#x5E94;tab&#x53E3;</td>
+<td>&#x67E5;&#x770B;&#x865A;&#x62DF;&#x673A;&#x5BF9;&#x5E94; tab &#x53E3;</td>
 <td>virsh dumpxml instance-00000038</td>
 </tr>
 </tbody>
@@ -327,7 +326,7 @@ pre[data-line] .line-highlight[data-end]:after {
     ovs-vsctl add-bond br0 dpdkbond0 dpdk1 dpdk2 \
     -- <span class="token keyword">set</span> interface dpdk1 type<span class="token operator">=</span>dpdk options:dpdk-devargs<span class="token operator">=</span>0000:01:00.0 \
     -- <span class="token keyword">set</span> interface dpdk2 type<span class="token operator">=</span>dpdk options:dpdk-devargs<span class="token operator">=</span>0000:02:00.0
-</pre><p>4.&#x8BBE;&#x7F6E;/&#x6E05;&#x9664;&#x7F51;&#x6865;&#x7684;openflow&#x534F;&#x8BAE;&#x7248;&#x672C;</p>
+</pre><p>4.&#x8BBE;&#x7F6E;/&#x6E05;&#x9664;&#x7F51;&#x6865;&#x7684; openflow &#x534F;&#x8BAE;&#x7248;&#x672C;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-vsctl <span class="token keyword">set</span> bridge br0 protocols<span class="token operator">=</span>OpenFlow13
 ovs-vsctl <span class="token function">clear</span> bridge br0 protocols
 </pre><p>5.&#x67E5;&#x770B;&#x67D0;&#x7F51;&#x6865;&#x5F53;&#x524D;&#x6D41;&#x8868;</p>
@@ -346,13 +345,13 @@ ovs-vsctl del-manager
 </pre><p>9.&#x8BBE;&#x7F6E;/&#x79FB;&#x9664;&#x53EF;&#x9009;&#x9009;&#x9879;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-vsctl <span class="token keyword">set</span> Interface eth0 options:link_speed<span class="token operator">=</span>1G
 ovs-vsctl remove Interface eth0 options link_speed
-</pre><p>10.&#x8BBE;&#x7F6E;fail&#x6A21;&#x5F0F;&#xFF0C;&#x652F;&#x6301;standalone&#x6216;&#x8005;secure</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">#standalone(default)&#xFF1A;&#x6E05;&#x9664;&#x6240;&#x6709;&#x63A7;&#x5236;&#x5668;&#x4E0B;&#x53D1;&#x7684;&#x6D41;&#x8868;&#xFF0C;ovs&#x81EA;&#x5DF1;&#x63A5;&#x7BA1; </span>
+</pre><p>10.&#x8BBE;&#x7F6E; fail &#x6A21;&#x5F0F;&#xFF0C;&#x652F;&#x6301; standalone &#x6216;&#x8005; secure</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">#standalone(default)&#xFF1A;&#x6E05;&#x9664;&#x6240;&#x6709;&#x63A7;&#x5236;&#x5668;&#x4E0B;&#x53D1;&#x7684;&#x6D41;&#x8868;&#xFF0C;ovs&#x81EA;&#x5DF1;&#x63A5;&#x7BA1;</span>
 <span class="token comment">#secure&#xFF1A;&#x6309;&#x7167;&#x539F;&#x6765;&#x6D41;&#x8868;&#x7EE7;&#x7EED;&#x8F6C;&#x53D1;</span>
 ovs-vsctl del-fail-mode br0
 ovs-vsctl set-fail-mode br0 secure
 ovs-vsctl get-fail-mode br0&#xFEFF;&#x200B;
-</pre><p>11.&#x67E5;&#x770B;&#x63A5;&#x53E3;id&#x7B49;</p>
+</pre><p>11.&#x67E5;&#x770B;&#x63A5;&#x53E3; id &#x7B49;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-appctl dpif/show&#xFEFF;
 </pre><p>12.&#x67E5;&#x770B;&#x63A5;&#x53E3;&#x7EDF;&#x8BA1;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl dump-ports br0
@@ -361,104 +360,90 @@ ovs-vsctl get-fail-mode br0&#xFEFF;&#x200B;
 </pre><p>14.&#x6D41;&#x8868;&#x8DDF;&#x8E2A;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-appctl ofproto/trace br-int in_port<span class="token operator">=</span>5,dl_src<span class="token operator">=</span>fa:16:3e:11:79:65,dl_dst<span class="token operator">=</span>fa:16:3e:1e:35:db,ip,nw_src<span class="token operator">=</span>10.10.10.4,nw_dst<span class="token operator">=</span>10.10.10.6,nw_proto<span class="token operator">=</span>1 -generate
 <span class="token comment">#&#x5907;&#x6CE8;&#xFF1A;in_port&#x4E3A;&#x865A;&#x62DF;&#x673A;&#x51FA;&#x7684;tab&#x53E3;,dl_type ping&#x5305;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5199;ip</span>
- 
+
 ovs-appctl ofproto/trace br-int in_port<span class="token operator">=</span>5,dl_src<span class="token operator">=</span>fa:16:3e:11:79:65,dl_dst<span class="token operator">=</span>fa:16:3e:1e:35:db,ip,nw_src<span class="token operator">=</span>10.10.10.4,nw_dst<span class="token operator">=</span>10.10.10.6,nw_proto<span class="token operator">=</span>1,recirc_id<span class="token operator">=</span>0x27,ct_state<span class="token operator">=</span>est\<span class="token operator">|</span>trk -generate
 <span class="token comment">#ct_state &#x53EA;&#x5199;&#x524D;&#x9762;&#x4E3A;+&#x597D;&#x7684;&#xFF0C;&#x8868;&#x793A;&#x4E3A;true</span>
 <span class="token comment">#&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x4E00;&#x76F4;ping&#xFF0C; &#x5426;&#x5219;&#x53EF;&#x80FD;&#x4F1A;&#x51FA;&#x73B0;Translation failed (No recirculation context), packet is dropped.</span>
 <span class="token comment">#http://www.openvswitch.org//support/dist-docs/ovs-vswitchd.8.html</span>
 <span class="token comment">#http://docs.openvswitch.org/en/latest/topics/tracing/?highlight=ovs-appctl%20</span>
-</pre><p>15.&#x67E5;&#x770B;ip&#x547D;&#x540D;&#x7A7A;&#x95F4;</p>
+</pre><p>15.&#x67E5;&#x770B; ip &#x547D;&#x540D;&#x7A7A;&#x95F4;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">ip</span> netns list
 </pre><p>16.&#x5728;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x5185;&#x6267;&#x884C;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">sudo</span> <span class="token function">ip</span> netns <span class="token function">exec</span>  <span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token punctuation">[</span>command<span class="token punctuation">]</span>
 </pre><p>&#x6D41;&#x8868;&#x7C7B;</p>
-<p>&#x6D41;&#x8868;&#x64CD;&#x4F5C;<br>
-1.&#x6DFB;&#x52A0;&#x666E;&#x901A;&#x6D41;&#x8868;</p>
+<p>&#x6D41;&#x8868;&#x64CD;&#x4F5C; 1.&#x6DFB;&#x52A0;&#x666E;&#x901A;&#x6D41;&#x8868;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>output:2
 </pre><p>2.&#x5220;&#x9664;&#x6240;&#x6709;&#x6D41;&#x8868;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl del-flows br0&#xFEFF;&#x200B;
 </pre><p>3.&#x6309;&#x5339;&#x914D;&#x9879;&#x6765;&#x5220;&#x9664;&#x6D41;&#x8868;</p>
 <p>bash<br>
 ovs-ofctl del-flows br0 &quot;in_port=1&quot;</p>
-<pre data-role="codeBlock" data-info class="language-"><code> 
-
+<pre data-role="codeBlock" data-info class="language-"><code>
 4.&#x67E5;&#x770B;&#x6D41;&#x8868;
 
 ```bash
 ovs-ofctl [-O openflow13] dump-flows br-int [table=0]
 </code></pre><p>&#x5339;&#x914D;&#x9879;</p>
-<p>1.&#x5339;&#x914D;vlan tag&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-4095</p>
+<p>1.&#x5339;&#x914D; vlan tag&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-4095</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 priority<span class="token operator">=</span>401,in_port<span class="token operator">=</span>1,dl_vlan<span class="token operator">=</span>777,actions<span class="token operator">=</span>output:2
-</pre><p>2.&#x5339;&#x914D;vlan pcp&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-7</p>
+</pre><p>2.&#x5339;&#x914D; vlan pcp&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-7</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 priority<span class="token operator">=</span>401,in_port<span class="token operator">=</span>1,dl_vlan_pcp<span class="token operator">=</span>7,actions<span class="token operator">=</span>output:2
-</pre><p>3.&#x5339;&#x914D;&#x6E90;/&#x76EE;&#x7684;MAC</p>
+</pre><p>3.&#x5339;&#x914D;&#x6E90;/&#x76EE;&#x7684; MAC</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,dl_src<span class="token operator">=</span>00:00:00:00:00:01/00:00:00:00:00:01,actions<span class="token operator">=</span>output:2
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,dl_dst<span class="token operator">=</span>00:00:00:00:00:01/00:00:00:00:00:01,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>4.&#x5339;&#x914D;&#x4EE5;&#x592A;&#x7F51;&#x7C7B;&#x578B;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-65535</p>
+</pre><p>4.&#x5339;&#x914D;&#x4EE5;&#x592A;&#x7F51;&#x7C7B;&#x578B;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-65535</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,dl_type<span class="token operator">=</span>0x0806,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>5.&#x5339;&#x914D;&#x6E90;/&#x76EE;&#x7684;IP<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x0800&#xFF0C;&#x6216;&#x8005;ip/tcp</p>
+</pre><p>5.&#x5339;&#x914D;&#x6E90;/&#x76EE;&#x7684; IP<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x0800&#xFF0C;&#x6216;&#x8005; ip/tcp</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,nw_src<span class="token operator">=</span>10.10.0.0/16,actions<span class="token operator">=</span>output:2
 ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,nw_dst<span class="token operator">=</span>10.20.0.0/16,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>6.&#x5339;&#x914D;&#x534F;&#x8BAE;&#x53F7;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-255<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x0800&#x6216;&#x8005;ip</p>
-<h2>2. ICMP</h2>
+</pre><p>6.&#x5339;&#x914D;&#x534F;&#x8BAE;&#x53F7;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-255<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x0800 &#x6216;&#x8005; ip</p>
+<h2 class="mume-header" id="2-icmp">2. ICMP</h2>
+
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,nw_proto<span class="token operator">=</span>1,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>7.&#x5339;&#x914D;IP ToS/DSCP&#xFF0C;tos&#x8303;&#x56F4;&#x4E3A;0-255&#xFF0C;DSCP&#x8303;&#x56F4;&#x4E3A;0-63<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x0800/0x86dd&#xFF0C;&#x5E76;&#x4E14;ToS&#x4F4E;2&#x4F4D;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;(DSCP&#x503C;&#x4E3A;ToS&#x7684;&#x9AD8;6&#x4F4D;&#xFF0C;&#x5E76;&#x4E14;&#x4F4E;2&#x4F4D;&#x4E3A;&#x9884;&#x7559;&#x4F4D;)</p>
+</pre><p>7.&#x5339;&#x914D; IP ToS/DSCP&#xFF0C;tos &#x8303;&#x56F4;&#x4E3A; 0-255&#xFF0C;DSCP &#x8303;&#x56F4;&#x4E3A; 0-63<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x0800/0x86dd&#xFF0C;&#x5E76;&#x4E14; ToS &#x4F4E; 2 &#x4F4D;&#x4F1A;&#x88AB;&#x5FFD;&#x7565;(DSCP &#x503C;&#x4E3A; ToS &#x7684;&#x9AD8; 6 &#x4F4D;&#xFF0C;&#x5E76;&#x4E14;&#x4F4E; 2 &#x4F4D;&#x4E3A;&#x9884;&#x7559;&#x4F4D;)</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,nw_tos<span class="token operator">=</span>68,actions<span class="token operator">=</span>output:2
 ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,ip_dscp<span class="token operator">=</span>62,actions<span class="token operator">=</span>output:2
-</pre><p>8.&#x5339;&#x914D;IP ecn&#x4F4D;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-3<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x0800/0x86dd</p>
+</pre><p>8.&#x5339;&#x914D; IP ecn &#x4F4D;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-3<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x0800/0x86dd</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,ip_ecn<span class="token operator">=</span>2,actions<span class="token operator">=</span>output:2
-</pre><p>9.&#x5339;&#x914D;IP TTL&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-255</p>
+</pre><p>9.&#x5339;&#x914D; IP TTL&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-255</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,nw_ttl<span class="token operator">=</span>128,actions<span class="token operator">=</span>output:2
-</pre><p>10.&#x5339;&#x914D;tcp/udp&#xFF0C;&#x6E90;/&#x76EE;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-65535</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x5339;&#x914D;&#x6E90;tcp&#x7AEF;&#x53E3;179</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;&#x6E90;tcp&#x7AEF;&#x53E3;179&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</pre><p>10.&#x5339;&#x914D; tcp/udp&#xFF0C;&#x6E90;/&#x76EE;&#x7684;&#x7AEF;&#x53E3;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-65535</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x5339;&#x914D;&#x6E90;tcp&#x7AEF;&#x53E3;179</span>
 ovs-ofctl add-flow br0 tcp,tcp_src<span class="token operator">=</span>179/0xfff0,actions<span class="token operator">=</span>output:2
-<span class="token comment">## &#x5339;&#x914D;&#x76EE;&#x7684;tcp&#x7AEF;&#x53E3;179</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;&#x76EE;&#x7684;tcp&#x7AEF;&#x53E3;179&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5339;&#x914D;&#x76EE;&#x7684;tcp&#x7AEF;&#x53E3;179</span>
 ovs-ofctl add-flow br0 tcp,tcp_dst<span class="token operator">=</span>179/0xfff0,actions<span class="token operator">=</span>output:2
-<span class="token comment">## &#x5339;&#x914D;&#x6E90;udp&#x7AEF;&#x53E3;1234</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;&#x6E90;udp&#x7AEF;&#x53E3;1234&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5339;&#x914D;&#x6E90;udp&#x7AEF;&#x53E3;1234</span>
 ovs-ofctl add-flow br0 udp,udp_src<span class="token operator">=</span>1234/0xfff0,actions<span class="token operator">=</span>output:2
-<span class="token comment">## &#x5339;&#x914D;&#x76EE;&#x7684;udp&#x7AEF;&#x53E3;1234</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;&#x76EE;&#x7684;udp&#x7AEF;&#x53E3;1234&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5339;&#x914D;&#x76EE;&#x7684;udp&#x7AEF;&#x53E3;1234</span>
 ovs-ofctl add-flow br0 udp,udp_dst<span class="token operator">=</span>1234/0xfff0,actions<span class="token operator">=</span>output:2
-</pre><p>11.&#x5339;&#x914D;tcp flags<br>
+</pre><p>11.&#x5339;&#x914D; tcp flags<br>
 tcp flags=fin&#xFF0C;syn&#xFF0C;rst&#xFF0C;psh&#xFF0C;ack&#xFF0C;urg&#xFF0C;ece&#xFF0C;cwr&#xFF0C;ns</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 tcp,tcp_flags<span class="token operator">=</span>ack,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>12.&#x5339;&#x914D;icmp code&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-255<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;icmp</p>
+</pre><p>12.&#x5339;&#x914D; icmp code&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-255<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; icmp</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 icmp,icmp_code<span class="token operator">=</span>2,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>13.&#x5339;&#x914D;vlan TCI<br>
-TCI&#x4F4E;12&#x4F4D;&#x4E3A;vlan id&#xFF0C;&#x9AD8;3&#x4F4D;&#x4E3A;priority&#xFF0C;&#x4F8B;&#x5982;tci=0xf123&#x5219;vlan_id&#x4E3A;0x123&#x548C;vlan_pcp=7</p>
+</pre><p>13.&#x5339;&#x914D; vlan TCI<br>
+TCI &#x4F4E; 12 &#x4F4D;&#x4E3A; vlan id&#xFF0C;&#x9AD8; 3 &#x4F4D;&#x4E3A; priority&#xFF0C;&#x4F8B;&#x5982; tci=0xf123 &#x5219; vlan_id &#x4E3A; 0x123 &#x548C; vlan_pcp=7</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,vlan_tci<span class="token operator">=</span>0xf123,actions<span class="token operator">=</span>output:2&#xFEFF;
-</pre><p>14.&#x5339;&#x914D;mpls label<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x8847/0x8848</p>
+</pre><p>14.&#x5339;&#x914D; mpls label<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x8847/0x8848</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 mpls,in_port<span class="token operator">=</span>1,mpls_label<span class="token operator">=</span>7,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>15.&#x5339;&#x914D;mpls tc&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-7<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x8847/0x8848</p>
+</pre><p>15.&#x5339;&#x914D; mpls tc&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-7<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x8847/0x8848</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 mpls,in_port<span class="token operator">=</span>1,mpls_tc<span class="token operator">=</span>7,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><p>16.&#x5339;&#x914D;tunnel id&#xFF0C;&#x6E90;/&#x76EE;&#x7684;IP</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x5339;&#x914D;tunnel id</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;tunnel-id&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</pre><p>16.&#x5339;&#x914D; tunnel id&#xFF0C;&#x6E90;/&#x76EE;&#x7684; IP</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x5339;&#x914D;tunnel id</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,tun_id<span class="token operator">=</span>0x7/0xf,actions<span class="token operator">=</span>output:2
-<span class="token comment">## &#x5339;&#x914D;tunnel&#x6E90;IP</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;tunnel&#x6E90;ip&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5339;&#x914D;tunnel&#x6E90;IP</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,tun_src<span class="token operator">=</span>192.168.1.0/255.255.255.0,actions<span class="token operator">=</span>output:2
-<span class="token comment">## &#x5339;&#x914D;tunnel&#x76EE;&#x7684;IP</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5339;&#x914D;tunnel&#x76EE;&#x7684;ip&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5339;&#x914D;tunnel&#x76EE;&#x7684;IP</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,tun_dst<span class="token operator">=</span>192.168.1.0/255.255.255.0,actions<span class="token operator">=</span>output:2&#xFEFF;&#x200B;
-</pre><h3>2.1. &#x4E00;&#x4E9B;&#x5339;&#x914D;&#x9879;&#x7684;&#x901F;&#x8BB0;&#x7B26;</h3>
+</pre><h3 class="mume-header" id="21-%E4%B8%80%E4%BA%9B%E5%8C%B9%E9%85%8D%E9%A1%B9%E7%9A%84%E9%80%9F%E8%AE%B0%E7%AC%A6">2.1. &#x4E00;&#x4E9B;&#x5339;&#x914D;&#x9879;&#x7684;&#x901F;&#x8BB0;&#x7B26;</h3>
+
 <p>&#x901F;&#x8BB0;&#x7B26; &#x5339;&#x914D;&#x9879;</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">ip</span> dl_type<span class="token operator">=</span>0x800
 ipv6 dl_type<span class="token operator">=</span>0x86dd
@@ -474,121 +459,106 @@ arp dl_type<span class="token operator">=</span>0x0806
 rarp dl_type<span class="token operator">=</span>0x8035
 mpls dl_type<span class="token operator">=</span>0x8847
 mplsm dl_type<span class="token operator">=</span>0x8848&#xFEFF;
-</pre><h3>2.2. &#x6307;&#x4EE4;&#x52A8;&#x4F5C;</h3>
+</pre><h3 class="mume-header" id="22-%E6%8C%87%E4%BB%A4%E5%8A%A8%E4%BD%9C">2.2. &#x6307;&#x4EE4;&#x52A8;&#x4F5C;</h3>
+
 <p>1.&#x52A8;&#x4F5C;&#x4E3A;&#x51FA;&#x63A5;&#x53E3;<br>
 &#x4ECE;&#x6307;&#x5B9A;&#x63A5;&#x53E3;&#x8F6C;&#x53D1;&#x51FA;&#x53BB;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=output:2&#xFEFF;&#x200B;
-</code></pre><p>2.&#x52A8;&#x4F5C;&#x4E3A;&#x6307;&#x5B9A;group<br>
-group id&#x4E3A;&#x5DF2;&#x521B;&#x5EFA;&#x7684;group table</p>
+</code></pre><p>2.&#x52A8;&#x4F5C;&#x4E3A;&#x6307;&#x5B9A; group<br>
+group id &#x4E3A;&#x5DF2;&#x521B;&#x5EFA;&#x7684; group table</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=group:666&#xFEFF;&#x200B;
-</code></pre><p>3.&#x52A8;&#x4F5C;&#x4E3A;normal<br>
-&#x8F6C;&#x4E3A;L2/L3&#x5904;&#x7406;&#x6D41;&#x7A0B;</p>
+</code></pre><p>3.&#x52A8;&#x4F5C;&#x4E3A; normal<br>
+&#x8F6C;&#x4E3A; L2/L3 &#x5904;&#x7406;&#x6D41;&#x7A0B;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=normal
-</code></pre><p>4.&#x52A8;&#x4F5C;&#x4E3A;flood<br>
-&#x4ECE;&#x6240;&#x6709;&#x7269;&#x7406;&#x63A5;&#x53E3;&#x8F6C;&#x53D1;&#x51FA;&#x53BB;&#xFF0C;&#x9664;&#x4E86;&#x5165;&#x63A5;&#x53E3;&#x548C;&#x5DF2;&#x5173;&#x95ED;flooding&#x7684;&#x63A5;&#x53E3;</p>
+</code></pre><p>4.&#x52A8;&#x4F5C;&#x4E3A; flood<br>
+&#x4ECE;&#x6240;&#x6709;&#x7269;&#x7406;&#x63A5;&#x53E3;&#x8F6C;&#x53D1;&#x51FA;&#x53BB;&#xFF0C;&#x9664;&#x4E86;&#x5165;&#x63A5;&#x53E3;&#x548C;&#x5DF2;&#x5173;&#x95ED; flooding &#x7684;&#x63A5;&#x53E3;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=flood&#xFEFF;
-</code></pre><p>5.&#x52A8;&#x4F5C;&#x4E3A;all<br>
+</code></pre><p>5.&#x52A8;&#x4F5C;&#x4E3A; all<br>
 &#x4ECE;&#x6240;&#x6709;&#x7269;&#x7406;&#x63A5;&#x53E3;&#x8F6C;&#x53D1;&#x51FA;&#x53BB;&#xFF0C;&#x9664;&#x4E86;&#x5165;&#x63A5;&#x53E3;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=all&#xFEFF;
-</code></pre><p>6.&#x52A8;&#x4F5C;&#x4E3A;local<br>
+</code></pre><p>6.&#x52A8;&#x4F5C;&#x4E3A; local<br>
 &#x4E00;&#x822C;&#x662F;&#x8F6C;&#x53D1;&#x7ED9;&#x672C;&#x5730;&#x7F51;&#x6865;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=local&#xFEFF;
-</code></pre><p>7.&#x52A8;&#x4F5C;&#x4E3A;in_port<br>
+</code></pre><p>7.&#x52A8;&#x4F5C;&#x4E3A; in_port<br>
 &#x4ECE;&#x5165;&#x63A5;&#x53E3;&#x8F6C;&#x53D1;&#x56DE;&#x53BB;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=in_port&#xFEFF;
-</code></pre><p>8.&#x52A8;&#x4F5C;&#x4E3A;controller<br>
-&#x4EE5;packet-in&#x6D88;&#x606F;&#x4E0A;&#x9001;&#x7ED9;&#x63A7;&#x5236;&#x5668;</p>
+</code></pre><p>8.&#x52A8;&#x4F5C;&#x4E3A; controller<br>
+&#x4EE5; packet-in &#x6D88;&#x606F;&#x4E0A;&#x9001;&#x7ED9;&#x63A7;&#x5236;&#x5668;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=controller&#xFEFF;
-</code></pre><p>9.&#x52A8;&#x4F5C;&#x4E3A;drop<br>
+</code></pre><p>9.&#x52A8;&#x4F5C;&#x4E3A; drop<br>
 &#x4E22;&#x5F03;&#x6570;&#x636E;&#x5305;&#x64CD;&#x4F5C;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=drop&#xFEFF;&#x200B;
-</code></pre><p>10.&#x52A8;&#x4F5C;&#x4E3A;mod_vlan_vid<br>
-&#x4FEE;&#x6539;&#x62A5;&#x6587;&#x7684;vlan id&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x4F1A;&#x4F7F;vlan_pcp&#x7F6E;&#x4E3A;0</p>
+</code></pre><p>10.&#x52A8;&#x4F5C;&#x4E3A; mod_vlan_vid<br>
+&#x4FEE;&#x6539;&#x62A5;&#x6587;&#x7684; vlan id&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x4F1A;&#x4F7F; vlan_pcp &#x7F6E;&#x4E3A; 0</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=mod_vlan_vid:8,output:2
-</code></pre><p>11.&#x52A8;&#x4F5C;&#x4E3A;mod_vlan_pcp<br>
-&#x4FEE;&#x6539;&#x62A5;&#x6587;&#x7684;vlan&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x4F1A;&#x4F7F;vlan_id&#x7F6E;&#x4E3A;0</p>
+</code></pre><p>11.&#x52A8;&#x4F5C;&#x4E3A; mod_vlan_pcp<br>
+&#x4FEE;&#x6539;&#x62A5;&#x6587;&#x7684; vlan &#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x8BE5;&#x9009;&#x9879;&#x4F1A;&#x4F7F; vlan_id &#x7F6E;&#x4E3A; 0</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=mod_vlan_pcp:7,output:2
-</code></pre><p>12.&#x52A8;&#x4F5C;&#x4E3A;strip_vlan<br>
-&#x5265;&#x6389;&#x62A5;&#x6587;&#x5185;&#x5916;&#x5C42;vlan tag</p>
+</code></pre><p>12.&#x52A8;&#x4F5C;&#x4E3A; strip_vlan<br>
+&#x5265;&#x6389;&#x62A5;&#x6587;&#x5185;&#x5916;&#x5C42; vlan tag</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=strip_vlan,output:2&#xFEFF;
-</code></pre><p>13.&#x52A8;&#x4F5C;&#x4E3A;push_vlan<br>
-&#x5728;&#x62A5;&#x6587;&#x5916;&#x5C42;&#x538B;&#x5165;&#x4E00;&#x5C42;vlan tag&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;openflow1.1&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x517C;&#x5BB9;</p>
+</code></pre><p>13.&#x52A8;&#x4F5C;&#x4E3A; push_vlan<br>
+&#x5728;&#x62A5;&#x6587;&#x5916;&#x5C42;&#x538B;&#x5165;&#x4E00;&#x5C42; vlan tag&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528; openflow1.1 &#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x517C;&#x5BB9;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow -O OpenFlow13 br0 in_port=1,actions=push_vlan:0x8100,set_field:4097-\&gt;vlan_vid,output:2
-</code></pre><p>ps: set field&#x503C;&#x4E3A;4096+vlan_id&#xFF0C;&#x5E76;&#x4E14;vlan&#x4F18;&#x5148;&#x7EA7;&#x4E3A;0&#xFF0C;&#x5373;4096-8191&#xFF0C;&#x5BF9;&#x5E94;&#x7684;vlan_id&#x4E3A;0-4095</p>
-<p>14.&#x52A8;&#x4F5C;&#x4E3A;push_mpls<br>
-&#x4FEE;&#x6539;&#x62A5;&#x6587;&#x7684;ethertype&#xFF0C;&#x5E76;&#x4E14;&#x538B;&#x5165;&#x4E00;&#x4E2A;MPLS LSE</p>
+</code></pre><p>ps: set field &#x503C;&#x4E3A; 4096+vlan_id&#xFF0C;&#x5E76;&#x4E14; vlan &#x4F18;&#x5148;&#x7EA7;&#x4E3A; 0&#xFF0C;&#x5373; 4096-8191&#xFF0C;&#x5BF9;&#x5E94;&#x7684; vlan_id &#x4E3A; 0-4095</p>
+<p>14.&#x52A8;&#x4F5C;&#x4E3A; push_mpls<br>
+&#x4FEE;&#x6539;&#x62A5;&#x6587;&#x7684; ethertype&#xFF0C;&#x5E76;&#x4E14;&#x538B;&#x5165;&#x4E00;&#x4E2A; MPLS LSE</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=push_mpls:0x8847,set_field:10-\&gt;mpls_label,output:2&#xFEFF;&#x200B;
-</code></pre><p>15.&#x52A8;&#x4F5C;&#x4E3A;pop_mpls<br>
-&#x5265;&#x6389;&#x6700;&#x5916;&#x5C42;mpls&#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x4FEE;&#x6539;ethertype&#x4E3A;&#x975E;mpls&#x7C7B;&#x578B;</p>
+</code></pre><p>15.&#x52A8;&#x4F5C;&#x4E3A; pop_mpls<br>
+&#x5265;&#x6389;&#x6700;&#x5916;&#x5C42; mpls &#x6807;&#x7B7E;&#xFF0C;&#x5E76;&#x4E14;&#x4FEE;&#x6539; ethertype &#x4E3A;&#x975E; mpls &#x7C7B;&#x578B;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 mpls,in_port=1,mpls_label=20,actions=pop_mpls:0x0800,output:2
-</code></pre><p>16.&#x52A8;&#x4F5C;&#x4E3A;&#x4FEE;&#x6539;&#x6E90;/&#x76EE;&#x7684;MAC&#xFF0C;&#x4FEE;&#x6539;&#x6E90;/&#x76EE;&#x7684;IP</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x4FEE;&#x6539;&#x6E90;MAC</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;&#x6E90;mac&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</code></pre><p>16.&#x52A8;&#x4F5C;&#x4E3A;&#x4FEE;&#x6539;&#x6E90;/&#x76EE;&#x7684; MAC&#xFF0C;&#x4FEE;&#x6539;&#x6E90;/&#x76EE;&#x7684; IP</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x4FEE;&#x6539;&#x6E90;MAC</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_dl_src:00:00:00:00:00:01,output:2
-<span class="token comment">## &#x4FEE;&#x6539;&#x76EE;&#x7684;MAC</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;&#x76EE;&#x7684;mac&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x4FEE;&#x6539;&#x76EE;&#x7684;MAC</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_dl_dst:00:00:00:00:00:01,output:2
-<span class="token comment">## &#x4FEE;&#x6539;&#x6E90;IP</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;&#x6E90;ip&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x4FEE;&#x6539;&#x6E90;IP</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_nw_src:192.168.1.1,output:2
-<span class="token comment">## &#x4FEE;&#x6539;&#x76EE;&#x7684;IP</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;&#x76EE;&#x7684;ip&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x4FEE;&#x6539;&#x76EE;&#x7684;IP</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_nw_dst:192.168.1.1,output:2
-</pre><p>17.&#x52A8;&#x4F5C;&#x4E3A;&#x4FEE;&#x6539;TCP/UDP/SCTP&#x6E90;&#x76EE;&#x7684;&#x7AEF;&#x53E3;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x4FEE;&#x6539;TCP&#x6E90;&#x7AEF;&#x53E3;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;tcp&#x6E90;&#x7AEF;&#x53E3;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</pre><p>17.&#x52A8;&#x4F5C;&#x4E3A;&#x4FEE;&#x6539; TCP/UDP/SCTP &#x6E90;&#x76EE;&#x7684;&#x7AEF;&#x53E3;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x4FEE;&#x6539;TCP&#x6E90;&#x7AEF;&#x53E3;</span>
 ovs-ofctl add-flow br0 tcp,in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_tp_src:67,output:2
-<span class="token comment">## &#x4FEE;&#x6539;TCP&#x76EE;&#x7684;&#x7AEF;&#x53E3;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;tcp&#x76EE;&#x7684;&#x7AEF;&#x53E3;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x4FEE;&#x6539;TCP&#x76EE;&#x7684;&#x7AEF;&#x53E3;</span>
 ovs-ofctl add-flow br0 tcp,in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_tp_dst:68,output:2
-<span class="token comment">## &#x4FEE;&#x6539;UDP&#x6E90;&#x7AEF;&#x53E3;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;udp&#x6E90;&#x7AEF;&#x53E3;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x4FEE;&#x6539;UDP&#x6E90;&#x7AEF;&#x53E3;</span>
 ovs-ofctl add-flow br0 udp,in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_tp_src:67,output:2
-<span class="token comment">## &#x4FEE;&#x6539;UDP&#x76EE;&#x7684;&#x7AEF;&#x53E3;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x4FEE;&#x6539;udp&#x76EE;&#x7684;&#x7AEF;&#x53E3;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x4FEE;&#x6539;UDP&#x76EE;&#x7684;&#x7AEF;&#x53E3;</span>
 ovs-ofctl add-flow br0 udp,in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>mod_tp_dst:68,output:2
-</pre><p>18.&#x52A8;&#x4F5C;&#x4E3A;mod_nw_tos<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x0800<br>
-&#x4FEE;&#x6539;ToS&#x5B57;&#x6BB5;&#x7684;&#x9AD8;6&#x4F4D;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-255&#xFF0C;&#x503C;&#x5FC5;&#x987B;&#x4E3A;4&#x7684;&#x500D;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x53BB;&#x4FEE;&#x6539;ToS&#x4F4E;2&#x4F4D;ecn&#x503C;</p>
+</pre><p>18.&#x52A8;&#x4F5C;&#x4E3A; mod_nw_tos<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x0800<br>
+&#x4FEE;&#x6539; ToS &#x5B57;&#x6BB5;&#x7684;&#x9AD8; 6 &#x4F4D;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-255&#xFF0C;&#x503C;&#x5FC5;&#x987B;&#x4E3A; 4 &#x7684;&#x500D;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x53BB;&#x4FEE;&#x6539; ToS &#x4F4E; 2 &#x4F4D; ecn &#x503C;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 ip,in_port=1,actions=mod_nw_tos:68,output:2
-</code></pre><p>19.&#x52A8;&#x4F5C;&#x4E3A;mod_nw_ecn<br>
-&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A;dl_type=0x0800&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;openflow1.1&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x517C;&#x5BB9;<br>
-&#x4FEE;&#x6539;ToS&#x5B57;&#x6BB5;&#x7684;&#x4F4E;2&#x4F4D;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-3&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x53BB;&#x4FEE;&#x6539;ToS&#x9AD8;6&#x4F4D;&#x7684;DSCP&#x503C;</p>
+</code></pre><p>19.&#x52A8;&#x4F5C;&#x4E3A; mod_nw_ecn<br>
+&#x6761;&#x4EF6;&#xFF1A;&#x6307;&#x5B9A; dl_type=0x0800&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528; openflow1.1 &#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x517C;&#x5BB9;<br>
+&#x4FEE;&#x6539; ToS &#x5B57;&#x6BB5;&#x7684;&#x4F4E; 2 &#x4F4D;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-3&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x53BB;&#x4FEE;&#x6539; ToS &#x9AD8; 6 &#x4F4D;&#x7684; DSCP &#x503C;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 ip,in_port=1,actions=mod_nw_ecn:2,output:2
-</code></pre><p>20.&#x52A8;&#x4F5C;&#x4E3A;mod_nw_ttl<br>
-&#x4FEE;&#x6539;IP&#x62A5;&#x6587;ttl&#x503C;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;openflow1.1&#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x517C;&#x5BB9;</p>
+</code></pre><p>20.&#x52A8;&#x4F5C;&#x4E3A; mod_nw_ttl<br>
+&#x4FEE;&#x6539; IP &#x62A5;&#x6587; ttl &#x503C;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528; openflow1.1 &#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x517C;&#x5BB9;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow -O OpenFlow13 br0 in_port=1,actions=mod_nw_ttl:6,output:2
-</code></pre><p>21.&#x52A8;&#x4F5C;&#x4E3A;dec_ttl<br>
-&#x5BF9;IP&#x62A5;&#x6587;&#x8FDB;&#x884C;ttl&#x81EA;&#x51CF;&#x64CD;&#x4F5C;</p>
+</code></pre><p>21.&#x52A8;&#x4F5C;&#x4E3A; dec_ttl<br>
+&#x5BF9; IP &#x62A5;&#x6587;&#x8FDB;&#x884C; ttl &#x81EA;&#x51CF;&#x64CD;&#x4F5C;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=dec_ttl,output:2
-</code></pre><p>22.&#x52A8;&#x4F5C;&#x4E3A;set_mpls_label<br>
-&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42;mpls&#x6807;&#x7B7E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;20bit&#x503C;</p>
+</code></pre><p>22.&#x52A8;&#x4F5C;&#x4E3A; set_mpls_label<br>
+&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42; mpls &#x6807;&#x7B7E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 20bit &#x503C;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=set_mpls_label:666,output:2&#xFEFF;
-</code></pre><p>23.&#x52A8;&#x4F5C;&#x4E3A;set_mpls_tc<br>
-&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42;mpls tc&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-7</p>
+</code></pre><p>23.&#x52A8;&#x4F5C;&#x4E3A; set_mpls_tc<br>
+&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42; mpls tc &#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-7</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=set_mpls_tc:7,output:2
-</code></pre><p>24.&#x52A8;&#x4F5C;&#x4E3A;set_mpls_ttl<br>
-&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42;mpls ttl&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-255</p>
+</code></pre><p>24.&#x52A8;&#x4F5C;&#x4E3A; set_mpls_ttl<br>
+&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42; mpls ttl &#x8FDB;&#x884C;&#x4FEE;&#x6539;&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-255</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=set_mpls_ttl:255,output:2
-</code></pre><p>25.&#x52A8;&#x4F5C;&#x4E3A;dec_mpls_ttl<br>
-&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42;mpls ttl&#x8FDB;&#x884C;&#x81EA;&#x51CF;&#x64CD;&#x4F5C;</p>
+</code></pre><p>25.&#x52A8;&#x4F5C;&#x4E3A; dec_mpls_ttl<br>
+&#x5BF9;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42; mpls ttl &#x8FDB;&#x884C;&#x81EA;&#x51CF;&#x64CD;&#x4F5C;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,actions=dec_mpls_ttl,output:2&#xFEFF;
-</code></pre><p>26.&#x52A8;&#x4F5C;&#x4E3A;move NXM&#x5B57;&#x6BB5;<br>
-&#x4F7F;&#x7528;move&#x53C2;&#x6570;&#x5BF9;NXM&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</p>
+</code></pre><p>26.&#x52A8;&#x4F5C;&#x4E3A; move NXM &#x5B57;&#x6BB5;<br>
+&#x4F7F;&#x7528; move &#x53C2;&#x6570;&#x5BF9; NXM &#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</p>
 <ul>
-<li>&#x5C06;&#x62A5;&#x6587;&#x6E90;MAC&#x590D;&#x5236;&#x5230;&#x76EE;&#x7684;MAC&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6E90;MAC&#x6539;&#x4E3A;00:00:00:00:00:01</li>
+<li>&#x5C06;&#x62A5;&#x6587;&#x6E90; MAC &#x590D;&#x5236;&#x5230;&#x76EE;&#x7684; MAC &#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x6E90; MAC &#x6539;&#x4E3A; 00:00:00:00:00:01</li>
 </ul>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>move:NXM_OF_ETH_SRC<span class="token punctuation">[</span><span class="token punctuation">]</span>-\<span class="token operator">&gt;</span>NXM_OF_ETH_DST<span class="token punctuation">[</span><span class="token punctuation">]</span>,mod_dl_src:00:00:00:00:00:01,output:2&#xFEFF;&#x200B;
 </pre><ul>
-<li>ps: &#x5E38;&#x7528;NXM&#x5B57;&#x6BB5;&#x53C2;&#x7167;&#x8868;</li>
+<li>ps: &#x5E38;&#x7528; NXM &#x5B57;&#x6BB5;&#x53C2;&#x7167;&#x8868;</li>
 </ul>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">NXM&#x5B57;&#x6BB5; &#x62A5;&#x6587;&#x5B57;&#x6BB5;
 NXM_OF_ETH_SRC &#x6E90;MAC
@@ -606,156 +576,130 @@ NXM_OF_UDP_SRC UDP&#x6E90;&#x7AEF;&#x53E3;
 NXM_OF_UDP_DST UDP&#x76EE;&#x7684;&#x7AEF;&#x53E3;
 NXM_OF_SCTP_SRC SCTP&#x6E90;&#x7AEF;&#x53E3;
 NXM_OF_SCTP_DST SCTP&#x76EE;&#x7684;&#x7AEF;&#x53E3;&#xFEFF;&#x200B;
-</pre><p>27.&#x52A8;&#x4F5C;&#x4E3A;load NXM&#x5B57;&#x6BB5;<br>
-&#x4F7F;&#x7528;load&#x53C2;&#x6570;&#x5BF9;NXM&#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## push mpls label&#xFF0C;&#x5E76;&#x4E14;&#x628A;10(0xa)&#x8D4B;&#x503C;&#x7ED9;mpls label</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;push-mpls-label&#x5E76;&#x4E14;&#x628A;100xa&#x8D4B;&#x503C;&#x7ED9;mpls-label&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</pre><p>27.&#x52A8;&#x4F5C;&#x4E3A; load NXM &#x5B57;&#x6BB5;<br>
+&#x4F7F;&#x7528; load &#x53C2;&#x6570;&#x5BF9; NXM &#x5B57;&#x6BB5;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##push mpls label&#xFF0C;&#x5E76;&#x4E14;&#x628A;10(0xa)&#x8D4B;&#x503C;&#x7ED9;mpls label</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>push_mpls:0x8847,load:0xa-\<span class="token operator">&gt;</span>OXM_OF_MPLS_LABEL<span class="token punctuation">[</span><span class="token punctuation">]</span>,output:2
-<span class="token comment">## &#x5BF9;&#x76EE;&#x7684;MAC&#x8FDB;&#x884C;&#x8D4B;&#x503C;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5BF9;&#x76EE;&#x7684;mac&#x8FDB;&#x884C;&#x8D4B;&#x503C;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5BF9;&#x76EE;&#x7684;MAC&#x8FDB;&#x884C;&#x8D4B;&#x503C;</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1,actions<span class="token operator">=</span>load:0x001122334455-\<span class="token operator">&gt;</span>OXM_OF_ETH_DST<span class="token punctuation">[</span><span class="token punctuation">]</span>,output:2&#xFEFF;&#x200B;
-</pre><p>28.&#x52A8;&#x4F5C;&#x4E3A;pop_vlan<br>
-&#x5F39;&#x51FA;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42;vlan tag</p>
+</pre><p>28.&#x52A8;&#x4F5C;&#x4E3A; pop_vlan<br>
+&#x5F39;&#x51FA;&#x62A5;&#x6587;&#x6700;&#x5916;&#x5C42; vlan tag</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=1,dl_type=0x8100,dl_vlan=777,actions=pop_vlan,output:2
-</code></pre><h3>2.3. meter&#x8868;</h3>
+</code></pre><h3 class="mume-header" id="23-meter-%E8%A1%A8">2.3. meter &#x8868;</h3>
+
 <p>&#x5E38;&#x7528;&#x64CD;&#x4F5C;<br>
-&#x7531;&#x4E8E;meter&#x8868;&#x662F;openflow1.3&#x7248;&#x672C;&#x4EE5;&#x540E;&#x624D;&#x652F;&#x6301;&#xFF0C;&#x6240;&#x4EE5;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x6307;&#x5B9A;OpenFlow1.3&#x7248;&#x672C;&#x4EE5;&#x4E0A;<br>
-ps: &#x5728;openvswitch-v2.8&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x8FD8;&#x4E0D;&#x652F;&#x6301;meter<br>
-&#x5728;v2.8&#x7248;&#x672C;&#x4E4B;&#x540E;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#xFF0C;&#x8981;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;datapath&#x7C7B;&#x578B;&#x8981;&#x6307;&#x5B9A;&#x4E3A;netdev&#xFF0C;band type&#x6682;&#x65F6;&#x53EA;&#x652F;&#x6301;drop&#xFF0C;&#x8FD8;&#x4E0D;&#x652F;&#x6301;DSCP REMARK</p>
-<p>1.&#x67E5;&#x770B;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x5BF9;meter&#x7684;&#x652F;&#x6301;</p>
+&#x7531;&#x4E8E; meter &#x8868;&#x662F; openflow1.3 &#x7248;&#x672C;&#x4EE5;&#x540E;&#x624D;&#x652F;&#x6301;&#xFF0C;&#x6240;&#x4EE5;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x6307;&#x5B9A; OpenFlow1.3 &#x7248;&#x672C;&#x4EE5;&#x4E0A;<br>
+ps: &#x5728; openvswitch-v2.8 &#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#xFF0C;&#x8FD8;&#x4E0D;&#x652F;&#x6301; meter<br>
+&#x5728; v2.8 &#x7248;&#x672C;&#x4E4B;&#x540E;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#xFF0C;&#x8981;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x8BDD;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F; datapath &#x7C7B;&#x578B;&#x8981;&#x6307;&#x5B9A;&#x4E3A; netdev&#xFF0C;band type &#x6682;&#x65F6;&#x53EA;&#x652F;&#x6301; drop&#xFF0C;&#x8FD8;&#x4E0D;&#x652F;&#x6301; DSCP REMARK</p>
+<p>1.&#x67E5;&#x770B;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x5BF9; meter &#x7684;&#x652F;&#x6301;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 meter-features br0&#xFEFF;
-</code></pre><p>2.&#x67E5;&#x770B;meter&#x8868;</p>
+</code></pre><p>2.&#x67E5;&#x770B; meter &#x8868;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 meter-features br0&#xFEFF;&#x200B;
-</code></pre><p>3.&#x67E5;&#x770B;meter&#x7EDF;&#x8BA1;</p>
+</code></pre><p>3.&#x67E5;&#x770B; meter &#x7EDF;&#x8BA1;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 meter-stats br0
-</code></pre><p>4.&#x521B;&#x5EFA;meter&#x8868;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x9650;&#x901F;&#x7C7B;&#x578B;&#x4EE5;kbps(kilobits per second)&#x8BA1;&#x7B97;&#xFF0C;&#x8D85;&#x8FC7;20kb/s&#x5219;&#x4E22;&#x5F03;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x9650;&#x901F;&#x7C7B;&#x578B;&#x4EE5;kbpskilobits-per-second&#x8BA1;&#x7B97;&#x8D85;&#x8FC7;20kbs&#x5219;&#x4E22;&#x5F03;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</code></pre><p>4.&#x521B;&#x5EFA; meter &#x8868;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x9650;&#x901F;&#x7C7B;&#x578B;&#x4EE5;kbps(kilobits per second)&#x8BA1;&#x7B97;&#xFF0C;&#x8D85;&#x8FC7;20kb/s&#x5219;&#x4E22;&#x5F03;</span>
 ovs-ofctl -O OpenFlow13 add-meter br0 meter<span class="token operator">=</span>1,kbps,band<span class="token operator">=</span>type<span class="token operator">=</span>drop,rate<span class="token operator">=</span>20
-<span class="token comment">## &#x540C;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;burst size&#x53C2;&#x6570;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x540C;&#x4E0A;&#x589E;&#x52A0;burst-size&#x53C2;&#x6570;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x540C;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;burst size&#x53C2;&#x6570;</span>
 ovs-ofctl -O OpenFlow13 add-meter br0 meter<span class="token operator">=</span>2,kbps,band<span class="token operator">=</span>type<span class="token operator">=</span>drop,rate<span class="token operator">=</span>20,burst_size<span class="token operator">=</span>256
-<span class="token comment">## &#x540C;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;stats&#x53C2;&#x6570;,&#x5BF9;meter&#x8FDB;&#x884C;&#x8BA1;&#x6570;&#x7EDF;&#x8BA1;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x540C;&#x4E0A;&#x589E;&#x52A0;stats&#x53C2;&#x6570;&#x5BF9;meter&#x8FDB;&#x884C;&#x8BA1;&#x6570;&#x7EDF;&#x8BA1;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x540C;&#x4E0A;&#xFF0C;&#x589E;&#x52A0;stats&#x53C2;&#x6570;,&#x5BF9;meter&#x8FDB;&#x884C;&#x8BA1;&#x6570;&#x7EDF;&#x8BA1;</span>
 group&#x8868;
 &#x7531;&#x4E8E;group&#x8868;&#x662F;openflow1.1&#x7248;&#x672C;&#x4EE5;&#x540E;&#x624D;&#x652F;&#x6301;&#xFF0C;&#x6240;&#x4EE5;&#x6240;&#x6709;&#x547D;&#x4EE4;&#x9700;&#x8981;&#x6307;&#x5B9A;OpenFlow1.1&#x7248;&#x672C;&#x4EE5;&#x4E0A;
 
 ovs-ofctl -O OpenFlow13 add-meter br0 meter<span class="token operator">=</span>3,kbps,stats,band<span class="token operator">=</span>type<span class="token operator">=</span>drop,rate<span class="token operator">=</span>20,burst_size<span class="token operator">=</span>256
-<span class="token comment">## &#x9650;&#x901F;&#x7C7B;&#x578B;&#x4EE5;pktps(packets per second)&#x8BA1;&#x7B97;&#xFF0C;&#x8D85;&#x8FC7;1000pkt/s&#x5219;&#x4E22;&#x5F03;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x9650;&#x901F;&#x7C7B;&#x578B;&#x4EE5;pktpspackets-per-second&#x8BA1;&#x7B97;&#x8D85;&#x8FC7;1000pkts&#x5219;&#x4E22;&#x5F03;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x9650;&#x901F;&#x7C7B;&#x578B;&#x4EE5;pktps(packets per second)&#x8BA1;&#x7B97;&#xFF0C;&#x8D85;&#x8FC7;1000pkt/s&#x5219;&#x4E22;&#x5F03;</span>
 ovs-ofctl -O OpenFlow13 add-meter br0 meter<span class="token operator">=</span>4,pktps,band<span class="token operator">=</span>type<span class="token operator">=</span>drop,rate<span class="token operator">=</span>1000&#xFEFF;
-</pre><p>5.&#x5220;&#x9664;meter&#x8868;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x5220;&#x9664;&#x5168;&#x90E8;meter&#x8868;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5220;&#x9664;&#x5168;&#x90E8;meter&#x8868;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</pre><p>5.&#x5220;&#x9664; meter &#x8868;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x5220;&#x9664;&#x5168;&#x90E8;meter&#x8868;</span>
 ovs-ofctl -O OpenFlow13 del-meters br0
-<span class="token comment">## &#x5220;&#x9664;meter id=1</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5220;&#x9664;meter-id1&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x5220;&#x9664;meter id=1</span>
 ovs-ofctl -O OpenFlow13 del-meter br0 meter<span class="token operator">=</span>1
 </pre><p>6.&#x521B;&#x5EFA;&#x6D41;&#x8868;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 add-flow br0 in_port=1,actions=meter:1,output:
-</code></pre><h3>2.4. &#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3>
-<h3>2.5. group table&#x652F;&#x6301;&#x79CD;&#x7C7B;&#x578B;</h3>
-<p>all&#xFF1A;&#x6240;&#x6709;buckets&#x90FD;&#x6267;&#x884C;&#x4E00;&#x904D;<br>
-select&#xFF1A; &#x6BCF;&#x6B21;&#x9009;&#x62E9;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;bucket&#x6267;&#x884C;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5E94;&#x7528;<br>
+</code></pre><h3 class="mume-header" id="24-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C">2.4. &#x5E38;&#x7528;&#x64CD;&#x4F5C;</h3>
+
+<h3 class="mume-header" id="25-group-table-%E6%94%AF%E6%8C%81%E7%A7%8D%E7%B1%BB%E5%9E%8B">2.5. group table &#x652F;&#x6301;&#x79CD;&#x7C7B;&#x578B;</h3>
+
+<p>all&#xFF1A;&#x6240;&#x6709; buckets &#x90FD;&#x6267;&#x884C;&#x4E00;&#x904D;<br>
+select&#xFF1A; &#x6BCF;&#x6B21;&#x9009;&#x62E9;&#x5176;&#x4E2D;&#x4E00;&#x4E2A; bucket &#x6267;&#x884C;&#xFF0C;&#x5E38;&#x7528;&#x4E8E;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x5E94;&#x7528;<br>
 ff(FAST FAILOVER)&#xFF1A;&#x5FEB;&#x901F;&#x6545;&#x969C;&#x4FEE;&#x590D;&#xFF0C;&#x7528;&#x4E8E;&#x68C0;&#x6D4B;&#x89E3;&#x51B3;&#x63A5;&#x53E3;&#x7B49;&#x6545;&#x969C;<br>
-indirect&#xFF1A;&#x95F4;&#x63A5;&#x6267;&#x884C;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65B9;&#x6CD5;&#xFF0C;&#x88AB;&#x53E6;&#x4E00;&#x4E2A;group&#x6765;&#x8C03;&#x7528;</p>
-<p>1.&#x67E5;&#x770B;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x5BF9;group&#x7684;&#x652F;&#x6301;</p>
+indirect&#xFF1A;&#x95F4;&#x63A5;&#x6267;&#x884C;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x65B9;&#x6CD5;&#xFF0C;&#x88AB;&#x53E6;&#x4E00;&#x4E2A; group &#x6765;&#x8C03;&#x7528;</p>
+<p>1.&#x67E5;&#x770B;&#x5F53;&#x524D;&#x8BBE;&#x5907;&#x5BF9; group &#x7684;&#x652F;&#x6301;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 dump-group-features br0&#xFEFF;
-</code></pre><p>2.&#x67E5;&#x770B;group&#x8868;</p>
+</code></pre><p>2.&#x67E5;&#x770B; group &#x8868;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 dump-groups br0
-</code></pre><p>3.&#x521B;&#x5EFA;group&#x8868;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x7C7B;&#x578B;&#x4E3A;all</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x7C7B;&#x578B;&#x4E3A;all&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</code></pre><p>3.&#x521B;&#x5EFA; group &#x8868;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x7C7B;&#x578B;&#x4E3A;all</span>
 ovs-ofctl -O OpenFlow13 add-group br0 group_id<span class="token operator">=</span>1,type<span class="token operator">=</span>all,bucket<span class="token operator">=</span>output:1,bucket<span class="token operator">=</span>output:2,bucket<span class="token operator">=</span>output:3
-<span class="token comment">## &#x7C7B;&#x578B;&#x4E3A;select</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x7C7B;&#x578B;&#x4E3A;select&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x7C7B;&#x578B;&#x4E3A;select</span>
 ovs-ofctl -O OpenFlow13 add-group br0 group_id<span class="token operator">=</span>2,type<span class="token operator">=</span>select,bucket<span class="token operator">=</span>output:1,bucket<span class="token operator">=</span>output:2,bucket<span class="token operator">=</span>output:3
-<span class="token comment">## &#x7C7B;&#x578B;&#x4E3A;select&#xFF0C;&#x6307;&#x5B9A;hash&#x65B9;&#x6CD5;(5&#x5143;&#x7EC4;&#xFF0C;OpenFlow1.5+)</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x7C7B;&#x578B;&#x4E3A;select&#x6307;&#x5B9A;hash&#x65B9;&#x6CD5;5&#x5143;&#x7EC4;openflow15&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x7C7B;&#x578B;&#x4E3A;select&#xFF0C;&#x6307;&#x5B9A;hash&#x65B9;&#x6CD5;(5&#x5143;&#x7EC4;&#xFF0C;OpenFlow1.5+)</span>
 ovs-ofctl -O OpenFlow15 add-group br0 group_id<span class="token operator">=</span>3,type<span class="token operator">=</span>select,selection_method<span class="token operator">=</span>hash,fields<span class="token operator">=</span>ip_src,bucket<span class="token operator">=</span>output:2,bucket<span class="token operator">=</span>output:3&#xFEFF;
-</pre><p>4.&#x5220;&#x9664;group&#x8868;</p>
+</pre><p>4.&#x5220;&#x9664; group &#x8868;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 del-groups br0 group_id=2
 </code></pre><p>5.&#x521B;&#x5EFA;&#x6D41;&#x8868;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl -O OpenFlow13 add-flow br0 in_port=1,actions=group:2
-</code></pre><h3>2.6. goto table&#x914D;&#x7F6E;</h3>
-<p>&#x6570;&#x636E;&#x6D41;&#x5148;&#x4ECE;table0&#x5F00;&#x59CB;&#x5339;&#x914D;&#xFF0C;&#x5982;actions&#x6709;goto_table&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x540E;&#x7EED;table&#x7684;&#x5339;&#x914D;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;&#x5982;&#x9700;&#x4F7F;&#x7528;goto table&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x6D41;&#x8868;&#x65F6;&#xFF0C;&#x6307;&#x5B9A;table id&#xFF0C;&#x8303;&#x56F4;&#x4E3A;0-255&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;table0<br>
-1.&#x5728;table0&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x6D41;&#x8868;&#x6761;&#x76EE;</p>
+</code></pre><h3 class="mume-header" id="26-goto-table-%E9%85%8D%E7%BD%AE">2.6. goto table &#x914D;&#x7F6E;</h3>
+
+<p>&#x6570;&#x636E;&#x6D41;&#x5148;&#x4ECE; table0 &#x5F00;&#x59CB;&#x5339;&#x914D;&#xFF0C;&#x5982; actions &#x6709; goto_table&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x540E;&#x7EED; table &#x7684;&#x5339;&#x914D;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x7EA7;&#x6D41;&#x6C34;&#x7EBF;&#xFF0C;&#x5982;&#x9700;&#x4F7F;&#x7528; goto table&#xFF0C;&#x5219;&#x521B;&#x5EFA;&#x6D41;&#x8868;&#x65F6;&#xFF0C;&#x6307;&#x5B9A; table id&#xFF0C;&#x8303;&#x56F4;&#x4E3A; 0-255&#xFF0C;&#x4E0D;&#x6307;&#x5B9A;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A; table0 1.&#x5728; table0 &#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x6D41;&#x8868;&#x6761;&#x76EE;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 table=0,in_port=1,actions=goto_table=1
-</code></pre><p>2.&#x5728;table1&#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x6D41;&#x8868;&#x6761;&#x76EE;</p>
+</code></pre><p>2.&#x5728; table1 &#x4E2D;&#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x6D41;&#x8868;&#x6761;&#x76EE;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 table=1,ip,nw_dst=10.10.0.0/16,actions=output:2&#xFEFF;&#x200B;
-</code></pre><h3>2.7. tunnel&#x914D;&#x7F6E;</h3>
-<p>&#x5982;&#x9700;&#x914D;&#x7F6E;tunnel&#xFF0C;&#x5FC5;&#x9700;&#x786E;&#x4FDD;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x5BF9;&#x5404;tunnel&#x7684;remote ip&#x7F51;&#x7EDC;&#x53EF;&#x8FBE;</p>
-<h3>2.8. gre</h3>
-<p>1.&#x521B;&#x5EFA;&#x4E00;&#x4E2A;gre&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;id=1001</p>
+</code></pre><h3 class="mume-header" id="27-tunnel-%E9%85%8D%E7%BD%AE">2.7. tunnel &#x914D;&#x7F6E;</h3>
+
+<p>&#x5982;&#x9700;&#x914D;&#x7F6E; tunnel&#xFF0C;&#x5FC5;&#x9700;&#x786E;&#x4FDD;&#x5F53;&#x524D;&#x7CFB;&#x7EDF;&#x5BF9;&#x5404; tunnel &#x7684; remote ip &#x7F51;&#x7EDC;&#x53EF;&#x8FBE;</p>
+<h3 class="mume-header" id="28-gre">2.8. gre</h3>
+
+<p>1.&#x521B;&#x5EFA;&#x4E00;&#x4E2A; gre &#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x6307;&#x5B9A;&#x7AEF;&#x53E3; id=1001</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl add-port br0 gre1 -- set Interface gre1 type=gre options:remote_ip=1.1.1.1 ofport_request=1001
 </code></pre><p>2.&#x53EF;&#x9009;&#x9009;&#x9879;<br>
-&#x5C06;tos&#x6216;&#x8005;ttl&#x5728;&#x96A7;&#x9053;&#x4E0A;&#x7EE7;&#x627F;&#xFF0C;&#x5E76;&#x5C06;tunnel id&#x8BBE;&#x7F6E;&#x6210;123</p>
+&#x5C06; tos &#x6216;&#x8005; ttl &#x5728;&#x96A7;&#x9053;&#x4E0A;&#x7EE7;&#x627F;&#xFF0C;&#x5E76;&#x5C06; tunnel id &#x8BBE;&#x7F6E;&#x6210; 123</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl set Interface gre1 options:tos=inherit options:ttl=inherit options:key=123&#xFEFF;&#x200B;
-</code></pre><p>3.&#x521B;&#x5EFA;&#x5173;&#x4E8E;gre&#x6D41;&#x8868;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">## &#x5C01;&#x88C5;gre&#x8F6C;&#x53D1;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x5C01;&#x88C5;gre&#x8F6C;&#x53D1;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+</code></pre><p>3.&#x521B;&#x5EFA;&#x5173;&#x4E8E; gre &#x6D41;&#x8868;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">##&#x5C01;&#x88C5;gre&#x8F6C;&#x53D1;</span>
 ovs-ofctl add-flow br0 ip,in_port<span class="token operator">=</span>1,nw_dst<span class="token operator">=</span>10.10.0.0/16,actions<span class="token operator">=</span>output:1001
-<span class="token comment">## &#x89E3;&#x5C01;gre&#x8F6C;&#x53D1;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;&#x89E3;&#x5C01;gre&#x8F6C;&#x53D1;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<span class="token comment">##&#x89E3;&#x5C01;gre&#x8F6C;&#x53D1;</span>
 ovs-ofctl add-flow br0 in_port<span class="token operator">=</span>1001,actions<span class="token operator">=</span>output:1&#xFEFF;&#x200B;
-</pre><h3>2.9. vxlan</h3>
-<p>1.&#x521B;&#x5EFA;&#x4E00;&#x4E2A;vxlan&#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x6307;&#x5B9A;&#x7AEF;&#x53E3;id=2001</p>
+</pre><h3 class="mume-header" id="29-vxlan">2.9. vxlan</h3>
+
+<p>1.&#x521B;&#x5EFA;&#x4E00;&#x4E2A; vxlan &#x63A5;&#x53E3;&#xFF0C;&#x5E76;&#x4E14;&#x6307;&#x5B9A;&#x7AEF;&#x53E3; id=2001</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl add-port br0 vxlan1 -- set Interface vxlan1 type=vxlan options:remote_ip=1.1.1.1 ofport_request=2001&#xFEFF;
 </code></pre><p>2.&#x53EF;&#x9009;&#x9009;&#x9879;<br>
-&#x5C06;tos&#x6216;&#x8005;ttl&#x5728;&#x96A7;&#x9053;&#x4E0A;&#x7EE7;&#x627F;&#xFF0C;&#x5C06;vni&#x8BBE;&#x7F6E;&#x6210;123&#xFF0C;UDP&#x76EE;&#x7684;&#x7AEF;&#x4E3A;&#x8BBE;&#x7F6E;&#x6210;8472(&#x9ED8;&#x8BA4;&#x4E3A;4789)</p>
+&#x5C06; tos &#x6216;&#x8005; ttl &#x5728;&#x96A7;&#x9053;&#x4E0A;&#x7EE7;&#x627F;&#xFF0C;&#x5C06; vni &#x8BBE;&#x7F6E;&#x6210; 123&#xFF0C;UDP &#x76EE;&#x7684;&#x7AEF;&#x4E3A;&#x8BBE;&#x7F6E;&#x6210; 8472(&#x9ED8;&#x8BA4;&#x4E3A; 4789)</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl set Interface vxlan1 options:tos=inherit options:ttl=inherit options:key=123 options:dst_port=8472&#xFEFF;
-</code></pre><p>3.&#x521B;&#x5EFA;&#x5173;&#x4E8E;vxlan&#x6D41;&#x8868;</p>
-<p>&#x5C01;&#x88C5;vxlan&#x8F6C;&#x53D1;</p>
+</code></pre><p>3.&#x521B;&#x5EFA;&#x5173;&#x4E8E; vxlan &#x6D41;&#x8868;</p>
+<p>&#x5C01;&#x88C5; vxlan &#x8F6C;&#x53D1;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 ip,in_port=1,nw_dst=10.10.0.0/16,actions=output:2001&#xFEFF;&#x200B;
-</code></pre><p>&#x89E3;&#x5C01;vxlan&#x8F6C;&#x53D1;</p>
+</code></pre><p>&#x89E3;&#x5C01; vxlan &#x8F6C;&#x53D1;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-ofctl add-flow br0 in_port=2001,actions=output:1&#xFEFF;
-</code></pre><h3>2.10. sflow&#x914D;&#x7F6E;</h3>
-<p>1.&#x5BF9;&#x7F51;&#x6865;br0&#x8FDB;&#x884C;sflow&#x76D1;&#x63A7;</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment"># agent: &#x4E0E;collector&#x901A;&#x4FE1;&#x6240;&#x5728;&#x7684;&#x7F51;&#x53E3;&#x540D;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;&#x7BA1;&#x7406;&#x53E3;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;agent-&#x4E0E;collector&#x901A;&#x4FE1;&#x6240;&#x5728;&#x7684;&#x7F51;&#x53E3;&#x540D;&#x901A;&#x5E38;&#x4E3A;&#x7BA1;&#x7406;&#x53E3;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
+</code></pre><h3 class="mume-header" id="210-sflow-%E9%85%8D%E7%BD%AE">2.10. sflow &#x914D;&#x7F6E;</h3>
 
-<span class="token comment"># target: collector&#x76D1;&#x542C;&#x7684;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x9ED8;&#x8BA4;&#x4E3A;6343</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;target-collector&#x76D1;&#x542C;&#x7684;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#x7AEF;&#x53E3;&#x9ED8;&#x8BA4;&#x4E3A;6343&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
-<span class="token comment"># header: sFlow&#x5728;&#x91C7;&#x6837;&#x65F6;&#x622A;&#x53D6;&#x62A5;&#x6587;&#x5934;&#x7684;&#x957F;&#x5EA6;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;header-sflow&#x5728;&#x91C7;&#x6837;&#x65F6;&#x622A;&#x53D6;&#x62A5;&#x6587;&#x5934;&#x7684;&#x957F;&#x5EA6;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
-<span class="token comment"># polling: &#x91C7;&#x6837;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;</span>
-<span class="token operator">&lt;</span>p class<span class="token operator">=</span><span class="token string">&quot;mume-header &quot;</span> id<span class="token operator">=</span><span class="token string">&quot;polling-&#x91C7;&#x6837;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;&quot;</span><span class="token operator">&gt;</span><span class="token operator">&lt;</span>/p<span class="token operator">&gt;</span>
-
+<p>1.&#x5BF9;&#x7F51;&#x6865; br0 &#x8FDB;&#x884C; sflow &#x76D1;&#x63A7;</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token comment">#agent: &#x4E0E;collector&#x901A;&#x4FE1;&#x6240;&#x5728;&#x7684;&#x7F51;&#x53E3;&#x540D;&#xFF0C;&#x901A;&#x5E38;&#x4E3A;&#x7BA1;&#x7406;&#x53E3;</span>
+<span class="token comment">#target: collector&#x76D1;&#x542C;&#x7684;IP&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;&#xFF0C;&#x7AEF;&#x53E3;&#x9ED8;&#x8BA4;&#x4E3A;6343</span>
+<span class="token comment">#header: sFlow&#x5728;&#x91C7;&#x6837;&#x65F6;&#x622A;&#x53D6;&#x62A5;&#x6587;&#x5934;&#x7684;&#x957F;&#x5EA6;</span>
+<span class="token comment">#polling: &#x91C7;&#x6837;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF0C;&#x5355;&#x4F4D;&#x4E3A;&#x79D2;</span>
 ovs-vsctl -- --id<span class="token operator">=</span>@sflow create sflow agent<span class="token operator">=</span>eth0 target<span class="token operator">=</span>\&quot;10.0.0.1:6343\&quot; header<span class="token operator">=</span>128 sampling<span class="token operator">=</span>64 polling<span class="token operator">=</span>10 -- <span class="token keyword">set</span> bridge br0 sflow<span class="token operator">=</span>@sflow&#xFEFF;&#x200B;
-</pre><p>2.&#x67E5;&#x770B;&#x521B;&#x5EFA;&#x7684;sflow</p>
+</pre><p>2.&#x67E5;&#x770B;&#x521B;&#x5EFA;&#x7684; sflow</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl list sflow&#xFEFF;&#x200B;
-</code></pre><p>3.&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x7684;&#x7F51;&#x6865;sflow&#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x4E3A;sFlow UUID</p>
+</code></pre><p>3.&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x7684;&#x7F51;&#x6865; sflow &#x914D;&#x7F6E;&#xFF0C;&#x53C2;&#x6570;&#x4E3A; sFlow UUID</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl remove bridge br0 sflow 7b9b962e-fe09-407c-b224-5d37d9c1f2b3
-</code></pre><p>4.&#x5220;&#x9664;&#x7F51;&#x6865;&#x4E0B;&#x6240;&#x6709;sflow&#x914D;&#x7F6E;</p>
+</code></pre><p>4.&#x5220;&#x9664;&#x7F51;&#x6865;&#x4E0B;&#x6240;&#x6709; sflow &#x914D;&#x7F6E;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl -- clear bridge br0 sflow
-</code></pre><h3>2.11. QoS&#x914D;&#x7F6E;</h3>
-<p>ingress policing<br>
-1.&#x914D;&#x7F6E;ingress policing&#xFF0C;&#x5BF9;&#x63A5;&#x53E3;eth0&#x5165;&#x6D41;&#x9650;&#x901F;10Mbps</p>
+</code></pre><h3 class="mume-header" id="211-qos-%E9%85%8D%E7%BD%AE">2.11. QoS &#x914D;&#x7F6E;</h3>
+
+<p>ingress policing 1.&#x914D;&#x7F6E; ingress policing&#xFF0C;&#x5BF9;&#x63A5;&#x53E3; eth0 &#x5165;&#x6D41;&#x9650;&#x901F; 10Mbps</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl set interface eth0 ingress_policing_rate=10000
 ovs-vsctl set interface eth0 ingress_policing_burst=8000&#xFEFF;&#x200B;
-</code></pre><p>2.&#x6E05;&#x9664;&#x76F8;&#x5E94;&#x63A5;&#x53E3;&#x7684;ingress policer&#x914D;&#x7F6E;</p>
+</code></pre><p>2.&#x6E05;&#x9664;&#x76F8;&#x5E94;&#x63A5;&#x53E3;&#x7684; ingress policer &#x914D;&#x7F6E;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl set interface eth0 ingress_policing_rate=0
 ovs-vsctl set interface eth0 ingress_policing_burst=0&#xFEFF;&#x200B;
-</code></pre><p>3.&#x67E5;&#x770B;&#x63A5;&#x53E3;ingress policer&#x914D;&#x7F6E;</p>
+</code></pre><p>3.&#x67E5;&#x770B;&#x63A5;&#x53E3; ingress policer &#x914D;&#x7F6E;</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl list interface eth0
 ovs-appctl qos/show-types br0
-</code></pre><h3>2.12. &#x7AEF;&#x53E3;&#x955C;&#x50CF;&#x914D;&#x7F6E;</h3>
-<p>1.&#x914D;&#x7F6E;eth0&#x6536;&#x5230;/&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5305;&#x955C;&#x50CF;&#x5230;eth1</p>
+</code></pre><h3 class="mume-header" id="212-%E7%AB%AF%E5%8F%A3%E9%95%9C%E5%83%8F%E9%85%8D%E7%BD%AE">2.12. &#x7AEF;&#x53E3;&#x955C;&#x50CF;&#x914D;&#x7F6E;</h3>
+
+<p>1.&#x914D;&#x7F6E; eth0 &#x6536;&#x5230;/&#x53D1;&#x9001;&#x7684;&#x6570;&#x636E;&#x5305;&#x955C;&#x50CF;&#x5230; eth1</p>
 <pre data-role="codeBlock" data-info class="language-"><code>ovs-vsctl -- set bridge br0 mirrors=@m \
 -- --id=@eth0 get port eth0 \
 -- --id=@eth1 get port eth1 \

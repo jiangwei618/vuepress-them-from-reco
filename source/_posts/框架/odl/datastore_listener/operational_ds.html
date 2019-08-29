@@ -1,22 +1,21 @@
 ---
 title: operational
-date: 2019-08-22 17:09:22 
+date: 2019-08-22 17:09:22
 categories:
-- 框架
-- odl
-- datastore
-tags: 
-- odl
-- datastore
+  - 框架
+  - odl
+  - datastore
+tags:
+  - odl
+  - datastore
 description: operational
 export_on_save:
-    html: true
+  html: true
 html:
   embed_local_images: false
   embed_svg: true
   offline: false
   toc: false
-  
 ---
 <!DOCTYPE html><html><head>
       <title>operational</title>
@@ -284,264 +283,264 @@ pre[data-line] .line-highlight[data-end]:after {
       <div class="mume markdown-preview  ">
       <h2 class="mume-header" id="1-operational-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9B%91%E5%90%AC">1. operational &#x6570;&#x636E;&#x5E93;&#x76D1;&#x542C;</h2>
 
-<pre data-role="codeBlock" data-info class="language-"><code>{
-    &quot;request&quot;: {
-        &quot;mbean&quot;: &quot;org.opendaylight.controller:Category=ShardDataTreeListenerInfo,name=member-1-shard-default-operational,type=DistributedOperationalDatastore&quot;,
-        &quot;attribute&quot;: &quot;DataTreeChangeListenerInfo&quot;,
-        &quot;type&quot;: &quot;read&quot;
-    },
-    &quot;value&quot;: [
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@752d2cd3&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)neutron-vip-states/vip-state/vip-state&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 6,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.aclservice.listeners.AclInterfaceStateListener@1bd8d730&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.ipv6service.Ipv6NodeListener@54c7e4fa&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.serviceutils.srm.impl.ServiceRecoveryListener@7d31cf48&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:serviceutils:srm:ops?revision=2018-06-26)service-ops/services/services/operations/operations&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 5,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.qosservice.QosTerminationPointListener@19c75b81&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=ovsdb:1}]/node/node/termination-point/termination-point/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-type, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport_request, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)qos-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)trunks, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-tag, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)options, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd-status, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-rate, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-burst, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)name, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ifindex, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-lldp, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-mode]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.elan.l2gw.listeners.LocalUcastMacListener@26c6babd&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.openflowplugin.applications.lldpspeaker.NodeConnectorInventoryEventTranslator@61c6f3b8&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/node-connector/node-connector/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)advertised-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)queue, (urn:opendaylight:flow:inventory?revision=2013-08-19)state, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware-address, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported, (urn:opendaylight:flow:inventory?revision=2013-08-19)peer-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)name, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)configuration, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-feature, (urn:opendaylight:flow:inventory?revision=2013-08-19)maximum-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)reason]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.alivenessmonitor.internal.AlivenessMonitor@61053a81&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:genius:alivenessmonitor?revision=2016-04-11)monitoring-states/monitoring-state/monitoring-state&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 6,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.servicebindings.flowbased.listeners.FlowBasedServicesInterfaceStateListener@1ca6fd59&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@51062c22&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:genius:itm:meta?revision=2017-12-10)ovs-bridge-ref-info/ovs-bridge-ref-entry/ovs-bridge-ref-entry&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.ovsdb.hwvtepsouthbound.HwvtepOperGlobalListener@73f14619&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.ovsdb.hwvtepsouthbound.reconciliation.configuration.HwvtepReconciliationManager@7173bf0b&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.pmcounters.NodeConnectorStatsImpl@321e109a&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.elan.l2gw.ha.listeners.HAOpClusteredListener@6fa6b700&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.vpnmanager.ArpMonitoringHandler@7ca6fb1b&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)learnt-vpn-vip-to-port-data/learnt-vpn-vip-to-port/learnt-vpn-vip-to-port&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.openflowplugin.openflow.ofswitch.config.DefaultConfigPusher@6713bd13&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 12,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.listeners.InterfaceTopologyStateListener@5fa84957&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)auto-attach, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)stp_enable, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-openflow-node-ref, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)datapath-id, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)datapath-type, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)protocol-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-name, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)controller-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)fail-mode, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)flow-node, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)managed-by, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-external-ids]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.elan.l2gw.listeners.HwvtepPhysicalSwitchListener@343f173c&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)switch-fault-status, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)management-ips, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnel-ips, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)hwvtep-node-name, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managed-by, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnels, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)hwvtep-node-description, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)physical-switch-uuid]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.internal.MDSALManager$GroupListener@74f89636&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)group/group&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.vpnmanager.VpnNodeListener@4b7abe7c&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.openflowplugin.applications.frm.impl.DeviceMastershipManager@7289c139&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 6,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.listeners.InterfaceStateListener@429560eb&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 16,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.lockmanager.impl.LockListener@22e01c05&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:genius:lockmanager?revision=2016-04-13)locks/lock/lock&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.daexim.impl.DataExportImportAppProvider$$Lambda$1228/2110221205@4c74d89d&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:daexim-internal?revision=2016-09-21)daexim/daexim-control&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.listeners.InterfaceInventoryStateListener@4d075e2c&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/node-connector/node-connector/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)advertised-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)queue, (urn:opendaylight:flow:inventory?revision=2013-08-19)state, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware-address, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported, (urn:opendaylight:flow:inventory?revision=2013-08-19)peer-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)name, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)configuration, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-feature, (urn:opendaylight:flow:inventory?revision=2013-08-19)maximum-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)reason]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 6,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.listeners.TerminationPointStateListener@4e8764b5&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology/node/node/termination-point/termination-point/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-type, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport_request, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)qos-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)trunks, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-tag, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)options, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd-status, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-rate, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-burst, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)name, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ifindex, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-lldp, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-mode]}&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 6,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.ipv6service.Ipv6ServiceInterfaceEventListener@ae636f5&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 1,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.qosservice.QosInterfaceStateChangeListener@4158db1e&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@4e58ee63&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:genius:itm:op?revision=2016-04-06)tunnels_state/state-tunnel-list/state-tunnel-list&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.openflowplugin.applications.lldpspeaker.NodeConnectorInventoryEventTranslator@61c6f3b8&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/node-connector/node-connector/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)advertised-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)queue, (urn:opendaylight:flow:inventory?revision=2013-08-19)state, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware-address, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported, (urn:opendaylight:flow:inventory?revision=2013-08-19)peer-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)name, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)configuration, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-feature, (urn:opendaylight:flow:inventory?revision=2013-08-19)maximum-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)reason]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)state&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 229,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@1743ee3b&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:neutron?revision=2015-07-12)neutron/hostconfigs/hostconfig/hostconfig&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 3,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.interfacemanager.listeners.CacheBridgeRefEntryListener@2fba4ff8&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)bridge-ref-info/bridge-ref-entry/bridge-ref-entry&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.elan.internal.ElanDpnInterfaceClusteredListener@5c76a1eb&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-dpn-interfaces/elan-dpn-interfaces-list/elan-dpn-interfaces-list/dpn-interfaces/dpn-interfaces&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netconf.sal.streams.listeners.ListenerAdapter@60d8721a&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 1,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.dhcpservice.DhcpNodeListener@103ccbae&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 1,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.natservice.ha.SnatNodeEventListener@673d01bb&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@6f871951&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)vpn-instance-op-data/vpn-instance-op-data-entry/vpn-instance-op-data-entry&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@69794b3&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)if-indexes-interface-map/if-index-interface/if-index-interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.genius.mdsalutil.internal.MDSALManager$FlowListener@5090ba47&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)table/table/flow/flow&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 6,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.elan.internal.ElanInterfaceStateClusteredListener@70004e74&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;
-        },
-        {
-            &quot;notificationCount&quot;: 0,
-            &quot;listener&quot;: &quot;org.opendaylight.netvirt.vpnmanager.LearntVpnVipToPortEventProcessor@6b763fe4&quot;,
-            &quot;enabled&quot;: true,
-            &quot;registeredPath&quot;: &quot;/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)learnt-vpn-vip-to-port-event-data/learnt-vpn-vip-to-port-event/learnt-vpn-vip-to-port-event&quot;
-        }
-    ],
-    &quot;timestamp&quot;: 1564714405,
-    &quot;status&quot;: 200
-}
-</code></pre>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+  <span class="token property">&quot;request&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;mbean&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.controller:Category=ShardDataTreeListenerInfo,name=member-1-shard-default-operational,type=DistributedOperationalDatastore&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;attribute&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DataTreeChangeListenerInfo&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;read&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;value&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@752d2cd3&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:netvirt:natservice?revision=2016-01-11)neutron-vip-states/vip-state/vip-state&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.aclservice.listeners.AclInterfaceStateListener@1bd8d730&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.ipv6service.Ipv6NodeListener@54c7e4fa&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.serviceutils.srm.impl.ServiceRecoveryListener@7d31cf48&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:serviceutils:srm:ops?revision=2018-06-26)service-ops/services/services/operations/operations&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.qosservice.QosTerminationPointListener@19c75b81&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=ovsdb:1}]/node/node/termination-point/termination-point/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-type, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport_request, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)qos-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)trunks, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-tag, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)options, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd-status, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-rate, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-burst, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)name, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ifindex, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-lldp, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-mode]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.elan.l2gw.listeners.LocalUcastMacListener@26c6babd&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.openflowplugin.applications.lldpspeaker.NodeConnectorInventoryEventTranslator@61c6f3b8&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/node-connector/node-connector/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)advertised-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)queue, (urn:opendaylight:flow:inventory?revision=2013-08-19)state, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware-address, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported, (urn:opendaylight:flow:inventory?revision=2013-08-19)peer-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)name, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)configuration, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-feature, (urn:opendaylight:flow:inventory?revision=2013-08-19)maximum-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)reason]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.alivenessmonitor.internal.AlivenessMonitor@61053a81&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:genius:alivenessmonitor?revision=2016-04-11)monitoring-states/monitoring-state/monitoring-state&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.servicebindings.flowbased.listeners.FlowBasedServicesInterfaceStateListener@1ca6fd59&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@51062c22&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:genius:itm:meta?revision=2017-12-10)ovs-bridge-ref-info/ovs-bridge-ref-entry/ovs-bridge-ref-entry&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.ovsdb.hwvtepsouthbound.HwvtepOperGlobalListener@73f14619&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.ovsdb.hwvtepsouthbound.reconciliation.configuration.HwvtepReconciliationManager@7173bf0b&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.pmcounters.NodeConnectorStatsImpl@321e109a&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.elan.l2gw.ha.listeners.HAOpClusteredListener@6fa6b700&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.vpnmanager.ArpMonitoringHandler@7ca6fb1b&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)learnt-vpn-vip-to-port-data/learnt-vpn-vip-to-port/learnt-vpn-vip-to-port&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.openflowplugin.openflow.ofswitch.config.DefaultConfigPusher@6713bd13&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.listeners.InterfaceTopologyStateListener@5fa84957&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)auto-attach, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)stp_enable, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-openflow-node-ref, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)datapath-id, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)datapath-type, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)protocol-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-name, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)controller-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)fail-mode, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)flow-node, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)managed-by, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)bridge-external-ids]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.elan.l2gw.listeners.HwvtepPhysicalSwitchListener@343f173c&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology[{(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)topology-id=hwvtep:1}]/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)switch-fault-status, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)management-ips, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnel-ips, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)hwvtep-node-name, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)managed-by, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)tunnels, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)hwvtep-node-description, (urn:opendaylight:params:xml:ns:yang:ovsdb:hwvtep?revision=2015-09-01)physical-switch-uuid]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.internal.MDSALManager$GroupListener@74f89636&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)group/group&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.vpnmanager.VpnNodeListener@4b7abe7c&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.openflowplugin.applications.frm.impl.DeviceMastershipManager@7289c139&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.listeners.InterfaceStateListener@429560eb&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.lockmanager.impl.LockListener@22e01c05&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:genius:lockmanager?revision=2016-04-13)locks/lock/lock&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.daexim.impl.DataExportImportAppProvider$$Lambda$1228/2110221205@4c74d89d&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:daexim-internal?revision=2016-09-21)daexim/daexim-control&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.listeners.InterfaceInventoryStateListener@4d075e2c&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/node-connector/node-connector/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)advertised-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)queue, (urn:opendaylight:flow:inventory?revision=2013-08-19)state, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware-address, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported, (urn:opendaylight:flow:inventory?revision=2013-08-19)peer-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)name, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)configuration, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-feature, (urn:opendaylight:flow:inventory?revision=2013-08-19)maximum-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)reason]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.listeners.TerminationPointStateListener@4e8764b5&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:TBD:params:xml:ns:yang:network-topology?revision=2013-10-21)network-topology/topology/topology/node/node/termination-point/termination-point/AugmentationIdentifier{childNames=[(urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-type, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport_request, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)qos-entry, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)trunks, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-uuid, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-tag, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-external-ids, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)options, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd-status, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-rate, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ingress-policing-burst, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)port-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)name, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-bfd, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ifindex, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-other-configs, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)interface-lldp, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)ofport, (urn:opendaylight:params:xml:ns:yang:ovsdb?revision=2015-01-05)vlan-mode]}&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.ipv6service.Ipv6ServiceInterfaceEventListener@ae636f5&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.qosservice.QosInterfaceStateChangeListener@4158db1e&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@4e58ee63&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:genius:itm:op?revision=2016-04-06)tunnels_state/state-tunnel-list/state-tunnel-list&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.openflowplugin.applications.lldpspeaker.NodeConnectorInventoryEventTranslator@61c6f3b8&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/node-connector/node-connector/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)advertised-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)queue, (urn:opendaylight:flow:inventory?revision=2013-08-19)state, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware-address, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported, (urn:opendaylight:flow:inventory?revision=2013-08-19)peer-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)name, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)configuration, (urn:opendaylight:flow:inventory?revision=2013-08-19)current-feature, (urn:opendaylight:flow:inventory?revision=2013-08-19)maximum-speed, (urn:opendaylight:flow:inventory?revision=2013-08-19)reason]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)state&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">229</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@1743ee3b&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:neutron?revision=2015-07-12)neutron/hostconfigs/hostconfig/hostconfig&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.interfacemanager.listeners.CacheBridgeRefEntryListener@2fba4ff8&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)bridge-ref-info/bridge-ref-entry/bridge-ref-entry&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.elan.internal.ElanDpnInterfaceClusteredListener@5c76a1eb&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:netvirt:elan?revision=2015-06-02)elan-dpn-interfaces/elan-dpn-interfaces-list/elan-dpn-interfaces-list/dpn-interfaces/dpn-interfaces&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netconf.sal.streams.listeners.ListenerAdapter@60d8721a&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:neutron?revision=2015-07-12)neutron/ports&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.dhcpservice.DhcpNodeListener@103ccbae&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.natservice.ha.SnatNodeEventListener@673d01bb&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@6f871951&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)vpn-instance-op-data/vpn-instance-op-data-entry/vpn-instance-op-data-entry&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.cache.DataObjectCache$$Lambda$1182/1721898455@69794b3&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:genius:interfacemanager:meta?revision=2016-04-06)if-indexes-interface-map/if-index-interface/if-index-interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.genius.mdsalutil.internal.MDSALManager$FlowListener@5090ba47&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:inventory?revision=2013-08-19)nodes/node/node/AugmentationIdentifier{childNames=[(urn:opendaylight:flow:inventory?revision=2013-08-19)description, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-actions, (urn:opendaylight:flow:inventory?revision=2013-08-19)hardware, (urn:opendaylight:flow:inventory?revision=2013-08-19)switch-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-instructions, (urn:opendaylight:flow:inventory?revision=2013-08-19)meter, (urn:opendaylight:flow:inventory?revision=2013-08-19)serial-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)stale-group, (urn:opendaylight:flow:inventory?revision=2013-08-19)supported-match-types, (urn:opendaylight:flow:inventory?revision=2013-08-19)port-number, (urn:opendaylight:flow:inventory?revision=2013-08-19)table, (urn:opendaylight:flow:inventory?revision=2013-08-19)group, (urn:opendaylight:flow:inventory?revision=2013-08-19)manufacturer, (urn:opendaylight:flow:inventory?revision=2013-08-19)table-features, (urn:opendaylight:flow:inventory?revision=2013-08-19)software, (urn:opendaylight:flow:inventory?revision=2013-08-19)ip-address]}/(urn:opendaylight:flow:inventory?revision=2013-08-19)table/table/flow/flow&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">6</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.elan.internal.ElanInterfaceStateClusteredListener@70004e74&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:ietf:params:xml:ns:yang:ietf-interfaces?revision=2014-05-08)interfaces-state/interface/interface&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token property">&quot;notificationCount&quot;</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;listener&quot;</span><span class="token operator">:</span> <span class="token string">&quot;org.opendaylight.netvirt.vpnmanager.LearntVpnVipToPortEventProcessor@6b763fe4&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;enabled&quot;</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;registeredPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;/(urn:opendaylight:netvirt:l3vpn?revision=2013-09-11)learnt-vpn-vip-to-port-event-data/learnt-vpn-vip-to-port-event/learnt-vpn-vip-to-port-event&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;timestamp&quot;</span><span class="token operator">:</span> <span class="token number">1564714405</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token number">200</span>
+<span class="token punctuation">}</span>
+</pre>
       </div>
       
       
