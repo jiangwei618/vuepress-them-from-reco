@@ -29,6 +29,7 @@ Mockito 是 mocking 框架，它让你用简洁的 API 做测试。而且 Mockit
 
 ![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/mock.md-2019-08-29-10-43-18.png)
 
+
 为了测试类 A，我们需要 Mock B 类和 C 类（用虚拟对象来代替）如下图所示：
 
 ![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/mock.md-2019-08-29-10-42-02.png)
