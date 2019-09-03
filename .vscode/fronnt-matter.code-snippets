@@ -28,7 +28,7 @@
 			"- $3",
 			"description: $4",
 			"export_on_save:",
-			"    html: true",
+			"    markdown: true",
 			"html:",
 			"  embed_local_images: false",
 			"  embed_svg: true",

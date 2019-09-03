@@ -6,7 +6,7 @@
         {
             "label": "node_deploy",
             "type": "shell",
-            "command": "powershell.exe -Command \"& {docker.exe cp F:\\gitbook\\gitbook\\source  39ef:/mnt/note/}\";powershell.exe -Command \"& {docker.exe exec   39ef bash -c \"/root/deploy_note.sh\"}\"",
+            "command": "powershell.exe -Command \"& {docker.exe cp F:\\gitbook\\gitbook\\  6ff111ca08d2:/mnt/note/}\";powershell.exe -Command \"& {docker.exe exec   6ff111ca08d2 bash -c \"/root/deploy_note.sh\"}\"",
             "problemMatcher": []
         }
     ]
