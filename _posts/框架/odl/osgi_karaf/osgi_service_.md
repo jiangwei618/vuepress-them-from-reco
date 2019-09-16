@@ -11,14 +11,20 @@ tags:
     - osgi
 ---  
   
-WaitingServiceTracker
+  
+##  服务获取工具类
+  
+  
+###  WaitingServiceTracker
+  
   
 ```java
  final WaitingServiceTracker<MyService> tracker = WaitingServiceTracker.create(MyService.class, bundleContext);
  final MyService myService = tracker.waitForService(WaitingServiceTracker.FIVE_MINUTES);
 ```
   
-ServiceTracker
+###  ServiceTracker
+  
   
 ```java
 BundleContext bundleContext = FrameworkUtil.getBundle(Util.class).getBundleContext();
@@ -28,10 +34,11 @@ try {
     object = (S) serviceTracker.waitForService(TIME_OUT);
 } catch (InterruptedException e) {
     LOG.error("Error to get service {} , {}", service, e);
-}return object;﻿​
+}return object;
 ```
   
-1.  发布服务可以关联一些属性。
+##  发布服务并关联属性。
+  
   
 ```xml
  <service ref="beanToBeExported" interface="com.xyz.MyServiceInterface"> 
@@ -42,7 +49,9 @@ try {
  </service> 
 ```
   
-2.  每个以 Spring Bean 发布成服务都会有一个属性名为 org.springframework.osgi.bean.name，对应的值为目标 Bean 的 name。
+##  blueprint获取服务
+  
+  每个以 Spring Bean 发布成服务都会有一个属性名为 org.springframework.osgi.bean.name，对应的值为目标 Bean 的 name。
   
 ```xml
  <service ref="beanToPublish" interface="com.xyz.MessageService"/> 
@@ -50,18 +59,21 @@ try {
   
 这个服务就会有一个属性 org.springframework.osgi.bean.name，值为 beanToPublish。
   
-3.  Spring DM 引入一种 Bean 的作用域，叫 bundle scope。当导出服务的 Bean 加了这个作用域后，导入这个服务的 Bundle 会创建一个新的服务 Bean 实例。
+##  服务作用域
+  
+  Spring DM 引入一种 Bean 的作用域，叫 bundle scope。当导出服务的 Bean 加了这个作用域后，导入这个服务的 Bundle 会创建一个新的服务 Bean 实例。
   
 ```xml
  <service ref="beanToBeExported" interface="com.xyz.MessageService"/>
  <bean id="beanToBeExported" scope="bundle" class="com.xyz.MessageServiceImpl"/> 
 ```
   
-4.  Controlling The Set Of Advertised Service Interfaces For An Exported Service.
+##  服务多个接口导出
+  
   
 当有一个 Bean 服务存在多个接口时，需要将接口都导出：
   
-复制代码
+  
 ```xml
  <service ref="beanToBeExported"> 
  　　<interfaces> 
@@ -72,7 +84,7 @@ try {
  or
  <service ref="beanToBeExported" auto-export="interfaces"/> 
 ```
-复制代码
+  
 auto-export 有四种值:
   
 disabled:如果 auto-export 属性未被指定，则该选项为默认值。接口列表必须使用 interface 属性或 interfaces 子元素指定。
@@ -80,7 +92,8 @@ interfaces:使用由服务类或其任何超类实现的所有公共接口注册
 class-hierarchy:使用服务类或其任何公共超类注册服务。
 all-classes:结合 interfaces 和 class-hierarchy 选项。
   
-注册服务的一些属性：
+##  服务依赖属性
+  
   
 depends-on:
   
@@ -232,7 +245,7 @@ SortedSet type - if this method is called, then both the Object and Collection m
   
 Service Importer Global Defaults
   
-复制代码
   
-复制代码
+  
+  
   

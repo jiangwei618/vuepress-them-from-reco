@@ -18,7 +18,7 @@ tags:
   
 Git 本地有四个工作区域：工作目录（Working Directory）、暂存区(Stage/Index)、资源库(Repository 或 Git Directory)、git 仓库(Remote Directory)。文件在这四个区域之间的转换关系如下：
   
-![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/git基本原理.md-2019-09-03-17-27-57.png )
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/git基本原理.md-2019-09-03-18-06-12.png )
   
 - Workspace： 工作区，就是你平时存放项目代码的地方
   
@@ -48,7 +48,7 @@ git 的工作流程一般是这样的：
   
 GIT 不关心文件两个版本之间的具体差别，而是关心文件的整体是否有改变，若文件被改变，在添加提交时就生成文件新版本的快照，而判断文件整体是否改变的方法就是用 SHA-1 算法计算文件的校验和。
   
-![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/git基本原理.md-2019-09-03-17-29-36.png )
+![](https://raw.githubusercontent.com/jiangwei618/note/master/assets/image/git基本原理.md-2019-09-03-18-07-18.png )
   
 - Untracked: 未跟踪, 此文件在文件夹中, 但并没有加入到 git 库, 不参与版本控制. 通过 git add 状态变为 Staged.
   
