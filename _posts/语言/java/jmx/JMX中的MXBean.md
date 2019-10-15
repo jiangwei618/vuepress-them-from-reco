@@ -9,8 +9,7 @@ categories:
 tags:
   - jmx
   - mxbean
-export_on_save:
-  markdown: true
+
 
 ---
 

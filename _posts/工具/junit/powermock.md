@@ -8,8 +8,7 @@ categories:
 tags:
   - junit
 
-export_on_save:
-  markdown: true
+
 
 ---
 

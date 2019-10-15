@@ -9,8 +9,7 @@ categories:
 tags:
   - odl
   - controller
-export_on_save:
-  markdown: true
+
 ---
 
 ## 1. 官方介绍

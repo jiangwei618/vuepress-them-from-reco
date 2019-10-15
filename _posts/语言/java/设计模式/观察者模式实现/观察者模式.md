@@ -9,8 +9,7 @@ categories:
   - 观察者模式
 tags:
   - 观察者模式
-export_on_save:
-  markdown: true
+
 
 ---
 

@@ -7,8 +7,7 @@ categories:
   - git
 tags:
   - git
-export_on_save:
-  markdown: true
+
 ---
 
 ## git 脑图

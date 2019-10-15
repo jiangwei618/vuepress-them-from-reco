@@ -8,8 +8,7 @@ categories:
   - jpda
 tags:
   - jpda
-export_on_save:
-  markdown: true
+
 
 ---
 

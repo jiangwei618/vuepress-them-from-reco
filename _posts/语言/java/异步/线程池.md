@@ -8,8 +8,7 @@ categories:
   - 异步
 tags:
   - 异步
-export_on_save:
-  markdown: true
+
 
 ---
 

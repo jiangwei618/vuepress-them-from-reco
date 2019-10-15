@@ -9,8 +9,7 @@ categories:
 tags:
   - jolokia
   - jmx
-export_on_save:
-  markdown: true
+
 
 ---
 

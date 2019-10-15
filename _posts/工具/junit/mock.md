@@ -8,9 +8,6 @@ categories:
 tags:
   - junit
 
-export_on_save:
-  markdown: true
-
 ---
 
 ## 1. Mockito 介绍

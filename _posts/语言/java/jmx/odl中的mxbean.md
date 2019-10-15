@@ -10,8 +10,7 @@ tags:
   - jmx
   - mxbean
   - odl
-export_on_save:
-  markdown: true
+
 
 ---
 

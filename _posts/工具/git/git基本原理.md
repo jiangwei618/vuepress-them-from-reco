@@ -7,8 +7,7 @@ categories:
   - git
 tags:
   - git
-export_on_save:
-  markdown: true
+  
 ---
 
 ## 1. 概念

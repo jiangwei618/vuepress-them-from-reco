@@ -8,8 +8,7 @@ categories:
   - jmx
 tags:
   - jmx
-export_on_save:
-  markdown: true
+
 
 ---
 

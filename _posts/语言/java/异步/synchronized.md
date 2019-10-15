@@ -9,8 +9,7 @@ categories:
 tags:
   - 异步
   - sychronized
-export_on_save:
-  markdown: true
+
 
 ---
 
