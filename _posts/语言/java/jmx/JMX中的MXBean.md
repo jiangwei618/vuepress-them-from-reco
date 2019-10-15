@@ -9,8 +9,6 @@ categories:
 tags:
   - jmx
   - mxbean
-
-
 ---
 
 ## 1. 虚拟机 Java 活动应用服务器 Bean

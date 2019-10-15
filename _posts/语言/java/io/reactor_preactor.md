@@ -8,8 +8,6 @@ categories:
   - io
 tags:
   - io
-
-
 ---
 
 &emsp;&emsp;Reactor 和 preactor 都是 IO 多路复用模式，一般地,I/O 多路复用机制都依赖于一个事件多路分离器(Event Demultiplexer)。分离器对象可将来自事件源的 I/O 事件分离出来，并分发到对应的 read/write 事件处理器(Event Handler)。开发人员预先注册需要处理的事件及其事件处理器（或回调函数）。

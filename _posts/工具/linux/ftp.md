@@ -7,8 +7,8 @@ categories:
 - linux
 tags: 
 - linux
-export_on_save:
-    markdown: true
+
+
 
 ---
 

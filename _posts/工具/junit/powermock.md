@@ -7,9 +7,6 @@ categories:
   - junit
 tags:
   - junit
-
-
-
 ---
 
 ## 1. 为什么要使用 Mock 工具

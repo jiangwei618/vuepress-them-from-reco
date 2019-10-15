@@ -8,8 +8,6 @@ categories:
   - jpda
 tags:
   - jpda
-
-
 ---
 
 &emsp;&emsp;JDWP 是 Java Debug Wire Protocol 的缩写，它定义了调试器（debugger）和被调试的 Java 虚拟机（target vm）之间的通信协议。

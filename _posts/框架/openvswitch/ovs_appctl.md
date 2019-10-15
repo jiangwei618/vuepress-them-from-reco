@@ -7,10 +7,6 @@ categories:
 - openvswitch
 tags: 
 - openvswitch
-export_on_save:
-    markdown: true
-
-  
 ---
 
 ## 1. 通用命令

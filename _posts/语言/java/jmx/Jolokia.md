@@ -9,8 +9,6 @@ categories:
 tags:
   - jolokia
   - jmx
-
-
 ---
 
 ## 1. jolokia 架构

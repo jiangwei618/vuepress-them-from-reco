@@ -8,8 +8,6 @@ categories:
   - io
 tags:
   - io
-
-
 ---
 
 ## 1. io 库的两个设计模式

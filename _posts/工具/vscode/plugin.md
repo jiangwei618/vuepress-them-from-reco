@@ -7,8 +7,8 @@ categories:
 - vscode
 tags: 
 - vscode
-export_on_save:
-    markdown: true
+
+
 
 ---
 
