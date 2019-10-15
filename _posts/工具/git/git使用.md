@@ -6,7 +6,8 @@ categories:
   - 工具
   - git
 tags:
-  - git---
+  - git
+---
 
 > Git 常用命令集合，Fork 于[tips](https://github.com/git-tips/tips)项目
 

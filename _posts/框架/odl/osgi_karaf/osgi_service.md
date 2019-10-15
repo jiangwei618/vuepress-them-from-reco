@@ -1,16 +1,14 @@
 ---
-title： osgi service
-date： 2019-08-26 11：11：19
-description： osgi service
-categories：
-- 框架
-- odl
-- osgi_karaf
-tags：
-- service
-- osgi
-export_on_save：
-markdown： true
+title: osgi service
+date: 2019-08-26 11：11：19
+description: osgi service
+categories:
+  - 框架
+  - odl
+  - osgi_karaf
+tags:
+  - service
+  - osgi
 ---
 
 ## 1. 服务获取工具类
