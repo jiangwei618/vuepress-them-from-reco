@@ -7,6 +7,7 @@
 @require './colorMixin'
 @require './iconfont.css'
 
+
 html, body
   padding 0
   margin 0
@@ -41,21 +42,8 @@ body
   display none
   background-color: rgba(0,0,0,.65);
 
-.sidebar
-  font-size 16px
-  background-color #fff
-  width $sidebarWidth
-  position fixed
-  z-index 10
-  margin 0
-  top $navbarHeight
-  left 0
-  bottom 0
-  box-sizing border-box
-  border-right 1px solid $borderColor
-  overflow-y auto
-
 .content__default:not(.custom)
+  max-width :1200px
   @extend $wrapper
   // > *:first-child
   //   margin-top 1.6rem
@@ -67,12 +55,16 @@ body
     border-radius 4px
   img
     max-width 100%
+  p
+     text-indent:2em;
 
 .content__default.custom
   padding 0
   margin 0
   img
     max-width 100%
+  p
+     text-indent:2em;
 
 a
   font-weight 500

@@ -142,7 +142,7 @@ export function resolveSidebarItems (page, regularPath, site, localePath) {
  * @param { Page } page
  * @returns { SidebarGroup }
  */
-function resolveHeaders (page) {
+export function resolveHeaders (page) {
   const headers = groupHeaders(page.headers || [])
   return [{
     type: 'group',

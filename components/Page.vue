@@ -224,6 +224,7 @@ function flatten (items, res) {
     max-width: 740px;
     margin: 0 auto;
     padding: 1rem 2.5rem;
+    text-align :center;
   .page-edit
     @extend $wrapper
     padding-top 1rem
@@ -234,6 +235,8 @@ function flatten (items, res) {
       a
         color lighten($textColor, 25%)
         margin-right 0.25rem
+
+
     .last-updated
       float right
       font-size 0.9em
@@ -249,6 +252,7 @@ function flatten (items, res) {
   &.reco-show.page {
     load-end(0.08s)
   }
+ 
 
 .page-nav
   @extend $wrapper
